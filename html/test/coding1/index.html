@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* 리셋 */
+    * {margin: 0; padding: 0;}
+    a {color: #222328; text-decoration: none;}
+    li {list-style: none;}
+    img {width: 100%;}
+
+    #wrap {width: 1000px; background-color: #fff; margin: 0 auto; overflow: hidden;}
+
+    #aside {width: 30%; height: 850px; float: left;}
+    .logo {width: 50%; height: 25px; }
+    #aside .text {margin-top: 80px;}
+    #aside h4 {color: blue;}
+    #aside div div ul {margin: 5px; font-size: 14px; }
+    #aside div div ul li {border-bottom: 1px solid #999; padding: 5px;}
+    #aside div ul li {margin-top: 10px;}
+
+    #main {width: 70%; height: 350px; float: right;}
+
+    #content1 {width: 70%; height: 250px; float: right; overflow: hidden;}
+    #content1 h4 {text-align: center; margin: 20px;}
+    #content1 h4 em {color: #999;}
+    #content1 div {margin: 20px;}
+    #content1 ul {float: left;}
+    #content1 ul li {text-align: center; font-size: 14px;}
+    #content1 img {width: 130px;}
+
+    #content2 {width: 70%; height: 250px; background-color: #999;   float: right; overflow: hidden;} 
+    #content2 div img {width: 100px; height: 100px; padding-left: 40px; padding-bottom: 5px;}
+    #content2 div {width: 210px; float: left; padding: 10px; border: 1px solid blue; box-sizing: border-box; margin: 10px 10px; background-color: #fff; position: relative;}
+    #content2 div h3 {text-align: center; margin: 10px;}
+    #content2 div ul li {text-overflow:ellipsis; white-space: nowrap; overflow: hidden; font-size: 10px; padding: 2px; }
+    #content2 span {position: relative; top: -215px; right: -108px; border: none; width: 10px; height: 10px; display: block;}
+    #content2 span img {width: 50px; height: 50px;}
+
+    #footer {width: 100%; height: 150px; clear: both; overflow: hidden; background-color: #e8f3f7;}
+    #footer img {width: 15%; height: 150px; float: left;}
+    #footer div img {width: 25%; height: 80px; float: right; margin: 35px;}
+    #footer ul {margin: 50px;}
+
+    </style>    
+</head>
+<body>
+    <div id="wrap">
+        <aside id="aside">
+            <div class="logo">
+                <img src="../coding1/images/logo.jpg" alt="로고">
+            </div>
+            <div class="text">
+                <div>
+                    <h4>서비스</h4>
+                    <ul>
+                        <li>분야별 정책정보</li>
+                        <li>정책뉴스</li>
+                        <li>연구보고서</li>
+                        <li>간행물</li>
+                        <li>정책자료</li>
+                    </ul>
+                </div>
+                <ul>
+                    <li><strong>정책정보</strong></li>
+                    <li><strong>기관정보</strong></li>
+                    <li><strong>고객센터</strong></li>
+                </ul>
+            </div>
+        </aside>
+        <section id="main">
+            <img src="../coding1/images/main.jpg" alt="메인">
+        </section>
+        <section id="content1">
+            <h4>자주 찾는 서비스 | <em>키워드 서비스</em></h4>
+            <div>
+                <ul>
+                    <li><img src="../coding1/images/icon1.jpg" alt=""></li>
+                    <li>주민등록표등본</li>
+                </ul>
+                <ul>
+                    <li><img src="../coding1/images/icon2.jpg" alt=""></li>
+                    <li>토지(임야)대장<br>열람/등본 발급신청</li>
+                </ul>
+                <ul>
+                    <li><img src="../coding1/images/icon3.jpg" alt=""></li>
+                    <li>건축물대장 등/초본<br>발급(열람) 신청</li>
+                </ul>
+                <ul>
+                    <li><img src="../coding1/images/icon4.jpg" alt=""></li>
+                    <li>지방세 납세증명</li>
+                </ul>
+                <ul>
+                    <li><img src="../coding1/images/icon5.jpg" alt=""></li>
+                    <li>지적도(임야도) 등본<br>발급 및 열람</li>
+                </ul>
+        </div>
+        </section>
+        <section id="content2">
+            <div>
+                <h3>공지사항</h3>
+                <img src="../coding1/images/icon1.jpg" alt="">
+                <ul>
+                    <li>[어디서나 대학민원] 호서대학교 팩스 어쩌구 저쩌구 룰루 랄라 릴리 삘리</li>
+                    <li>[전라북도 고창군] 새올행정시스템 어쩌구 저쩌구 룰루 랄라 릴리 삘리</li>
+                    <li>교육부 행정전자서명인증센터 시스템 어쩌구 저쩌구 룰루 랄라 릴리 삘리</li>
+                </ul>
+                <span><img src="../coding1/images/more.jpg" alt=""></span>
+            </div>
+            <div>
+                <h3>자료실</h3>
+                <img src="../coding1/images/icon2.jpg" alt="">
+                <ul>
+                    <li>[어디서나 대학민원] 호서대학교 팩스 어쩌구 저쩌구 룰루 랄라 릴리 삘리</li>
+                    <li>[전라북도 고창군] 새올행정시스템 어쩌구 저쩌구 룰루 랄라 릴리 삘리</li>
+                    <li>교육부 행정전자서명인증센터 시스템 어쩌구 저쩌구 룰루 랄라 릴리 삘리</li>
+                </ul>
+                <span><img src="../coding1/images/more.jpg" alt=""></span>
+            </div>
+            <div>
+                <h3>FAQ </h3>
+                <img src="../coding1/images/icon3.jpg" alt="">
+                <ul>
+                    <li>[어디서나 대학민원] 호서대학교 팩스 어쩌구 저쩌구 룰루 랄라 릴리 삘리</li>
+                    <li>[전라북도 고창군] 새올행정시스템 어쩌구 저쩌구 룰루 랄라 릴리 삘리</li>
+                    <li>교육부 행정전자서명인증센터 시스템 어쩌구 저쩌구 룰루 랄라 릴리 삘리</li>
+                </ul>
+                <span><img src="../coding1/images/more.jpg" alt=""></span>
+            </div>
+        </section>
+        <section id="footer">
+            <img src="../coding1/images/footer.jpg" alt="">
+            <div>
+                <img src="../coding1/images/footer1.jpg" alt="">
+            </div>
+            <ul>
+                <li>03171 서울특별시 세종대로 209 (세종로) 행정안전부</li>
+                <li>정부24 콜센터 1588-2188 정부민원안내콜센터 국번없이 110</li>
+                <li>Copyright Ministry of the lnterior and and Safety. All Right reserved.</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

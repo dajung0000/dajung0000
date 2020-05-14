@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="dajung">
+    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+    <meta name="keywords" content="다정, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, css3, html, markup, design, Webstoryboy">
+    <title>다정 | Dajung | HTML</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/docs.min.css" rel="stylesheet">
+    <link href="../assets/css/prism.css" rel="stylesheet">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/favicon_114.png">
+    <link rel="icon" href="../assets/ico/icon.png">
+    <link rel="icon" href="../assets/ico/favicon_57.png" sizes="16x16">
+    <link rel="icon" href="../assets/ico/favicon_72.png" sizes="32x32">
+    <link rel="icon" href="../assets/ico/favicon_114.png" sizes="48x48">
+    <link rel="icon" href="../assets/ico/favicon_114.png" sizes="64x64">
+    <link rel="icon" href="../assets/ico/favicon_114.png" sizes="128x128">
+
+    <!-- Facebook meta tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="웹스토리보이" />
+    <meta property="og:url" content="https://webstoryboy.co.kr/" />
+    <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+    <meta property="og:site_name" content="웹스토리보이" />
+    <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
+
+    <!-- twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@webstoryboy" />
+    <meta name="twitter:title" content="웹스토리보이" />
+    <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
+    <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+
+    <!-- 웹 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand">WEB'S &lt;/doc&gt;</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li><a href="https://wiss.tistory.com/">Design</a></li>
+                    <li><a href="https://webzz.tistory.com/">Coding</a></li>
+                    <li><a href="https://wtss.tistory.com/">Tutor</a></li>
+                    <li><a href="https://wess.tistory.com/">Edu</a></li>
+                    <li><a href="https://wsss.tistory.com/">CSS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="bs-header bgs1" id="content">
+        <div class="container">
+            <h1>HTML Reference v1.0 &lt;/doc&gt;</h1>
+            <p><a href="http://dajung.dothome.co.kr" target="_blank">dajung.dothome.co.kr</a></p>
+        </div>
+    </div>
+
+    <div class="container bs-docs-container">
+        <div class="row">
+
+            <div class="col-md-9" role="main">
+                <!-- Intro1 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro1" class="page-header">HTML</h2>
+                    <p class="bs-callout bs-callout-info">HTML(HyperText Markup Language)은 웹 문서를 표현하기 위한 하이퍼텍스트 마크업 언어입니다.</p>
+                    <p>하이퍼텍스트란 문서에서 다른 문서로 이동하는 것을 말하며, 마크업이란 태그를 사용하여 컨텐츠에 의미를 부여하는 것을 말합니다.</p>
+                    <p>HTML은 문서의 글자크기, 글자색, 글자모양, 그래픽, 문서이동(하이퍼링크) 등을 정의하는 명령어로서 홈페이지를 작성하는 데 쓰인다. HTML에서 사용하는 명령어 태그(tag)는 꺽쇠괄호를 사용하여 나타냅니다.</p>
+
+                </div>
+                <!-- //Intro1 -->
+
+                <!-- Intro2 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro2" class="page-header">tag</h2>
+                    <p class="bs-callout bs-callout-info">태그(tag)는 HTLM에서 정보를 전달하는 방식을 의미합니다.</p>
+                    <img src="img/tag.gif" style="width: 50%">
+                    <ul>
+                        <li>열린 태그 : 이것은 요소의 이름과 열고 닫는 꺽쇠 괄호로 구성됩니다. 요소가 시작부터 효과가 적용되기 시작합니다.</li>
+                        <li>닫힌 태그 : 이것은 요소의 이름 앞에 슬래시(/)가 있는 것을 제외하면 열린 태그와 같습니다. 이것은 요소의 끝에 위치합니다. 닫는 태그를 적어주지 않는 것은 흔한 초심자의 오류이며, 이것은 이상한 결과를 낳게됩니다.</li>
+                        <li>내용(컨텐츠) : 요소의 내용이며, 이 경우 단순한 텍스트 입니다.</li>
+                        <li>요소 : 열린 태그, 닫는 태그, 내용을 통틀어 요소라고 합니다.</li>
+                    </ul>
+                </div>
+                <!-- Intro2 -->
+                 
+                <!-- Intro3 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro3" class="page-header">속성(Attributes)</h2>
+                    <p class="bs-callout bs-callout-info">HTLM의 속성은 태그의 기능 및 유형을 설정하고, 태그의 동작을 제어하기 위한 용어입니다.</p>
+                    <img src="img/att.gif" style="width: 50%">
+                    <ul>
+                        <li>요소 이름 다음에 바로 오는 속성은 요소 이름과 속성 사이에 공백이 있어야 되고, 하나 이상의 속성들이 있는 경우엔 속성 사이에 공백이 있어야 합니다.</li>
+                        <li>속성 이름 다음엔 등호(=)가 붙습니다.</li>
+                        <li>속성 값은 열고 닫는 따옴표로 감싸야 합니다.</li>
+                    </ul>
+                </div>
+                <!-- Intro3 -->
+
+                <!-- Intro4 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">요소(Element)</h2>
+                    <p class="bs-callout bs-callout-info">요소는 HTML을 구성하는 가장 기본 단위입니다.</p>
+                    <p>태그의 시작태그와 끝나는 태그 사이의 범위를 요소라고 합니다.</p>
+                </div>
+                <!-- //Intro4 -->
+
+                <!-- Intro4-1 -->
+            <div class="bs-docs-section">
+                <h2 id="intro4-1" class="page-header">CSS 선언</h2>
+                <p class="bs-callout bs-callout-info">HTML 문서에 스타일을 선언하는 방법은 3가지가 있습니다.</p>
+                     <ul>
+                         <li>내부 스타일(Internal Style Sheet) : head 태그 안에 선언하는 방법</li>
+                         <li>외부 스타일(External Style Sheet) : 외부 파일로 연결하는 방법</li>
+                         <li>인라인 스타일(Inline Style Sheet) : 태그에 직접 연결하는 방법</li>
+                     </ul>
+ <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+ &lt;html lang="en"&gt;
+ &lt;head&gt;
+     &lt;meta charset="UTF-8"&gt;
+     &lt;title&gt;Document&lt;/title&gt;
+     
+     &lt;!-- 내부 스타일 --&gt;
+     &lt;style&gt;
+         h1 {color: #fff;}
+     &lt;/style&gt;
+     
+     &lt;!-- 외부 스타일 --&gt;
+     &lt;link rel="stylesheet" href="경로"&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+     &lt;!-- 인라인 스타일 --&gt;
+     &lt;h1 style="color: #fff"&gt;&lt;/h1&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+ </code></pre>
+             </div>
+                <!-- //Intro4-1 -->
+             
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">주석</h2>
+                    <p class="bs-callout bs-callout-info">주석 표시는 프로그램에 영향을 미치지 않으며, 설명이나 메모를 목적으로 사용합니다.</p>
+                    <pre class="line-numbers language-markup"><code>&lt;!-- 주석표시 --&gt;</code></pre>
+                </div>
+                <!-- Intro5-1 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5-1" class="page-header">조건식 주석</h2>
+                    <p class="bs-callout bs-callout-info">IE(Internet Explorer)에서만 작동하는 주석입니다.</p>
+                    <ul>
+                        <li>특정 조건을 정하여 특정한 조건하에서 작동하는 주석입니다.</li>
+                    </ul>
+                    <pre class="line-numbers language-markup"><code>&lt;!--[if IE 6]&gt;<br>Special instructions for IE 6 here<br>&lt;![endif]--&gt;</code></pre>
+                </div>
+                <!-- //Intro5-1 -->
+                
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">블록요소 / 인라인요소</h2>
+                    <p class="bs-callout bs-callout-info">블록요소는 박스, 인라인 요소는 텍스트를 의미합니다.</p>
+                    <ul>
+                        <li>블록 엘리먼트(Block Element)
+                        <ul>
+                            <li>독립된 박스영역으로 한 줄에 하나의 블록요소만 표현 할 수 있습니다.</li>
+                            <li>블록요소에는 블록요소와 인라인요소를 표현 할 수 있습니다.</li>
+                            <li>&lt;div&gt;, &lt;p&gt; ,&lt;ul&gt;, &lt;li&gt;, &lt;hr&gt;, &lt;adress&gt;</li>
+                        </ul>
+                        </li>
+                        <li>인라인 엘리먼트(Inline Element)
+                        <ul>
+                            <li>독립된 텍스트 영역으로 한 줄에 여러개의 인라인 요소를 표현 할 수 있습니다.</li>
+                            <li>인라인요소에는 블록요소가 포함 될 수 없지만, 인라인 요소는 포함 할 수 있습니다.</li>
+                            <li>&lt;span&gt;, &lt;a&gt;, &lt;img&gt;, &lt;input&gt;, &lt;button&gt;, &lt;br&gt;</li>
+                        </ul>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <!-- //Intro6 -->
+                
+                 <!-- Intro7 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro7" class="page-header">DTD 선언</h2>
+                    <p class="bs-callout bs-callout-info">웹 문서를 제작하기 위해서는 웹 문서 유형을 설정해야 합니다.</p>
+                    <p>DTD(Document Type)을 설정하지 않거나 잘못 설정하면 브라우저에 따라 화면이 다르게 나오거나 렌더링이 달라지기 때문에 독타입을 설정해야 합니다.</p>
+<pre class="line-numbers language-markup"><code>&lt;!-- HTML 4.01 Strict --&gt;
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;  
+
+&lt;!-- HTML 4.01 Transitional  --&gt;
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt; 
+
+&lt;!-- HTML 4.01 Frameset --&gt;
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd"&gt; 
+
+&lt;!-- XHTML 1.0 Strict --&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt; 
+
+&lt;!-- XHTML 1.0 Transitional --&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt; 
+
+&lt;!-- XHTML 1.0 Frameset --&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd"&gt; 
+
+&lt;!-- XHTML 1.1 --&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"&gt;
+
+&lt;!-- html5 --&gt;
+&lt;!DOCTYPE html&gt;
+</code></pre>
+                </div>
+                <!-- //Intro7 -->
+                
+                <!-- Intro8 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro8" class="page-header">언어, 속성, 설정</h2>
+                    <p class="bs-callout bs-callout-info">콘텐츠의 언어를 인식하고 언어 정보를 추출하는데 사용합니다.</p>
+                    <p>미리 언어를 설정하면 효율성이 더 좋아집니다.</p>
+<pre class="line-numbers language-markup"><code>&lt;!-- HTML5--&gt;
+&lt;html lang="ko"&gt;
+
+&lt;!-- HTML4--&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"&gt;
+</code></pre>
+                </div>
+                <!-- //Intro8 -->
+                
+                <!-- Intro9 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro9" class="page-header">문서 구조</h2>
+                    <p class="bs-callout bs-callout-info">HTML구조는 <code>html</code> 요소 안에 <code>head</code>와 <code>body</code>로 이루어져 있습니다.</p>
+                    <ul>
+                        <li>HTML 구조는 독타입 선언을 해주어야 하나의 웹 문서가 완성됩니다.</li>
+                        <li>HTLM 문서는 상하 관계가 존재하는 계층적인 구조로 되어있습니다. 상위에 있는 요소와 하위에 있는 요소는 부모 자식 관계로 표현하며, 이러한 구조를 DOM 구조라고 합니다.</li>
+                        <li>HEAD 요소에는 제목, 사이트 정보, 스크립트, 스타일시트, 메타 정보 등을 제공합니다.</li>
+                        <li>BODY 요소에는 문서 본문에 해당하는 콘텐츠 영역입니다.</li>
+                    </ul>
+<pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+    &lt;head&gt;
+
+    &lt;/head&gt;
+    &lt;body&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+                <!-- //Intro9 -->
+
+                <!-- Intro9-1 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro9-1" class="page-header">&lt;section&gt;</h2>
+                    <p class="bs-callout bs-callout-info"><code>section</code>태그는 일반적으로 문서의 콘텐츠 영역을 설정할 때 사용합니다.</p>
+                    <ul>
+                        <li>콘텐츠와 관련된 한 가지 주제 영역을 의미합니다.</li>
+                        <li><code>section</code>요소는 문장이나 스타일링 요소가 아니기 때문에 편의나 영역을 위함이라면<code>div</code>태그가 좋습니다.</li>
+                        <li><code>section</code>요소는 제목이 없는 경우 섹션이라고 할 수 없기 때문에 제목을 제공해야 합니다.</li>
+                        <li><code>section</code>요소는 일반적인 영역의 주제가 아니라면 구체적인 요소를 사용하는 것이 더 적절 합니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro9-1-->
+
+                <!-- Intro9-2-->
+                <div class="bs-docs-section">
+                    <h2 id="intro9-2" class="page-header">&lt;nav&gt;</h2>
+                    <p class="bs-callout bs-callout-info"><code>nav</code>태그는 웹 페이지 내에서 이동할 수 있는 네비게이션 링크 그룹을 설정합니다.</p>
+                    <ul>
+                        <li><code>nav</code>는 문서의 핵심적인 페이지 메뉴 및 서브 메뉴에서 사용합니다.</li>
+                        <li><code>nav</code>요소는 문서에서 주로 한 번만 사용합니다.</li>
+                        <li>문서안에 링크가 포함된 콘텐츠는 <code>nav</code>를 사용하지 않습니다.</li>
+                        <li><code>nav</code>는 핵심적인 네비게이션에 사용해야 하므로 푸터 내에 링크 그룹의 사용은 적절하지 않습니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro9-2-->
+
+                <!-- Intro9-3 -->
+                  <div class="bs-docs-section">
+                    <h2 id="intro9-3" class="page-header">&lt;main&gt;</h2>
+                    <p class="bs-callout bs-callout-info"><code>main</code>태그는 웹 문서에서 주요 콘텐츠 영역을 나타낼 때 사용합니다.</p>
+                    <ul>
+                        <li><code>main</code>는 웹 페이지 내에서 한 번만 사용할 수 있으며, 접근성과 검색 노출을 향상시킵니다.</li>
+                        <li><code>article</code>, <code>article</code>, <code>footer</code>, <code>nav</code></li>
+                        <li>문서안에 링크가 포함된 콘텐츠는 <code>nav</code>를 사용하지 않습니다.</li>
+                        <li><code>nav</code>는 핵심적인 네비게이션에 사용해야 하므로 푸터 내에 링크 그룹의 사용은 적절하지 않습니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro9-3-->
+
+                <!-- Intro9-4 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro9-4" class="page-header">&lt;aside&gt;</h2>
+                    <p class="bs-callout bs-callout-info"><code>aside</code>태그는 메인 콘텐츠와 관련된 콘텐츠 영역을 설정합니다.</p>
+                    <ul>
+                        <li><code>aside</code>는 메인 콘텐츠와 관련된 사이드의 정보, 광고 등 부분적인 정보를 그룹화할 때 사용합니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro9-4-->
+
+                <!-- Intro9-5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro9-5" class="page-header">&lt;header&gt;</h2>
+                    <p class="bs-callout bs-callout-info"><code>header</code>태그는 웹 문서의 헤더 영역을 설정합니다.</p>
+                    <ul>
+                        <li><code>header</code>는 웹 페이지의 소개, 네비게이션 영역, 검색 영역, 로고 영역을 포함하는 영역입니다.</li>
+                        <li><code>header</code>태그에는 제목 태그가 포함 될 수 있으며, 필수 조건은 아닙니다.</li>
+                        <li><code>header</code>는 섹션 콘텐츠가 아닌 그룹화하기 위한 요소이므로 <code>section</code></li>
+                    </ul>
+                </div>
+                <!-- //Intro9-5-->
+
+                <!-- Intro9-6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro9-6" class="page-header">&lt;footer&gt;</h2>
+                    <p class="bs-callout bs-callout-info"><code>footer</code>태그는 웹 문서의 풋터 영역을 설정합니다.</p>
+                    <ul>
+                        <li><code>footer</code>태그는 저작권 정보, 회사 정보, 관련 링크, 바닥글, 주소 사이트 정보 등을 포함하는 콘텐츠 영역입니다.</li>
+                        <li><code>footer</code>태그는 섹션 콘텐츠가 아닌 그룹을 나타내는 요소이며, <code>section</code>, <code>article</code>, <code>aside</code>태그를 포함시킬 수 있습니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro9-6-->
+
+                <!-- Intro9-7 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro9-7" class="page-header">&lt;article&gt;</h2>
+                    <p class="bs-callout bs-callout-info"><code>article</code>태그는 웹 문서의 독립적인 항목을 나타내는 콘텐츠를 의미합니다. </p>
+                    <ul>
+                        <li><code>article</code>태그는 신문기사, 잡지, 블로그 항목, 게시판 등의 독립적인 항목을 나타냅니다.</li>
+                        <li><code>section</code>태그는 하나의 주제를 나타낸다면, <code>article</code>태그는 주제를 묶은 독립적인 콘텐츠입니다.</li>
+                        <li><code>section</code>요소 안에는 <li><code>article</code>요소를 쓸 수 있으며, <br><code>article</code>요소 안에도 <code>section</code>요소를 쓸 수 있습니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro9-7-->
+                
+                <!-- Intro10 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro10" class="page-header">웹 표준과 웹 접근성</h2>
+                    <p class="bs-callout bs-callout-danger">웹 접근성 : 장애를 가진 사람들이 웹 콘텐츠를 인지하고, 편리하게 사용할 수 있으며, 그 내용이 쉬워야 하며, 견고성을 지녀야 한다.<br>웹 표준 : 사용자가 어떤 브라우저나 기기를 사용하더라도 내용을 동일하게 볼 수 있도록 하는 것이 웹 표준이다.</p>
+                </div>
+                <!-- //Intro10 -->
+
+                <!-- Intro11 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro11" class="page-header">html5에서 지원하지 않는 태그</h2>
+                    <p class="bs-callout bs-callout-danger">html5에서는 css로 제어하길 권하고 있습니다.<br>왜냐하면 디자인과 구조(정보)의 분리를 지향하기 때문입니다.</p>
+                    <ul>
+                        <li>&lt;acronym&gt;-->&lt;abbr&gt;</li>
+                        </li>&lt;applet&gt;-->&lt;embed&gt;</li>
+                        </li>&lt;basefont&gt;</li>
+                        </li>&lt;big&gt;</li>
+                        </li>&lt;center&gt;</li>
+                        </li>&lt;dir&gt;-->&lt;ul&gt;</li>
+                        </li>&lt;font&gt;</li>
+                        </li>&lt;frame&gt;</li>
+                        </li>&lt;frameset&gt;</li>
+                        </li>&lt;noframes&gt;</li>
+                        </li>&lt;strike&gt;-->&lt;del&gt; or &lt;s&gt;</li>
+                        </li>&lt;tt&gt;</li>
+                    </ul>
+                </div>
+                <!-- //Intro11 -->
+
+                <!-- Intro12 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro12" class="page-header">html5에서 새롭게 추가된 태그</h2>
+                    <ul>
+                        <li>&lt;audio&gt; : 음악이나 다른 오디오 스트림과 같은 소리를 들려줍니다.</li>
+                        <li>&lt;canvas&gt; : 스크립트를 제공하여 그래프, 게임 그래픽, 기타 비주얼 이미지를 그릴 수 있습니다.</li>
+                        <li>&lt;command&gt;</li>
+                        <li>&lt;datalist&gt; : input 요소에 대한 미리 정의된 옵션 집합을 나타냅니다.</li>
+                        <li>&lt;details&gt; : 사용자가 보거나 숨길 수 있는 추가정보를 지정하고 열고 닫을 수 있는 대화형 도구를 만드는데 사용합니다.</li>
+                        <li>&lt;embed&gt; : HTML이 아닌 외부 애플리케이션이나 대화형 컨텐츠를 포함할 때 사용합니다.</li>
+                        <li>&lt;figcaption&gt; : 부모 요소인 figure 요소의 캡션이나 제목을 정의합니다.</li>
+                        <li>&lt;figure&gt; : 일러스트레이션, 도표, 사진, 코드 등과 자체 포함된 내용을 지정합니다. 이 요소는 보통 문서의 흐름에서 단일 요소로 참조되어 제거되더라도 문서의 주된 흐름에 영향을 미치지 않습니다.</li>
+                        <li>&lt;hgroup&gt; : 섹션의 제목을 나타냅니다. 부제목이나 태그영역 h1 ~ h6 요소들을 그룹짓기 위해 사용합니다.</li>
+                        <li>&lt;keygen&gt; : 암호화를 위한 개인키와 공개키 쌍을 만들어냅니다.</li>
+                        <li>&lt;mark&gt; : 문서 내에서 다른 문맥과의 관련성을 표시하기 위해 참조 목적으로 마킹, 혹은 하이라이팅 한 텍스트 집합을 나타냅니다.</li>
+                        <li>&lt;meter&gt; : 알려진 범위 내에서의 스칼라 측정 또는 분포 비율을 나타냅니다.</li>
+                        <li>&lt;output&gt; : 계산의 결과를 나타냅니다.</li>
+                        <li>&lt;progress&gt;</li>
+                        <li>&lt;rp&gt; : 루비 주석을 지원하지 않는 사용자에게 루비 텍스트를 괄호로 둘러싸서 표현하기 위해 사용됩니다.</li>
+                        <li>&lt;rt&gt; : 루비 텍스트의 루비 주석을 나타냅니다.</li>
+                        <li>&lt;ruby&gt; : 루비 주석을 정의합니다. 루비 주석은 텍스트 주변(보통 위에)에 나타나는 텍스트로 주로 동아시아권 언어에서 발음이나 주석으로 사용됩니다.</li>
+                        <li>&lt;source&gt; : video 요소 및 audio 요소와 같은 미디어 요소에서 사용할 수 있는 대체 미디어 자원을 정의합니다.</li>
+                        <li>&lt;track&gt; : video 요소 및 audio 요소와 같은 미디어 요소에 대한 텍스트 트랙을 지정합니다. 이 요소는 자막파일이나 텍스트를 포함하는 다른 파일을 자정하는데 사용됩니다.</li>
+                        <li>&lt;video&gt;</li>
+                    </ul>
+                </div>
+                <!-- //Intro12 -->
+
+                <!-- Intro13 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro13" class="page-header">html5shiv</h2>
+                    <p class="bs-callout bs-callout-info">HTML5를 지원하지 않는 IE 9 이하 하위 버전 등에서 사용할 수 있도록 해 주는 Javascript 라이브러리이다.</p>
+                </div>
+                <!-- //Intro13 -->
+                
+                <!-- Intro14 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro14" class="page-header">&lt;div&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">div 태그는 문서의 섹션을 만들거나 영역을 만들 때 사용합니다.</p>
+                </div>
+                <!-- //Intro14 -->
+                
+                <!-- Intro15 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro15" class="page-header">&lt;p&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">p 태그는 문단을 쓸 때 사용합니다.</p>
+                    <ul>
+                        <li>p 태그와 p 태그 사이에는 한 줄의 행간이 표현됩니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro15 -->
+                
+                <!-- Intro16 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro16" class="page-header">&lt;ul&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">ul 태그는 순서가 없는 목록을 쓸 때 사용합니다.</p>
+                    <ul>
+                        <li>ul 태그는 li 태그와 같이 사용합니다.</li>
+                        <li>블릿기호는 점으로 표현됩니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro16 -->
+                
+                <!-- Intro17 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro17" class="page-header">&lt;li&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">li 태그는 목록의 항목을 쓸 때 사용합니다.</p>
+                    <ul>
+                        <li>li 태그는 ul 태그, ol 태그, munu 태그와 같이 사용합니다.</li>
+                        <li>li 태그 안에는 다른 목록을 중첩으로 사용할 수 있습니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro17 -->
+                
+                <!-- Intro18 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro18" class="page-header">&lt;ol&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">ol 태그는 순서가 있는 목록을 쓸 때 사용합니다.</p>
+                    <ul>
+                        <li>ol 태그는 li 태그와</li>
+                        <li>블릿기호는 번호(숫자)로 표현됩니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro18 -->
+                
+                <!-- Intro19 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro19" class="page-header">&lt;a&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">a 태그는 하이퍼 링크를 설정 합니다.</p>
+                    <ul>
+                        <li>하이퍼 링크란 현재 페이지에서 다른 페이지 이동을 말합니다.</li>
+                        <li>방문하지 않은 링크는 밑줄과 파란색으로 표현됩니다.</li>
+                        <li>방문한 링크는 밑줄과 보라색으로 표현됩니다.</li>
+                        <li>활성화된 링크는 밑줄과 빨간색으로 표현됩니다.</li>
+                        <li>HTML5에서는 예외적으로 인라인 구조인 a 태그에 블록 요소를 포함 할 수 있습니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro19 -->
+                
+                <!-- Intro20 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro20" class="page-header">&lt;title&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">title 태그는 웹 페이지의 제목을 나타냅니다.</p>
+                    <ul>
+                        <li>웹페이지 본문에는 보이지 않으며, 브라우저의 탭 등에서 확인 할 수 있습니다.</li>
+                        <li>검색 엔진 등에서 가장 크게 보여지는 텍스트이므로 페이지의 특성을 드러내는 제목을 작성하는 것이 중요합니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro20 -->
+
+                <!-- Intro21 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro21" class="page-header">&lt;meta&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">meta 태그는 웹 문서에 대한 여러가지 정보를 제공합니다.</p>
+                    <table class="table table-bordered table-striped table-hover">
+                       <caption>메타태그의 종류와 설명을 알려주는 표 입니다.</caption>
+                       <colgroup>
+                           <col style="width: 50%">
+                           <col style="width: 50%">
+                       </colgroup>
+                        <thead>
+                            <tr>
+                                <th>메타데이터</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>charset</td>
+                                <td>웹 페이지 언어를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>author</td>
+                                <td>웹 페이지를 만든 사람을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>description</td>
+                                <td>웹 페이지에 대한 설명을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>keywords</td>
+                                <td>웹 페이지에 대한 키워드를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>application-name</td>
+                                <td>웹 페이지에 관련된 응용 프로그램 이름을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>generator</td>
+                                <td>웹 페이지에서 만든 소프트웨어의 이름을 설정합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+
+                </div>
+                <!-- //Intro21 -->
+                
+                <!-- Intro22 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro22" class="page-header">&lt;table&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">HTML 테이블을 정의합니다.</p>
+                    <table class="table table-bordered table-stiped table-hover">
+                    <caption>테이블태그의 종류와 설명을 알려주는 표 입니다.</caption>
+                       <colgroup>
+                           <col style="width: 30%">
+                           <col style="width: 70%">
+                       </colgroup>   
+                        <thead>
+                                <th>태그</th>
+                                <th>설명</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>tr</td>
+                                <td>표의 제목을 쓰는 역할을 합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>td</td>
+                                <td>가로줄을 만드는 역할을 합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>tbody</td>
+                                <td>HTML 테이블에서 본문 내용을 그룹화하는 데 사용됩니다.</td>
+                            </tr>
+                            <tr>
+                                <td>thead</td>
+                                <td>HTML 테이블에서 헤더 내용을 그룹화하는 데 사용됩니다.</td>
+                            </tr>
+                            <tr>
+                                <td>tfoot</td>
+                                <td>HTML 테이블에서 바닥 글 내용을 그룹화하는 데 사용됩니다.</td>
+                            </tr>
+                            <tr>
+                                <td>caption</td>
+                                <td>표의 설명 또는 제목을 나타냅니다.</td>
+                            </tr>
+                            <tr>
+                                <td>col</td>
+                                <td>&lt;colgroup&gt; 요소 내의 각 열에 대한 열 속성을 지정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>colgroup</td>
+                                <td>하나 이상의 표의 열을 묶을 그룹을 지정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>colspan</td>
+                                <td>표의 정보가 세로로 읽힙니다.</td>
+                            </tr>
+                            <tr>
+                                <td>rowspan</td>
+                                <td>표의 정보가 가로로 읽힙니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //Intro22 -->
+                
+                <!-- Intro23 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro23" class="page-header">&lt;tr&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">테이블 행을 정의합니다.</p>
+                    <ul>
+                        <li>하나 이상의 &lt;th&gt; 또는 &lt;td&gt; 요소를 포함합니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro23 -->
+                
+                <!-- Intro24 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro24" class="page-header">&lt;td&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">테이블 셀을 정의합니다.</p>
+                    <ul>
+                        <li>헤더 셀: 헤더 정보를 포함합니다 ( &lt;th&gt; 요소로 작성 됨)</li>
+                        <li>표준 셀-데이터를 포함합니다 ( &lt;td&gt; 요소로 작성 됨)</li>
+                    </ul>
+                </div>
+                <!-- //Intro24 -->
+                
+                <!-- Intro25 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro25" class="page-header">&lt;tbody&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">HTML 테이블에서 본문 내용을 그룹화하는 데 사용됩니다.</p>
+                    <ul>
+                        <li>&lt;thead&gt; 및 &lt;tfoot&gt; 요소 와 함께 사용되어 테이블의 각 부분 (머리글, 본문, 바닥 글)을 지정합니다.</li>
+                        <li>머리글 및 바닥 글과 독립적으로 테이블 본문을 스크롤 할 수 있습니다.</li>
+                        <li>&lt;tbody&gt; 태그는 &lt;caption&gt;, &lt;colgroup&gt; 및 &lt;thead&gt; 요소 다음에 &lt;table&gt; 요소의 자식으로 사용되어야합니다.
+
+</li>
+                    </ul>
+                </div>
+                <!-- //Intro25 -->
+                
+                <!-- Intro26 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro26" class="page-header">&lt;thead&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">HTML 테이블에서 헤더 내용을 그룹화하는 데 사용됩니다.</p>
+                    <ul>
+                        <li>&lt;tbody&gt; 및 &lt;tfoot&gt; 요소 와 함께 사용되어 테이블의 각 부분 (머리글, 본문, 바닥 글)을 지정합니다.</li>
+                        <li>머리글 및 바닥 글과 독립적으로 테이블 본문을 스크롤 할 수 있습니다.</li>
+                        <li>&lt;thead&gt; 태그는 다음 컨텍스트에서 사용해야합니다. &lt;table&gt; 요소의 하위 요소, &lt;caption&gt; 및 &lt;colgroup&gt; 요소 뒤 및 &lt;tbody&gt;, &lt;tfoot> 및 &lt;tr&gt; 앞 집단.</li>
+                    </ul>
+                </div>
+                <!-- //Intro26 -->
+                
+                <!-- Intro27 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro27" class="page-header">&lt;tfoot&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">HTML 테이블에서 바닥 글 내용을 그룹화하는 데 사용됩니다.</p>
+                    <ul>
+                        <li>&lt;thead&gt; 및 &lt;tbody&gt; 요소 와 함께 사용되어 테이블의 각 부분 (머리글, 본문, 바닥 글)을 지정합니다.</li>
+                        <li>머리글 및 바닥 글과 독립적으로 테이블 본문을 스크롤 할 수 있습니다.</li>
+                        <li>&lt;tfoot&gt; 태그는 &lt;caption&gt;, &lt;colgroup&gt;, &lt;thead&gt; 및 &lt;tbody&gt; 요소 뒤에 &lt;table&gt; 요소의 자식으로 사용해야합니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro27 -->
+                
+                <!-- Intro28 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro28" class="page-header">&lt;caption&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">테이블 캡션을 정의합니다.</p>
+                    <ul>
+                        <li>&lt;table&gt; 태그 바로 뒤에 &lt;caption&gt; 태그를 삽입해야합니다.</li>
+                        <li>테이블 당 하나의 캡션 만 지정할 수 있습니다.</li>
+                        <li>기본적으로 테이블 캡션은 테이블 위에 가운데 정렬됩니다. 그러나 CSS 속성 text-align 및 caption-side 를 사용하여 캡션을 정렬하고 배치 할 수 있습니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro28 -->
+                
+                <!-- Intro29 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro29" class="page-header">&lt;col&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">&lt;colgroup&gt; 요소 내의 각 열에 대한 열 속성을 지정합니다 .</p>
+                    <ul>
+                        <li>각 행에 대해 각 셀의 스타일을 반복하는 대신 전체 열에 스타일을 적용하는 데 유용합니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro29 -->
+                
+                <!-- Intro30 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro30" class="page-header">&lt;colgroup&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">테이블에서 형식화 할 하나 이상의 열 그룹을 지정합니다.</p>
+                    <ul>
+                        <li>각 행에 대해 각 셀의 스타일을 반복하는 대신 전체 열에 스타일을 적용하는 데 유용합니다.</li>
+                        <li>&lt;caption&gt; 요소 다음과 &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt; 및 &lt;tr&gt; 요소 앞에 &lt;table&gt; 요소의 자식이어야합니다.</li>
+                        <li>&lt;colgroup&gt; 내의 열에 다른 속성을 정의하려면 &lt;colgroup&gt; 태그 내의 &lt;col&gt; 태그를 사용해야합니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro30 -->
+                
+                <!-- Intro31 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro31" class="page-header">&lt;h1&gt;&lt;h6&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">h1~h6 태그는 HTML 문서에서 제목(heading)을 정의할 때 사용합니다.</p>
+                    <ul>
+                        <li>h1 요소가 가장 중요한 제목을 정의하고, h6 요소가 가장 덜 중요한 제목을 정의합니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro31 -->
+                
+                <!-- Intro32 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro32" class="page-header">&lt;br&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">br 태그는 텍스트 내의 줄바꿈(line-break)을 정의할 때 사용합니다.</p>
+                    <ul>
+                        <li>HTML 소스 코드 내에서는 엔터(Enter)를 사용하여 줄바꿈을 실시하여도 브라우저 화면에 실제로 적용되지는 않습니다. <br>따라서 br 요소는 주소(address)나 시(poem) 등 줄바꿈이 중요한 텍스트에 유용하게 사용됩니다.</li>
+                        <li>br 요소는 빈 태그(empty)로, 종료 태그가 존재하지 않습니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro32 -->
+                
+                <!-- Intro33 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro33" class="page-header">&lt;hr&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">hr 태그는 문서의 주제를 정리할 때 사용합니다.</p>
+                </div>
+                <!-- //Intro33 -->
+                
+                <!-- Intro34 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro34" class="page-header">&lt;dl&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">dl 태그는 태그는 설명 목록을 정의합니다.</p>
+                </div>
+                <!-- //Intro34 -->
+                
+                <!-- Intro35 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro35" class="page-header">&lt;dd&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">dd 태그는 설명 목록에서 용어 / 이름을 설명하는 데 사용됩니다.</p>
+                    <ul>
+                        <li>dd 태그 안에 단락, 줄 바꿈, 이미지, 링크, 목록 등을 넣을 수 있습니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro35 -->
+                
+                <!-- Intro36 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro36" class="page-header">&lt;dt&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">dt 태그는 설명 목록에서 용어 / 이름을 정의합니다.</p>
+                </div>
+                <!-- //Intro36 -->
+                
+                <!-- Intro37 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro37" class="page-header">&lt;strong&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">strong 태그는 문구 태그입니다. 중요한 텍스트를 정의합니다.</p>
+                </div>
+                <!-- //Intro37 -->
+                
+                <!-- Intro38 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro38" class="page-header">&lt;em&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">em 태그는 문구 태그입니다. 강조된 텍스트로 렌더링됩니다.</p>
+                </div>
+                <!-- //Intro38 -->
+                
+                <!-- Intro39 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro39" class="page-header">&lt;span&gt;</h2>
+                    <ul>
+                        <li>문서에서 인라인 요소를 그룹화하는 데 사용됩니다.</li>
+                        <li>그 자체로는 시각적 인 변화를 제공하지 않습니다.</li>
+                        <li>텍스트 또는 문서의 일부에 후크를 추가하는 방법을 제공합니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro39 -->
+                
+                <!-- Intro40 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro40" class="page-header">&lt;address&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">address 태그는 문서나 글의 저자 또는 회사와 연락할 수 있는 정보를 명시할 때 사용합니다.</p>
+                    <ul>
+                        <li>&lt;body&gt; 요소 안에 존재하는 &lt;address&gt; 요소는 해당 문서의 연락 정보를 나타냅니다.</li>
+                        <li>&lt;article&gt; 요소 안에 존재하는 &lt;address&gt; 요소는 해당 글에 대한 연락 정보를 나타냅니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro40 -->
+                
+                <!-- Intro41 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro41" class="page-header">&lt;form&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">form 태그는 사용자로부터 입력을 받을 수 있는 HTLM 입력 폼(form)을 정의할 때 사용합니다.</p>
+                    <ul>
+                        <li><code>name</code> 폼의 이름</li>
+                        <li><code>action</code> 폼 데이터가 전송되는 백엔드 url(값을 전달할 페이지를 입력한다.)</li>
+                        <li><code>method</code> 폼 전송 방식 (GET / POST)
+                            <ul>
+                                <li>get 방식의 경우 URL에 전달하는 값이 표시된다.</li>
+                                <li>post 방식으로 값을 전달하면 URL에 값이 표시되지 않는다.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //Intro41 -->
+                
+                <!-- Intro42 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro42" class="page-header">&lt;fieldset&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">fieldset 태그는 form 태그 요소에서 연관된 요소들을 하나의 그룹으로 묶을 때 사용합니다.</p>
+                    <ul>
+                        <li>하나의 그룹으로 묶은 요소들 주변으로 박스 모양의 선을 그려줍니다.</li>
+                        <li>&lt;legend&gt; 요소를 사용하면 &lt;fieldset&gt; 요소의 캡션(caption)을 정의할 수 있습니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro42 -->
+                
+                <!-- Intro43 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro43" class="page-header">&lt;legend&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">legend 태그는 fieldset 태그 요소의 캡션(caption)을 정의할 때 사용합니다.</p>
+                </div>
+                <!-- //Intro43 -->
+                
+                <!-- Intro44 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro44" class="page-header">&lt;input&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">input 태그는사용자로부터 입력을 받을 수 있는 입력 필드(input filed)를 정의할 때 사용합니다.</p>
+                    <ul>
+                        <li>사용자가 데이터를 입력할 수 있는 입력 필드를 선언하기 위해 &lt;form&gt; 요소 내부에서 사용됩니다.</li>
+                        <li>type 속성값을 달리함으로써 여러 가지 모양으로 나타낼 수 있습니다.</li>
+                        <li>빈 태그(empty tag)이며, 속성만을 포함하고 있습니다.</li>
+                        <li>&lt;label&gt; 요소를 사용하면 &lt;input&gt; 요소의 라벨(label)을 정의할 수도 있습니다.</li>
+                    </ul>
+                    <h2>type</h2>
+                    <table class="table table-bordered table-stiped table-hover">
+                        <thead>
+                            <tr>
+                                <th>속성</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>&lt;text&gt;</td>
+                                <td>한 줄의 입력 필드를 정의</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;submit&gt;</td>
+                                <td>폼 -헨들러 (form- handler)에게 폼을 제출하 는 버튼을 정의<br>(폼 헨들러는 일반적으로 입력 자료를 처리할 스크립트로 이루어진 서버페이지)</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;radio&gt;</td>
+                                <td>사용자가 제한된 개수의 선택 중 하나만 선택</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;checkbox&gt;</td>
+                                <td>제한된 선택들 중에서 사용자가 임의의 개 수를 선택 </td>
+                            </tr>
+                            <tr>
+                                <td>&lt;button&gt;</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>&lt;number&gt;</td>
+                                <td>숫자에 한계를 설정할 </td>
+                            </tr>
+                            <tr>
+                                <td>&lt;date&gt;</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>&lt;color&gt;</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>&lt;range&gt;</td>
+                                <td>값이 범위 안에 있어야하는 입력 필드에 사용</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;month&gt;</td>
+                                <td>월과 연도를 선택</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;week&gt;</td>
+                                <td>주과 연도를 선택</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;time&gt;</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>&lt;datetime&gt;</td>
+                                <td>날짜와 시간을 (시간대와 함께) 선택</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;datetime-local&gt;</td>
+                                <td>날짜와 시간을 (시간대 없이) 선택</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;email&gt;</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>&lt;search&gt;</td>
+                                <td>검색 필드에 사용됩니다. (검색 필드는 일반 텍스트 필드처럼 동작된다.) </td>
+                            </tr>
+                            <tr>
+                                <td>&lt;tel&gt;</td>
+                                <td>전화 번호를 포함해야 하는 입력 필드에 사용</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;url&gt;</td>
+                                <td></td>
+                            </tr>
+                               <tr>
+                                <td>&lt;file&gt;</td>
+                                <td>선택한 파일의 경로</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;hidden&gt;</td>
+                                <td>보이지 않는 숨겨진 입력 필드</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;image&gt;</td>
+                                <td>제출 버튼(submit button)으로 사용될 이미지</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;password&gt;</td>
+                                <td>모든 문자들을 보안을 위해 원(·)모양으로 변경</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;range&gt;</td>
+                                <td>슬라이드 바를 조정하여 범위 내의 숫자를 선택</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;reset&gt;</td>
+                                <td>모든 폼(form) 요소의 값을 초깃값으로 되돌리는 버튼</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                <!-- //Intro44 -->
+                
+                <!-- Intro45 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro45" class="page-header">&lt;label&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">label 태그는 사용자 인터페이스(UI) 요소의 라벨(label)을 정의할 때 사용합니다.</p>
+                    <ul>
+                        <li>for 속성을 사용하여 다른 요소와 결합할 수 있으며, 이때 &lt;label&gt; 요소의 for 속성값은<br>결합하고자 하는 요소의 id 속성값과 같아야 합니다.</li>
+                        <li>요소를 결합하고자 하는 요소 내부에 위치시키면 for 속성을 사용하지 않더라도 해당 요소와 결합시킬 수 있습니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro45 -->
+                
+                <!-- Intro46 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro46" class="page-header">&lt;button&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">button 태그는 클릭할 수 있는 버튼을 정의할 때 사용합니다.</p>
+                    <ul>
+                        <li>텍스트나 이미지와 같은 콘텐츠를 삽입할 수 있습니다.</li>
+                        <li>&lt;input&gt; 요소를 사용한 버튼에는 이와 같은 콘텐츠를 삽입할 수 없습니다.</li>
+                        <li>브라우저별로 다른 기본 타입을 사용할 수 있으므로, 요소에 언제나 type 속성값을 명시하는 것이 좋습니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro46 -->
+
+                <!-- Intro47 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro47" class="page-header">&lt;semantic&gt;</h2>
+                    <p class="bs-callout bs-callout-danger">semantic 태그는 개발자와 브라우저에게 의미있는 태그를 제공합니다.</p>
+                    <ul>
+                        <li>예를 들어, &lt;div&gt; 태그는 non-semantic 태그라고 할 수 있고, &lt;table&gt;, &lt;article&gt; 등의 태그는 semantic 태그라고 볼 수 있다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro47 -->
+                
+                <!-- Intro48 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro48" class="page-header">&lt;i&gt;</h2>
+                    <p class="bs-callout bs-callout-info">i 태그는 특별한 이유로 평범한 글자와 구분하기 위해 사용합니다.</p>
+                </div>
+                <!-- //Intro48 -->
+
+                <!-- Intro49 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro49" class="page-header">&lt;figure&gt;</h2>
+                    <p class="bs-callout bs-callout-info">figure 태그는 콘텐츠에 대한 설명을 입력하기 위해 사용합니다.</p>
+                </div>
+                <!-- //Intro49 -->
+
+                <!-- Intro50 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro50" class="page-header">&lt;figcation&gt;</h2>
+                    <p class="bs-callout bs-callout-info">figcation 태그는 figure에 대한 설명문을 담은 태그입니다.</p>
+                    <ul>
+                        <li>figure 요소에서 한 번만 사용할 수 있습니다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro50 -->
+
+                <!-- Intro51 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro51" class="page-header">&lt;video&gt;</h2>
+                    <p class="bs-callout bs-callout-info">video 태그는 웹페이지에 영상파일을 재생할 때 사용합니다.</p>
+                    <ul>
+                        <li><code>src</code> 미디어 자원의 주소를 제공</li>
+                        <li><code>poster</code> 비디오를 사용할 수 없을때 보여줄 이미지</li>
+                        <li><code>preload</code> none, metadata, auto 키워드를 지정하여 미디어의 다운로드 상태 결정</li>
+                        <li><code>autoplay</code> 미디어를 자동 재생</li>
+                        <li><code>loop</code> 	미디어를 반복 재생</li>
+                        <li><code>audio</code> 	오디오 채널을 제어</li>
+                        <li><code>controls</code> 사용자 에이전트가 제공하는 기본 콘트롤러를 사용</li>
+                        <li><code>width</code> 	미디어의 가로 크기를 정의</li>
+                        <li><code>height</code> 	미디어의 세로 크기를 정의</li>
+                        <li>src 속성이 있으면 track 요소를 자식 요소로 포함할 수 있다.</li>
+                        <li>src 속성이 없으면 source 요소와 track 요소를 자식 요소로 포함할 수 있다.</li>
+                        <li>video 요소, audio 요소와 같은 미디어 요소는 자식 요소로 포함할 수 없다.</li>
+                        <li>video 요소를 지원하지 않는 오래된 웹 브라우저에서 구형 비디오 플러그인을 시도하거나 사용자가 비디오 컨텐츠에 접근할 수 있는 방법을 제시하는 텍스트를 보여줄 수 있도록 요소 내부에 컨텐츠를 제공할 수 있다.</li>
+                    </ul>
+                </div>
+                <!-- //Intro51 -->
+                
+            </div>
+            <!-- //col-md-9 -->
+
+
+            <!-- //col-md-3 -->
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print" role="complementary">
+                    <ul class="nav bs-sidenav">
+                        <li><a href="#intro1">HTML</a></li>
+                        <li><a href="#intro2">태그(tag)</a></li>
+                        <li><a href="#intro3">속성(Attributes)</a></li>
+                        <li><a href="#intro4">요소(Element)</a></li>
+                        <li><a href="#intro5">주석</a></li>
+                        <li><a href="#intro5-1">조건식 주석</a></li>
+                        <li><a href="#intro6">블록요소 / 인라인요소</a></li>
+                        <li><a href="#intro7">DTD 선언</a></li>
+                        <li><a href="#intro8">언어, 속성, 설정</a></li>
+                        <li><a href="#intro9">문서 구조</a></li>
+                        <li><a href="#intro9-1">section</a></li>
+                        <li><a href="#intro9-2">nav</a></li>
+                        <li><a href="#intro9-3">main</a></li>
+                        <li><a href="#intro9-4">aside</a></li>
+                        <li><a href="#intro9-5">header</a></li>
+                        <li><a href="#intro9-6">footer</a></li>
+                        <li><a href="#intro9-7">article</a></li>
+                        <li><a href="#intro10">웹 표준과 웹 접근성</a></li>
+                        <li><a href="#intro11">html5 X</a></li>
+                        <li><a href="#intro12">html5 O</a></li>
+                        <li><a href="#intro13">html5shiv</a></li>
+                        <li><a href="#intro14">&lt;div&gt;</a></li>
+                        <li><a href="#intro15">&lt;p&gt;</a></li>
+                        <li><a href="#intro16">&lt;ul&gt;</a></li>
+                        <li><a href="#intro17">&lt;li&gt;</a></li>
+                        <li><a href="#intro18">&lt;ol&gt;</a></li>
+                        <li><a href="#intro19">&lt;a&gt;</a></li>
+                        <li><a href="#intro20">&lt;title&gt;</a></li>
+                        <li><a href="#intro21">&lt;meta&gt;</a></li>
+                        <li><a href="#intro22">&lt;table&gt;</a></li>
+                        <li><a href="#intro23">&lt;tr&gt;</a></li>
+                        <li><a href="#intro24">&lt;td&gt;</a></li>
+                        <li><a href="#intro25">&lt;tbody&gt;</a></li>
+                        <li><a href="#intro26">&lt;thead&gt;</a></li>
+                        <li><a href="#intro27">&lt;tfoot&gt;</a></li>
+                        <li><a href="#intro28">&lt;caption&gt;</a></li>
+                        <li><a href="#intro29">&lt;col&gt;</a></li>
+                        <li><a href="#intro30">&lt;colgroup&gt;</a></li>
+                        <li><a href="#intro31">&lt;h1&gt;&lt;h6&gt;</a></li>
+                        <li><a href="#intro32">&lt;br&gt;</a></li>
+                        <li><a href="#intro33">&lt;hr&gt;</a></li>
+                        <li><a href="#intro34">&lt;dl&gt;</a></li>
+                        <li><a href="#intro35">&lt;dt&gt;</a></li>
+                        <li><a href="#intro36">&lt;dd&gt;</a></li>
+                        <li><a href="#intro37">&lt;strong&gt;</a></li>
+                        <li><a href="#intro38">&lt;em&gt;</a></li>
+                        <li><a href="#intro39">&lt;span&gt;</a></li>
+                        <li><a href="#intro40">&lt;address&gt;</a></li>
+                        <li><a href="#intro41">&lt;form&gt;</a></li>
+                        <li><a href="#intro42">&lt;fieldset&gt;</a></li>
+                        <li><a href="#intro43">&lt;legend&gt;</a></li>
+                        <li><a href="#intro44">&lt;input&gt;</a></li>
+                        <li><a href="#intro45">&lt;label&gt;</a></li>
+                        <li><a href="#intro46">&lt;buttom&gt;</a></li>
+                        <li><a href="#intro47">&lt;semantic&gt;</a></li>
+                        <li><a href="#intro48">&lt;i&gt;</a></li>
+                        <li><a href="#intro49">&lt;figure&gt;</a></li>
+                        <li><a href="#intro50">&lt;figcation&gt;</a></li>
+                        <li><a href="#intro51">&lt;video&gt;</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--//col-md-3 -->
+        </div>
+        <!-- //row -->
+    </div>
+    <!-- //container -->
+
+
+    <!-- Footer -->
+    <footer class="bs-footer" role="contentinfo">
+        <div class="container">
+            <ul class="footer-links muted">
+                <li>Currently v2.0</li>
+                <li>&middot;</li>
+                <li><a href="https://webstoryboy.github.io/w9/html/">webstoryboy</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.naver.com/crossbrowsing" target="_blank">publisher cafe</a></li>
+                <li>&middot;</li>
+                <li><a href="http://cafe.daum.net/flairdesignlink" target="_blank">designer cafe</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- //Footer -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/docs.min.js"></script>
+    <script src="../assets/js/prism.js"></script>
+</body>
+
+</html>
