@@ -1,0 +1,39 @@
+/* 레이아웃 */
+#header {background: url(../img/header_bg.jpg) repeat-x center top;}
+
+/* 컨테이너 */
+.container {width: 1200px; margin: 0 auto; background-color: rgba(0,0,0,0.3);}
+
+/* 헤더 */
+.header {height: 327px;}
+.header .header-menu {text-align: right; }
+.header .header-menu a {
+    color: #fff; font-family: 'Abel', sans-serif; 
+    padding: 8px 0 6px 10px; 
+    display: inline-block; 
+    transition: color 0.3s;
+}
+.header .header-menu a:hover {color: #ccc;}
+.header .header-tit {text-align: center; font-family: 'Abel'; margin-top: 55px;}
+.header .header-tit h1 {
+    background: #51b0dc; color: #fff; 
+    font-size: 30px; display: inline-block;
+    padding: 5px 30px;
+}
+.header .header-tit a {
+    display: inline-block;
+    color: #fff; background: #4a9abf; font-size: 16px;
+    padding: 10px 20px;
+    margin-top: -7px;
+}
+.header .heade-icon {
+    
+}
+
+
+
+/* 미디어쿼리 */
+@media (max-width: 1220px){
+    .container {width: 100%;}
+    .row {padding: 0 15px;}
+}

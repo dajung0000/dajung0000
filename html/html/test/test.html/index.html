@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 리셋 */
+        * {margin: 0; padding: 0;}
+        a {color: #222328; text-decoration: none;}
+        li {list-style: none;}
+        img {width: 100%;}
+
+        #wrap {width: 1000px; margin: 0 auto; background-color: #fff; }
+
+        #header {height: 35px; overflow: hidden;}
+        #header img {width: 100px; float: left; }
+        #header ul {float: right; }
+        #header ul li {float: left; margin-left: 20px;}
+
+        #banner {height: 380px; background-color: #888;}
+        #banner img { }
+
+        #cont1 {overflow: hidden;}
+        #cont1 .content1 {background-color: #999; width: 49%; margin-right: 10px; box-sizing: border-box; padding: 1%; float: left; position: relative;}
+        #cont1 .content1 img {position: absolute; width: 30px; height: 30px; right: 10px; top: 10px;}
+        #cont1 .content2 {background-color: #999; width: 48%; padding: 1%; float: left; position: relative;}
+        #cont1 .content2 img {position: absolute; width: 30px; height: 30px; right: 10px; top: 10px;}
+
+        #cont2 {margin-bottom: 40px; }
+        #cont2 h1 {margin-bottom: 20px;}
+        #cont2 h1 em {color: #999; }
+        #cont2 img { }
+        #cont2 ul {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 10px;
+         }
+        #cont2 li {position: relative;}
+        #cont2 li .bt {width: 10%; position: absolute; right: 0; bottom: 0;}
+
+        #footer {height: 200px; background-color: #555;}
+        #footer .sbox1 { }
+        #footer .sbox1 img {width: 100px; }
+        #footer .sbox2 {float: right;}
+        #footer .sbox2 h2 { }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <img src="img/header.jpg" alt="로고">
+            <ul>
+                <li>COOKIT소개</li>
+                <li>COOKIT메뉴</li>
+                <li>리뷰</li>
+                <li>이벤트</li>
+                <li>MY쿡킷</li>
+            </ul>
+        </header>
+        <section id="banner">
+            <img src="img/banner.jpg" alt="배너">
+        </section>
+        <section id="cont1">
+            <div class="content1">
+                <ul>
+                    <li>우리집도 COOKIT 배송이 되나요?<br>배송이 가능한지 알려드려요.</li>
+                </ul>
+                <img src="img/content1-1.jpg" alt="저울">
+            </div>
+            <div class="content2">
+                <ul>
+                    <li>7월 30일(화)에 받을 수 있어요<br>오전 7시까지 주문하시면 다음날 배송됩니다.</li>
+                </ul>
+                <img src="img/content1-2.jpg" alt="배송">
+            </div>
+        </section>
+        <section id="cont2">
+            <h1>실시간 베스트 | <em></em>생생한 리뷰</h1>
+            <ul>
+                <li><img src="img/content2-1.jpg" alt="">평양<br>33,800원<span>/3인분</span><img src="img/cont2.jpg" class="bt" alt=""></li>
+                <li><img src="img/content2-2.jpg" alt="">새우<br>33,800원<span>/3인분</span><img src="img/cont2.jpg" class="bt" alt=""></li>
+                <li><img src="img/content2-3.jpg" alt="">나물<br>33,800원<span>/3인분</span><img src="img/cont2.jpg" class="bt" alt=""></li>
+            </ul>
+        </section>
+    </div>
+        <footer id="footer">
+            <div class="sbox1"><img src="img/footer.jpg" alt="풔"></div>
+            <div class="sbox2">
+                <h2>이용약관 | 이용약관 | 이용약관 | 이용약관</h2>
+                <ul>
+                    <li>씨제이잉이ㅣㅇ이ㅣㅇ이이</li>
+                    <li>서우우ㅜ우우룰루ㅜ루루루루루루루ㅜ룰</li>
+                    <li>호호호ㅗㅗ호호호홓호호호호</li>
+                </ul>
+            </div>
+        </footer>
+</body>
+</html>
