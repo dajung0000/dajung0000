@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/all.css">
 
     <!-- icon -->
     <link rel="shortcut icon" href="http://www.nongshim.com/resources2/images/favicon.ico">
@@ -32,8 +33,10 @@
     <!-- 웹 폰트 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
+    
 <body>
-    <header id="header">
+    <!-- header -->
+    <header id="header" class="white">
         <div class="header">
         <h1>
             <svg x="0px" y="0px" width="133.5px" height="42.66px" viewBox="0 0 133.5 42.66">
@@ -59,7 +62,6 @@
                 c0-5.665-3.191-10.259-7.128-10.259s-7.127,4.594-7.127,10.259C18.251,20.701,21.441,25.294,25.378,25.294"/>
                 </svg>
         </h1>
-        
 
         <nav id="nav" class="nav">
             <ul>
@@ -72,10 +74,10 @@
             </ul>
         </nav>
         <ul class="side-nav">
-            <li><a href="#"><img src="assets/img/icon-search.svg" alt="검색"></a></li>
-            <li><a href="#"><img src="assets/img/icon-account.svg" alt="로그인"></a></li>
-            <li><a href="#"><img src="assets/img/icon-language.svg" alt="언어"></a></li>
-            <li><a href="#"><img src="assets/img/icon-menu.svg" alt="전체메뉴"></a></li>
+            <li><a href="#" title="검색"><i class="fas fa-search"></i></a></li>
+            <li><a href="#" title="로그인"><i class="far fa-user"></i></a></li>
+            <li><a href="#" title="언어" fill="none"><i class="far fa-comment-alt"></i></a></li>
+            <li><a href="#" title="전체메뉴"><i class="fas fa-bars"></i></a></li>
         </ul>
         </div>
     </header>
@@ -83,11 +85,15 @@
 
     <section id="banner">
         <h2>태경농산</h2>
-        <p>태경농산은 맛과 건강을 제공하는 식생활 파트너, 식재전문기업입니다</p>
-        <span class="dot"></span>
+        <div class="bbox">    
+            <p>태경농산은 맛과 건강을 제공하는 식생활 파트너,<br> 식재전문기업입니다</p>
+            <span class="line-1"></span>
+            <span class="line-2"></span>
+            <span class="circle"></span>
+        </div>
         <div class="btn_quick">
             <a href="javascript:;" title="아래로">
-                <i class="icon-chevron-down"></i>
+                <i class="fas fa-chevron-down"></i>
             </a>
         </div>
     </section>
@@ -110,6 +116,7 @@
                         기여코자 엄선된 원료만을 사용하여 맛의
                         원천을 창조해 나가는 국내 최대의 식재 메이커입니다.</p>
                 </div>
+                
                 <img src="assets/img/taekyungnongsan_main.jpg" alt="메인">
             </div>
         </div>
@@ -158,21 +165,102 @@
                         </a>
                     </td>
                 </tr>
-                <caption>태경농산 지점 정보</caption>
+                
             </tbody>
+            
+            <caption>태경농산 지점 정보</caption>
             </table>
         </div>
     </div>
 
-    <div id="foorter">
-        <div class="container">
-
+    <section id="nav1">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="#">
+                <span>OVERVIEW</span>
+                <div class="img"></div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#">
+                <span>경영이념</span>
+                <div class="img"></div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#">
+                <span>연혁</span>
+                <div class="img"></div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#">
+                <span>세계속의 농심</span>
+                <div class="img"></div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#">
+                <span>CI소개</span>
+                <div class="img"></div>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#">
+                <span>농심그룹</span>
+                <div class="img"></div>
+                </a>
+            </div>
+            </div>
         </div>
-    </div>
+        <div class="swiper-scrollbar"></div>
+        </section>
+        <footer id = "footer">
+        <div class="container">
+            <div class="family-site">
+            <a href="#"><span>패밀리 사이트<i class="fas fa-caret-down"></i></span></a>
+            </div>
+            <ul class="ul1">
+            <li><a href="#">상담접수</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">오시는길</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li><br>
+            <li><a href="#">특약점포탈</a></li>
+            <li><a href="#">전자결제</a></li>
+            <li><a href="#">증명서조회</a></li>
+            <li><a href="#">이메일주소무단수집거부</a></li>
+            </ul>
+            <ul class="ul2">
+            <li>(주)농심</li>
+            <li>서울특별시 동작구 여의대방로 112(신대방동)</li>
+            <li>사업자등록번호 118-81-03914</li>
+            <li>대표이사 박준</li><br>
+            <li>대표전화 <a href="#">02.820.7114</a></li>
+            <li>고객센터 <a href="#">080.023.5181</a></li>
+            </ul>
+            <div class="socials">
+            <ul>
+                <li><a href="#"><img src="assets/img/nav/facebook.svg" alt="페이스북"></a></li>
+                <li><a href="#"><img src="assets/img/nav/instagram.svg" alt="페이스북"></a></li>
+                <li><a href="#"><img src="assets/img/nav/youtube.svg" alt="페이스북"></a></li>
+                <li><a href="#"><img src="assets/img/nav/blog.png" alt="페이스북"></a></li>
+            </ul>
+            </div>
+            <p>ⓒ  NONGSHIM CO.,LTD. ALL RIGHTS RESERVED.</p>
+        </div>
+        </footer>
+    
         
     <!-- script -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/swiper.min.js"></script>
     <script src="assets/js/custom.js"></script>
+    <script>
+        $(window).load(function(){
+            $("#banner").addClass("active");
+        });
+    </script>
 </body>
 </html>
