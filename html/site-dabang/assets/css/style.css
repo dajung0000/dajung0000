@@ -1,0 +1,70 @@
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+
+#header .container {
+  width: calc(100% - 20px);
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 1;
+}
+
+#header .container .bar {
+  text-align: right;
+  padding-top: 18px;
+}
+
+#header .container .bar li {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #8b8b8b;
+}
+
+#header .container .bar li a {
+  color: inherit;
+}
+
+#header .container .bar li::after {
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  margin: 14px;
+  vertical-align: middle;
+  background: #e0e0e0;
+  content: '';
+}
+
+#header .container .nav {
+  height: 16px;
+  margin: 0 -39px;
+}
+
+#header .container .nav .navwrap {
+  margin-top: -20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#header .container .nav .navwrap .nav-icon {
+  width: 194px;
+  vertical-align: middle;
+}
+
+#header .container .nav .navwrap .navbar li {
+  display: inline-block;
+  padding: 0 39px;
+  list-style: none;
+  font-size: 0.937rem;
+}
+/*# sourceMappingURL=style.css.map */
