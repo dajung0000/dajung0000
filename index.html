@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Dabang">
+    <meta name="author" content="dajung">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
+    <title>site-Dabang</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/all.css">
+</head>
+<body>
+    <div id="wrap">
+    <header id="header">
+        <div class="container">
+
+                <div class="topbar">
+                    <ul>
+                        <li><a href="#">더본코리아</a></li>
+                        <li><a href="#">매장찾기</a></li>
+                        <li class="sns f"><a href="https://ko-kr.facebook.com/ipaikscoffee/" target="_blank">facebook</a></li>
+                        <li class="sns i"><a href="https://www.instagram.com/paikscoffee_official/" target="_blank">instagram</a></li>
+                    </ul>
+                </div>
+
+                <div class="navwrap">
+                    <div class="nav-icon">
+                        <img src="assets/img/dabang/logo.png" alt="로고">
+                    </div>
+                    <ul class="navbar">
+                        <li class="manu"><a href="#">빽다방</a></li>
+                        <li class="manu"><a href="#">메뉴</a></li>
+                        <li class="manu"><a href="#">소식</a></li>
+                        <li class="manu"><a href="#">커뮤니티</a></li>
+                        <li class="manu"><a href="#">매장안내</a></li>
+                        <li class="manu"><a href="#">창업안내</a></li>
+                        <li class="manu"><a href="#">고객의 소리</a></li>
+                    </ul>
+                </div>
+
+        </div>
+    </header>
+    <!-- //header -->
+    <section id="banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="assets/img/dabang/main_달고나크런치-1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/img/dabang/main_크림고소미.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/img/dabang/main_치즈크림.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/img/dabang/main_콜드브루-1.jpg" alt="">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- //banner -->
+    <div id="main_sec">
+        <section class="main_sec_row1">
+            <div class="container">
+                <h1 class="main_tit font-eb color-1">
+                    <span class="font-l">The Finest Quality Coffee Plants</span><br>
+                    PAIK’S COFFEE STORY
+                </h1>
+                <p class="font-l pc_ver">균형잡힌 바디감으로 긴여운을 남기는 빽다방 커피를 만나보세요.</p>
+                <a class="btn st-1" href="#"><span></span></a>
+            </div>
+        </section>
+    </section>
+    <!-- //main_sec_row1 -->
+        <section class="main_sec_row2">
+            <div class="contaner">
+            </div>
+        </section>
+    <!-- //main_sec_row2 -->
+        <section class="main_sec_row3">
+            <div class="contaner">
+            </div>
+        </section>
+    </div>
+    <!-- //main_sec_row3 -->
+    <section class="sns"></section>
+    <!-- //sns -->
+    <section id="footer"></section>
+    <!-- //footer -->
+</div>
+
+
+    <!-- script -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        // <a href="#" class="icon-pause">
+        //             <img src="assets/img/icon-stop.svg" alt="정지">
+        //         </a>
+        //         <a href="#" class="icon-play">
+        //             <img src="assets/img/icon-play.svg" alt="시작">
+        //         </a>
+        $(document).ready(function(){
+            $(".swiper-pagination").append("<a href='#' class='icon-pause'><img src='assets/img/icon-pause.svg' alt='정지'></a>");
+            
+            $(".swiper-pagination a").click(function(e){
+                //alert("클릭을 했군요~")
+                e.preventDefault();
+                if( $(this).attr("class") == 'icon-pause' ){
+                    $(this).children().attr({"src":"assets/img/icon-play.svg","alt":"시작"})
+                    $(this).attr("class","icon-play")
+                    mySwiper.autoplay.stop();
+                }else {
+                    $(this).children().attr({"src":"assets/img/icon-pause.svg","alt":"정지"})
+                    $(this).attr("class","icon-pause")
+                    mySwiper.autoplay.start();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
