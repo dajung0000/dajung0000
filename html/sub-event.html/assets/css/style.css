@@ -444,4 +444,49 @@ strong.tit {
   font-weight: 200;
   color: #666;
 }
+
+#footer .container p {
+  margin-top: 30px;
+}
+
+#footer {
+  border-top: 1px solid #e8e8e8;
+}
+
+#footer .container {
+  position: relative;
+  padding: 37px 40px 41px;
+}
+
+.socials {
+  position: absolute;
+  right: 40px;
+  top: 100px;
+}
+
+.socials li {
+  display: inline-block;
+}
+
+.family-site {
+  position: absolute;
+  right: 40px;
+  top: 30px;
+}
+
+.family-site i {
+  float: right;
+}
+
+.family-site a {
+  display: inline-block;
+  width: 240px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px 20px 10px 20px;
+  border: 2px solid #e8e8e8;
+  border-radius: 50px;
+  color: #666;
+  font-size: 14px;
+}
 /*# sourceMappingURL=style.css.map */
