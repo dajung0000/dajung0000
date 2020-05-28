@@ -64,7 +64,7 @@
                     <img src="assets/img/dabang/main_콜드브루-1.jpg" alt="">
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
+            <a class="btn st-1" href="/about/story"><span></span></a>
         </div>
     </section>
     <!-- //banner -->
@@ -92,7 +92,26 @@
         </section>
     <!-- //main_sec_row2 -->
         <section class="main_sec_row3">
-            <div class="contaner">
+            <div class="container">
+                <div class="m10-col-6 clear">
+                    <img class="pc_ver" src="assets/img/dabang/main_sec3.jpg" alt="">
+                    <img class="m_ver" src="assets/img/dabang/mmain_sec3.jpg" alt="">
+                    <div class="inner">
+                        <h1 class="main_tit">various<br>beverage</h1>
+                        <h2 class="sub_tit">에이드, 티, 주스 등 취향대로<br>골라 먹는 즐거움!</h2>
+                        <a class="btn st-1" href="/menu/menu_drink"><span></span></a>
+                    </div>
+    
+                </div>
+                <div class="m10-col-4">
+                    <img class="pc_ver" src="assets/img/dabang/main_sec4.jpg" alt="">
+                    <img class="m_ver" src="assets/img/dabang/mmain_sec4.jpg" alt="">
+                    <div class="inner">
+                        <h1 class="main_tit">sweet<br>paik's ccino</h1>
+                        <h2 class="sub_tit">달콤 시원한 빽다방<br>시그니처 메뉴!</h2>
+                        <a class="btn st-1" href="/menu/menu_ccino"><span></span></a>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -109,29 +128,7 @@
     <script src="assets/js/swiper.min.js"></script>
     <script src="assets/js/custom.js"></script>
     <script>
-        // <a href="#" class="icon-pause">
-        //             <img src="assets/img/icon-stop.svg" alt="정지">
-        //         </a>
-        //         <a href="#" class="icon-play">
-        //             <img src="assets/img/icon-play.svg" alt="시작">
-        //         </a>
-        $(document).ready(function(){
-            $(".swiper-pagination").append("<a href='#' class='icon-pause'><img src='assets/img/icon-pause.svg' alt='정지'></a>");
-            
-            $(".swiper-pagination a").click(function(e){
-                //alert("클릭을 했군요~")
-                e.preventDefault();
-                if( $(this).attr("class") == 'icon-pause' ){
-                    $(this).children().attr({"src":"assets/img/icon-play.svg","alt":"시작"})
-                    $(this).attr("class","icon-play")
-                    mySwiper.autoplay.stop();
-                }else {
-                    $(this).children().attr({"src":"assets/img/icon-pause.svg","alt":"정지"})
-                    $(this).attr("class","icon-pause")
-                    mySwiper.autoplay.start();
-                }
-            });
-        });
+        
     </script>
 </body>
 </html>

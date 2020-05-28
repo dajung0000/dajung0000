@@ -33,21 +33,21 @@
                     background: #e0e0e0;
                     content: '';
                 }
-                // &:nth-last-of-type(1){
-                //     &::after{
-                //         content : '';
-                //         width:0;
-                //     }
-                // }
-                // &:nth-last-of-type(6){
-                //     &::after{
-                //         content : '';
-                //         width:0;
-                //     }
-                // }
+                &:nth-last-of-type(1){
+                    &::after{
+                        content : '';
+                        width:0;
+                    }
+                }
+                &:nth-last-of-type(6){
+                    &::after{
+                        content : '';
+                        width:0;
+                    }
+                }
             }
             .sns {
-                // display: none;
+                display: none;
                 margin: 0 3px;
                 font-size: 0;
                 vertical-align: middle;
@@ -89,12 +89,41 @@
 
 #banner {
     width: 100%; 
-    position: relative;
     .swiper-container {
-        position: relative;
         z-index: 1;
         margin: 0 auto;
-        img {height: 459px;}
+        }
+    .btn {
+        display: block;
+    }
+    .st-1 {
+        //position: absolute; left: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 502%;
+        box-shadow: 3px 0 11px rgba(138, 138, 138, 0.2);
+        //-webkit-box-shadow: 3px 0 11px rgba(138, 138, 138, 0.2);
+        background: #fff;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: all .3s ease;
+        position: relative;
+        span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%) rotate(0);
+            opacity: 1;
+            transition: all .3s ease;
+            &::after{
+                display: inline-block;
+                width: 20px;
+                height: 3px;
+                background: #080406;
+            }
+        }
+        
     }
 }
 
@@ -172,8 +201,9 @@
 }
 
 .main_sec_row2 {
+    position: relative; //글씨
     .pc_ver {
-        position: relative;
+        position: absolute; top: 0;
         vertical-align: middle;
         transform: scale(1,1);
         transition: .8s ease;
@@ -185,11 +215,11 @@
     }
     
     .container {
-        padding-top: 30px;
-        padding: 81px 0 40px 45px;
         box-sizing: border-box;
+        padding-top: 30px;
+        padding: 31px 0 40px 45px;
+        
         .main_tit {
-            position: absolute; 
             font-size: 3.125rem;
             text-transform: uppercase;
             -webkit-margin-before: 0;
@@ -214,5 +244,59 @@
             line-height: 130%;
         }
 
+    }
+}
+
+.main_sec_row3 {
+    margin-top: 10px;
+    .container {
+        margin: 0 -5px;
+        display: flex;
+        justify-content: left;
+        .m10-col-6 {
+            //display: flex;
+            .pc_ver {
+                width: 100%;
+                transform: scale(1,1);
+                transition: .8s ease;
+            }
+            .m_ver {
+                display: none;
+                width: 100%;
+                transform: scale(1,1);
+                transition: .8s ease;
+            }
+            .inner {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                
+            }
+        }
+        .m10-col-4 {
+            //display: flex;
+            .pc_ver {
+                width: 100%;
+                transform: scale(1,1);
+                transition: .8s ease;
+            }
+            .m_ver {
+                display: none;
+            }
+            .inner {
+                padding-left: 45px;
+                padding-top: 30px;
+                box-sizing: border-box;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: 50%;
+                transform: translateX(-50%);
+            }
+        }
     }
 }
