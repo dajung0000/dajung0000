@@ -25,8 +25,8 @@
                     <ul>
                         <li><a href="#">더본코리아</a></li>
                         <li><a href="#">매장찾기</a></li>
-                        <li class="sns f"><a href="https://ko-kr.facebook.com/ipaikscoffee/" target="_blank">facebook</a></li>
-                        <li class="sns i"><a href="https://www.instagram.com/paikscoffee_official/" target="_blank">instagram</a></li>
+                        <li><a href="#"><img src="assets/img/dabang/topbar1.jpg" alt="https://www.instagram.com/paikscoffee_official/"></a></li>
+                        <li><a href="#"><img src="assets/img/dabang/topbar2.jpg" alt="https://www.instagram.com/paikscoffee_official/"></a></li>
                     </ul>
                 </div>
 
@@ -210,18 +210,16 @@
     <script src="assets/js/swiper.min.js"></script>
     <script src="assets/js/custom.js"></script>
     <script>
-        
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
 
-        gtag('config', 'UA-37266520-11');
+var swiper = new Swiper('.swiper-container', {
 
-            //패밀리사이트
-            jQuery('.family_site').click(function() {
-                jQuery(this).toggleClass("active");
-                jQuery('#fmenu').slideToggle(300);
-            })
+  pagination: {
+
+    el: '.swiper-pagination',
+
+  },
+
+});
 
     </script>
 </body>

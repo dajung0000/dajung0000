@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallax07</title>
+    <title>Parallax08</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
 
@@ -175,15 +175,141 @@
             font-size: 14px; font-weight: 300;
             z-index: 10000;
             font-style: normal;
+            font-family: 'Abel';
         }
 
-        /* .contents > section {
-            opacity: 0; transform: translateY(100px);
-            transition: all 0.6s ease;
+        /* contents */ /* content-item-desc */
+        /* .content-item-desc {
+            opacity: 0;
+            transform: translateY(70px);
+            transition: all 0.44s ease;
         }
-        .contents > section.show {
-            opacity: 1; transform: translateY(0px);
+        .content-item-desc.show {
+            opacity: 1;
+            transform: translateY(0)
         } */
+        #section1 .content-item-desc span {
+            opacity: 0;
+            transform: translateY(70px);
+            transition: all 0.44s ease;
+            display: inline-block;
+            min-width: 20px;
+        }
+        #section1 .content-item-desc span.show {
+            opacity: 1;
+            transform: translateY(0)
+        }
+        #section2 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;
+            min-width: 20px;
+        }
+        #section2 .content-item-desc span.show {
+            opacity: 1;
+            animation: flipInY 0.5s;
+        }
+        @keyframes flipInY {
+            from {
+                transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+                animation-timing-function: ease-in;
+                opacity: 0;
+            }
+
+            40% {
+                transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+                animation-timing-function: ease-in;
+            }
+
+            60% {
+                transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+                opacity: 1;
+            }
+
+            80% {
+                transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+            }
+
+            to {
+                transform: perspective(400px);
+            }
+        }
+
+        #section3 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;
+            min-width: 20px;
+        }
+        #section3 .content-item-desc span.show {
+            opacity: 1;
+            animation: zoomInLeft 1s;
+        }
+        @keyframes zoomInLeft {
+            from {
+                opacity: 0;
+                -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+                transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+                -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+                animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            }
+
+            60% {
+                opacity: 1;
+                -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+                transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+                -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+                animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            }
+        }
+
+        #section4 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;
+            min-width: 20px;
+        }
+        #section4 .content-item-desc span.show {
+            opacity: 1;
+            animation: zoomInRight 1s;
+        }
+        @keyframes zoomInRight {
+            from {
+                opacity: 0;
+                transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);
+                animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            }
+
+            60% {
+                opacity: 1;
+                transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0);
+                animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            }
+        }
+
+        #section5 .content-item-desc span {
+            opacity: 0;
+            transition: all 0.44s ease;
+            display: inline-block;
+            min-width: 20px;
+        }
+        #section5 .content-item-desc span.show {
+            opacity: 1;
+            animation: zoomInDown 0.7s;
+        }
+        @keyframes zoomInDown {
+            from {
+                opacity: 0;
+                transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+                animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            }
+
+            60% {
+                opacity: 1;
+                transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+                animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            }
+        }
     </style>
 </head>
 <body>
@@ -193,8 +319,8 @@
     </div>
 
     <div class="title">
-        <h1>Parallax06</h1>
-        <p>이질감 효과(자바스크립트)</p>
+        <h1>Parallax08</h1>
+        <p>텍스트 효과</p>
         <ul>
             <li><a href="parallax01.html">Parallax01</a></li>
             <li><a href="parallax02.html">Parallax02</a></li>
@@ -202,8 +328,8 @@
             <li><a href="parallax04.html">Parallax04</a></li>
             <li><a href="parallax05.html">Parallax05</a></li>
             <li><a href="parallax06.html">Parallax06</a></li>
-            <li class="active"><a href="parallax07.html">Parallax07</a></li>
-            <li><a href="parallax08.html">Parallax08</a></li>
+            <li><a href="parallax07.html">Parallax07</a></li>
+            <li class="active"><a href="parallax08.html">Parallax08</a></li>
         </ul>
     </div>
 
@@ -217,7 +343,7 @@
                 <figure class="content-item-imgWrap">
                     <div class="content-item-img"></div>
                 </figure>
-                <p class="content-item-desc">선생님 힘내세요 우리가 있잖아요 아마도...</p>
+                <p class="content-item-desc">매운 돼지갈비찜 맛집은 맵돈</p>
             </section>
             <section id="section2" class="content-item">
                 <span class="content-item-num">02</span>
@@ -291,61 +417,78 @@
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/gsap.min.js"></script>
     <script>
-        //제이쿼리
-        // let scrollTop = $(window).scrollTop();
+        let txt = $("#section1 .content-item-desc").text()
+        let split = txt.split("").join("</span><span aria-hidden='true'>")
+            split = "<span aria-hidden='true'>" + split + "</span>"
+            //content-item-desc에 aria-label 속성 추가(attr) -> 속성에 텍스트(txt) 입력
+            $("#section1 .content-item-desc").html(split).attr("aria-label", txt)
+        //alert(split)
 
-        // function scroll(){
-        //     let newScrollTop= $(window).scrollTop();
-        //     let different = newScrollTop - scrollTop;
-
-        //     console.log("scrollTop :"+scrollTop);
-        //     console.log("newScrollTop :"+newScrollTop);
-        //     console.log("different :"+different);
-
-        //     $(".content-item-desc").css({"transform":"skewY("+different+"deg)"})
-
-        //     scrollTop = newScrollTop
-        //     requestAnimationFrame(scroll)
-        // }
-        // scroll() //호출
-
+        //한 번에-제이쿼리
+        $(".content-item-desc").each(function(){
+            let txt = $(this).text()
+            let split = txt.split("").join("</span><span aria-hidden='true'>")
+                split = "<span aria-hidden='true'>" + split + "</span>"
+            $(this).html(split).attr("aria-label", txt)
+            console.log(txt)
+        })
         //자바스크립트
-        let pageYOffset = window.pageYOffset
 
-        const scroll = () => { //익명함수
-            const newPageYOffset = window.pageYOffset
-            const different = newPageYOffset - pageYOffset //=0
+        //페럴럭스 이펙트
+        $(window).scroll(function(){
+            // if( $(window).scrollTop > $("#section1").offset().top ){
+            //     $("#section1 .content-item-desc").addClass("show")
+            // }else {
+            //     $("#section1 .content-item-desc").removeClass("show")
+            // }
 
-            // console.log("pageYOffset :"+pageYOffset);
-            // console.log("newPageYOffset:"+newPageYOffset);
-            // console.log("different :"+different);
+            $(".content-item").each(function(){
+                if( $(window).scrollTop > $(this).offset().top ){
+                    $(this).find(".content-item-desc").addClass("show")
+                }else {
+                    $(this).find(".content-item-desc").removeClass("show")
+                }
+            })
 
-           let target = document.querySelector(".content-item-img")
-            //target.style.transform = "rotate("+different+" deg)"
-            //    target.forEach(box => {
-            //     box.style.transform = "rotate("+different * 0.03+"deg)"
-            //    })
+            if( $(window).scrollTop() > $("#section1").offset().top ){ //화면에 섹션이 보이기 시작할 때
+                $("#section1 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section1 .content-item-desc span").eq(index).addClass("show")
+                    },100 *index)
+                })
+            }else {
 
-            //gsap
-            // gsap.to(".content-item-img", {duration: 0.3, ease: Power1.ease, rotation: different})
-            gsap.to(".content-item-imgWrap", {duration: 0.3, ease: Power1.out, skewY: different * 0.2})
-            gsap.to(".content-item-desc", {duration: 0.3, ease: Power2.out, skewY: -different * 0.1})
+            }
 
-            pageYOffset = newPageYOffset
-            requestAnimationFrame(scroll) //부드러운 애니메이션 효과
-        }
-        scroll()
-
-        //일정한 시간동안 반복적 함수를 실행
-
-        let num = 0;
-        function render(){
-            $(".content-item-num").text(num)
-            num++
-            requestAnimationFrame(render)
-            //setInterval(render, 100)
-        }
-        render()
+            if( $(window).scrollTop() > $("#section2").offset().top ){ //화면에 섹션이 보이기 시작할 때
+                $("#section2 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section2 .content-item-desc span").eq(index).addClass("show")
+                    },10 *index)
+                })
+            }
+            if( $(window).scrollTop() > $("#section3").offset().top ){ //화면에 섹션이 보이기 시작할 때
+                $("#section3 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section3 .content-item-desc span").eq(index).addClass("show")
+                    },10 *index)
+                })
+            }
+            if( $(window).scrollTop() > $("#section4").offset().top ){ //화면에 섹션이 보이기 시작할 때
+                $("#section4 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section4 .content-item-desc span").eq(index).addClass("show")
+                    },10 *index)
+                })
+            }
+            if( $(window).scrollTop() > $("#section5").offset().top ){ //화면에 섹션이 보이기 시작할 때
+                $("#section5 .content-item-desc span").each(function(index){
+                    setInterval(function(){
+                        $("#section5 .content-item-desc span").eq(index).addClass("show")
+                    },10 *index)
+                })
+            }
+        })
     </script>
 </body>
 </html>
