@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lotte</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="wrap">
+    <div class="contents">
+        <header id="header">
+            <div class="logo">
+                <img src="../lotte/img/Llogo.jpg" alt="로고">
+            </div>
+            <div class="tab-menu">
+                <div class="tab-btn">
+                    <ul>
+                        <li class="active"><a href="#">즐길거리</a></li>
+                        <li><a href="#">요금/우대혜택</a></li>
+                        <li><a href="#">참여프로그램</a></li>
+                        <li><a href="#">이용가이드</a></li>
+                        <li><a href="#">소통서비스</a></li>
+                    </ul>
+                </div>
+                <div class="tab-cont">
+                    <div>즐길거리</div>
+                    <div>요금/우대혜택</div>
+                    <div>참여프로그램</div>
+                    <div>이용가이드</div>
+                    <div>소통서비스</div>
+                </div>
+            </div>
+        </header>
+        <section id="banner">
+                <img src="../lotte/img/Lmain.jpg" alt="미라클있수마수">
+        </section>
+        <section id="main">
+            <div class="news">
+                <h2>
+                    <strong>롯데월드 소식</strong>
+                    <span>뉴스.공지</span>
+                </h2>
+                <ul>
+                    <li><a href="#">그럴싸진관 미라클</a><span>2018.11.19</span></li>
+                    <li><a href="#">드림스테이지</a><span>2018.11.20</span></li>
+                    <li><a href="#">'힘내 소중한 너' 음원 발매</a><span>2018.11.13</span></li>
+                    <li><a href="#">이용 요금 조정 안내</a><span>2018.11.12</span></li>
+            
+                    <a href="#" class="btn">더보기</a>
+                </ul>
+            </div>
+            <div class="side">
+                <img src="../lotte/img/Lside.jpg" alt="혜택">
+            </div>
+        </section>
+        <section id="sub">
+            <h1>특별한 경험</h1>
+            <div class="Limg">
+                <div>
+                    <img src="../lotte/img/L1.jpg" alt="이미지1">
+                    <p>연간회원안내</p>
+                </div>
+                <div>
+                    <img src="../lotte/img/L2.jpg" alt="이미지2">
+                    <p>프리미엄투어</p>
+                </div>
+                <div>
+                    <img src="../lotte/img/L3.jpg" alt="이미지3">
+                    <p>공연참여 프로그램</p>
+                </div>
+                <div>
+                    <img src="../lotte/img/L4.jpg" alt="이미지4">
+                    <p>단체프로그램</p>
+                </div>
+            </div>
+        </section>
+        <footer id="footer">
+            <ul>
+                <li>서울특별시 송파구 올림픽로 240 호텔롯데 롯데월드</li>
+                <li>대표자:박동기</li>
+            </ul>
+            <ul>
+                <li>사업자등록번호:219-85-00014</li>
+                <li>통신판매업신고번호:송파 제5513호</li>
+                <li>전화:1661-2000</li>
+            </ul>
+            <ul class="copy">
+                <li>zxcvbnmasdfhghjkl</li>
+            </ul>
+        </footer>
+    </div>
+</div>
+</body>
+<script src="../lotte/js/jquery.min_1.12.4.js"></script>
+<script src="../lotte/js/jquery-ui.min.js"></script>
+<script>
+    let tabBtn = $(".tab-btn > ul > li"); //각각의 버튼을 변수에 저장
+    let tabCont = $ (".tab-cont > div"); //각각의 컨텐츠를 변수에 저장
+
+    tabBtn.click(function(){
+    let target = $(this) //버튼의 타겟을 변수에 저장
+    let index = target.index(); //버튼의 순서를 변수에 저장
+    //alert(index);
+    tabBtn.removeClass("active"); //버튼의 클래스를 삭제
+    target.addClass("active"); //타겟버튼의 클래스를 추가
+    // tabCont.css("display","none");
+    tabCont.eq(index).css("display","block");
+    
+});
+</script>
+</html>
