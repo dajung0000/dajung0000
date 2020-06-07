@@ -9,27 +9,58 @@
 <body>
 <div id="wrap">
     <div class="contents">
-        <header id="header">
+        <header id="header" class="clearfix">
             <div class="logo">
                 <img src="../lotte/img/Llogo.jpg" alt="로고">
             </div>
-            <div class="tab-menu">
-                <div class="tab-btn">
-                    <ul>
-                        <li class="active"><a href="#">즐길거리</a></li>
-                        <li><a href="#">요금/우대혜택</a></li>
-                        <li><a href="#">참여프로그램</a></li>
-                        <li><a href="#">이용가이드</a></li>
-                        <li><a href="#">소통서비스</a></li>
-                    </ul>
-                </div>
-                <div class="tab-cont">
-                    <div>즐길거리</div>
-                    <div>요금/우대혜택</div>
-                    <div>참여프로그램</div>
-                    <div>이용가이드</div>
-                    <div>소통서비스</div>
-                </div>
+            <div class="nav">
+                <ul class="clearfix">
+                    <li class="active"><a href="#">즐길거리</a>
+                        <ul class="submenu">
+                            <li><a href="#">즐길거리</a></li>
+                            <li><a href="#">요금/우대혜택</a></li>
+                            <li><a href="#">참여프로그램</a></li>
+                            <li><a href="#">이용가이드</a></li>
+                            <li><a href="#">소통서비스</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">요금/우대혜택</a>
+                        <ul class="submenu">
+                            <li><a href="#">즐길거리</a></li>
+                            <li><a href="#">요금/우대혜택</a></li>
+                            <li><a href="#">참여프로그램</a></li>
+                            <li><a href="#">이용가이드</a></li>
+                            <li><a href="#">소통서비스</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">참여프로그램</a>
+                        <ul class="submenu">
+                            <li><a href="#">즐길거리</a></li>
+                            <li><a href="#">요금/우대혜택</a></li>
+                            <li><a href="#">참여프로그램</a></li>
+                            <li><a href="#">이용가이드</a></li>
+                            <li><a href="#">소통서비스</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이용가이드</a>
+                        <ul class="submenu">
+                            <li><a href="#">즐길거리</a></li>
+                            <li><a href="#">요금/우대혜택</a></li>
+                            <li><a href="#">참여프로그램</a></li>
+                            <li><a href="#">이용가이드</a></li>
+                            <li><a href="#">소통서비스</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">소통서비스</a>
+                        <ul class="submenu">
+                            <li><a href="#">즐길거리</a></li>
+                            <li><a href="#">요금/우대혜택</a></li>
+                            <li><a href="#">참여프로그램</a></li>
+                            <li><a href="#">이용가이드</a></li>
+                            <li><a href="#">소통서비스</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </header>
         <section id="banner">
@@ -89,24 +120,32 @@
                 <li>zxcvbnmasdfhghjkl</li>
             </ul>
         </footer>
+        <div class="layer-bg"></div>
+        <div class="layer">
+            <h2>까꿍</h2>
+            <a href="#" class="close">닫기</a>
+        </div>
+        
     </div>
 </div>
 </body>
 <script src="../lotte/js/jquery.min_1.12.4.js"></script>
-<script src="../lotte/js/jquery-ui.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
 <script>
-    let tabBtn = $(".tab-btn > ul > li"); //각각의 버튼을 변수에 저장
-    let tabCont = $ (".tab-cont > div"); //각각의 컨텐츠를 변수에 저장
-
-    tabBtn.click(function(){
-    let target = $(this) //버튼의 타겟을 변수에 저장
-    let index = target.index(); //버튼의 순서를 변수에 저장
-    //alert(index);
-    tabBtn.removeClass("active"); //버튼의 클래스를 삭제
-    target.addClass("active"); //타겟버튼의 클래스를 추가
-    // tabCont.css("display","none");
-    tabCont.eq(index).css("display","block");
+    $(".nav > ul > li").mouseover.(functon(){
+        $(this).find(".submenu").stop().slideDown(200) 
+    });
+    $(".nav > ul > li").mouseout.(functon(){
+        $(this).find(".submenu").stop().slideUp(200) 
+    });
     
-});
+    $(".layerPopup").click(function(){
+        $(".layer").show()
+        $(".layer-bg").show()
+    })
+    $(".layer .close").click(function(){
+        $(".layer").hide()
+        $(".layer-bg").hide()
+    })
 </script>
 </html>
