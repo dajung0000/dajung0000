@@ -13,6 +13,7 @@
         a {text-decoration: none;color: #fff;}
         img {width: 100%; vertical-align: top;}
         li {list-style: none;}
+        body {cursor: none;}
 
         #nav {
             position: fixed; left: 0; top: 0; 
@@ -257,6 +258,17 @@
             transform: rotate(45deg);
             transform-origin: right;
         }
+
+
+        .cursor {
+            position: absolute; left: 10px; top: 0;
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            z-index: 10000;
+            background-color: rgba(255, 255, 255, 0.1);
+            user-select: none;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -375,9 +387,11 @@
         </div>
     </section>
 
+    <div class="cursor"></div>
 
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+    <script src="../mouse/assets/js/prism.js"></script>
     <script>
         //닷, 버튼 생성
         $(".slide-wrap").append("<div class='slide-dot'></div>")
@@ -387,7 +401,8 @@
               slideImg = $(".slide-img"),
               slide = $(".slide"),
               slideDot = $(".slide-dot"),
-              slideBtn = $(".slide-btn");
+              slideBtn = $(".slide-btn"),
+              cursor = $(".cursor");
 
         let slideCount = slide.length,          //슬라이드 이미지 갯수
             currentIndex = 0,                   //현재 보이는 이미지
@@ -395,6 +410,8 @@
             duration = 1000,                    //이미지 슬라이드 이동 시간
             easing = "easeOutExpo",             //이미지 움직임 효과
             slideBg = ["#fcefe9", "#e9effd", "#fae3f5", "#fbe368", "#ccebea", "#e9effd", "#f4f2ec"];
+       
+       
 
         //글씨 쪼개기
         slide.each(function(){
@@ -413,8 +430,14 @@
             $(this).css("left",i * 100+"%");    //각 슬라이드 이미지 위치설정
             dotIndex += "<a href='#'>0"+(i+1)+"</a>";    //이미지 개수만큼 닷 버튼 생성
             $(this).css({ background: slideBg[i] });    //배경색 적용
+            $(cursor).css({ background: slideBg[i] })
         });
         slideDot.html(dotIndex);    //닷 버튼 출력
+
+        $("body, html").mousemove(function(event){
+            $(cursor).css({left: event.clientX-25, top: event.clientY-25})
+        })
+
 
         //이미지 움직이기
         function gotoSlide(num){
@@ -465,6 +488,8 @@
                 gotoSlide(currentIndex)
             },3000)
         }
+
+        
     </script>
 </body>
 </html>
