@@ -120,32 +120,33 @@
                 <li>zxcvbnmasdfhghjkl</li>
             </ul>
         </footer>
-        <div class="layer-bg"></div>
-        <div class="layer">
-            <h2>까꿍</h2>
-            <a href="#" class="close">닫기</a>
-        </div>
         
+    </div>
+</div>
+<div class="layerPopup">
+    <!-- <div class="layer-bg"></div> -->
+    <div class="layer">
+        <h2>까꿍</h2>
+        <a href="#" class="close">닫기</a>
     </div>
 </div>
 </body>
 <script src="../lotte/js/jquery.min_1.12.4.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script>
-    $(".nav > ul > li").mouseover.(functon(){
-        $(this).find(".submenu").stop().slideDown(200) 
+    $(".nav > ul > li").mouseover(function(){
+        $(this).find(".submenu").stop().slideDown(200); 
     });
-    $(".nav > ul > li").mouseout.(functon(){
+    $(".nav > ul > li").mouseout(function(){
         $(this).find(".submenu").stop().slideUp(200) 
     });
     
-    $(".layerPopup").click(function(){
-        $(".layer").show()
-        $(".layer-bg").show()
+    $(".side").click(function(){
+        console.log($(this));
+       $(".layerPopup").show();
     })
     $(".layer .close").click(function(){
-        $(".layer").hide()
-        $(".layer-bg").hide()
+        $(".layerPopup").hide();
     })
 </script>
 </html>

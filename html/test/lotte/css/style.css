@@ -39,8 +39,19 @@ font-size: 13px; color: #999;}
 #footer ul li {font-size: 13px; color: #666;}
 #footer .copy {margin: 10px 0;}
 
-.layer {
+.layerPopup{
+    position: absolute;
+    top: 0;
+    bottom: -150px;
+    width:100%;
+
+    display: block;
+    background: rgba(0,0,0,0.6);
+   
     display: none;
+}
+.layer {
+    
     width: 500px; height: 500px; background: #fff;
     border: 2px solid #000;
     position: absolute;
@@ -49,8 +60,6 @@ font-size: 13px; color: #999;}
 }
 .layer h2 {padding: 20px; color: #000;}
 .layer .close {position: absolute; bottom: 20px; right: 20px;}
-.layer-bg {
-    display: none;
-    width: 100%; height: 100%; background: rgba(0,0,0,0.6);
-    position: absolute; left: 0; top: 0; z-index: 500;
-}
+/* .layer-bg {
+    
+} */

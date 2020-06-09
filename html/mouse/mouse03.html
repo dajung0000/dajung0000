@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mouse Effect02</title>
+    <title>Mouse Effect03</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
         @font-face { 
@@ -76,37 +76,46 @@
             line-height: 1.5;
         }
         .contents p a {
-            text-decoration: none; color: orange;
-            border-bottom: 2px dashed orange;
+            text-decoration: none; color: red;
+            border-bottom: 2px dashed red;
+        }
+        .contents p span {
+            text-decoration: none; color: purple;
+            border-bottom: 2px dashed purple;
         }
 
         .cursor {
             position: absolute;
             width: 10px; height: 10px;
             border-radius: 50%;
-            border: 3PX solid #FFF;
+            /* border: 3PX solid #FFF; */
             z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color:#fff;
             user-select: none;
             pointer-events: none;
-            transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+            transform: scale(12);
+            transition: transform 0.3s ease-in-out;
+            mix-blend-mode: difference;
+/* mix-blend-mode: normal;
+mix-blend-mode: multiply;
+mix-blend-mode: screen;
+mix-blend-mode: overlay;
+mix-blend-mode: darken;
+mix-blend-mode: lighten;
+mix-blend-mode: color-dodge;
+mix-blend-mode: color-burn;
+mix-blend-mode: hard-light;
+mix-blend-mode: soft-light;
+mix-blend-mode: difference;
+mix-blend-mode: exclusion;
+mix-blend-mode: hue;
+mix-blend-mode: saturation;
+mix-blend-mode: color;
+mix-blend-mode: luminosity; */
         }
+
         .cursor.active {
-            opacity: .5;
-            transform: scale(0);
-        }
-        .cursor-follower {
-            position: absolute;
-            width: 30px; height: 30px;
-            background: rgba(255,255,255,0.3);
-            border-radius: 50%;
-            user-select: none;
-            pointer-events: none;
-            transition: transform 0.6s ease-in-out, opacity 0.2s ease-in-out;
-        }
-        .cursor-follower.active {
-            opacity: .7;
-            transform: scale(4);
+            transform: scale(12);
         }
     </style>
     <link rel="stylesheet" href="assets/css/prism.css">
@@ -122,8 +131,8 @@
     <div class="info2">
         <ul>
             <li><a href="mouse01.html">Mouse01</a></li>
-            <li class="active"><a href="mouse02.html">Mouse02</a></li>
-            <li><a href="mouse03.html">Mouse03</a></li>
+            <li><a href="mouse02.html">Mouse02</a></li>
+            <li class="active"><a href="mouse03.html">Mouse03</a></li>
             <li><a href="mouse04.html">Mouse04</a></li>
             <li><a href="mouse05.html">Mouse05</a></li>
             <li><a href="mouse06.html">Mouse06</a></li>
@@ -145,7 +154,18 @@
                 <span class="control"></span>
                 <span class="control"></span>
                 <span class="control"></span>
-<pre class="line-numbers"><code class="language-js">
+<pre class="line-numbers"><code class="language-js">$(document).mousemove(function(e){
+    gsap.to(".cursor",{duration: .3, left: e.pageX-5, top: e.pageY-5});
+})
+
+document.querySelectorAll("a").forEach(function(elem){
+    elem.addEventListener("mouseenter",function(){
+        document.querySelector(".cursor").classList.add("active")
+    })
+    elem.addEventListener("mouseleave",function(){
+        document.querySelector(".cursor").classList.remove("active")
+    })
+})
 </code></pre>
                 
                 
@@ -156,11 +176,10 @@
 
     <!-- content -->
     <div class="cursor"></div>
-    <div class="cursor-follower"></div>
 
     <div class="contents">
-        <p>When money speaks, the<a> truth</a> keeps silent.</p>
-        <p>돈이 말할 때는 <a>진실</a>은 입을 다문다.</p>
+        <p>All forture is <a>to be conquered</a> by bearing it.</p>
+        <p>모든 <a>운명</a>은 그것을 <span>인내</span>함으로써 극복해야 한다.</p>
     </div>
 
     <!-- script -->
@@ -169,42 +188,19 @@
     <script src="../parallax/js/gsap.min.js"></script>
     <script src="../mouse/assets/js/prism.js"></script>
     <script>
-        const cursor = $(".cursor")
-        const follower = $(".cursor-follower")
-
         $(document).mousemove(function(e){
-            gsap.to(cursor, 0.3, {left: e.pageX-5, top: e.pageY-5})
-            gsap.to(follower, 0.8, {left: e.pageX-15, top: e.pageY-15})
-        })
-
-        $("a").hover(function(){
-            cursor.addClass("active")
-            follower.addClass("active")
-        }, function(){
-            cursor.removeClass("active")
-            follower.removeClass("active")
-        })
-        //자바스크립트
-        window.addEventListener("mousemove", function(e){
-            document.querySelector(".pageX").innerHTML = e.pageX
-            document.querySelector(".pageY").innerHTML = e.pageY
+            gsap.to(".cursor",{duration: .3, left: e.pageX-5, top: e.pageY-5});
         })
 
         document.querySelectorAll("a").forEach(function(elem){
             elem.addEventListener("mouseenter",function(){
                 document.querySelector(".cursor").classList.add("active")
-                document.querySelector(".follower").classList.add("active")
             })
             elem.addEventListener("mouseleave",function(){
                 document.querySelector(".cursor").classList.remove("active")
-                document.querySelector(".follower").classList.remove("active")
             })
-        });
-        //출력용
-        // $(document).mousemove(function(e){  //마우스가 움직였을 떄 이벤트 함수
-        //     $(".pageX").text(e.pageX)   //이벤트 pageX값을 화면에 출력
-        //     $(".pageY").text(e.pageY)   //이벤트 pageY값을 화면에 출력
-        // })
+        })
+
     </script>
 </body>
 </html>
