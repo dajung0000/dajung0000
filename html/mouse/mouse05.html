@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Effect05</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+        @font-face { 
+            font-family: 'GmarketSansMedium'; 
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); 
+            font-weight: normal; 
+            font-style: normal; 
+        }
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        a {text-decoration: none; color: #fff;}
+        img {width: 100%; vertical-align: top;}
+        ul {padding: 10px 20px;}
+        body {
+            background: url(../parallax/img/so08.jpg) no-repeat center center;
+            background-size: cover;
+            font-family: 'Abel', 'GmarketSansMedium';
+            color: #fff;
+            height: 100vh;
+            transition: all 0.2s;
+            /* cursor: none; */
+            overflow: hidden;
+        }
+        body::before {
+            content: '';
+            position: absolute; left: 0; top: 0;
+            width: 100%; height: 100vh;
+            background: rgba(1, 96, 139, 0.8);
+            z-index: -1;
+        }
+        .info {position: absolute; left: 0; top: 0; z-index: 1000; padding: 20px;}
+        .info h1 {margin-bottom: 10px;}
+        .info2 {position: absolute; right: 0; top: 0; z-index: 1000; padding: 20px;}
+        .info2 li {list-style: none; margin-bottom: 5px;}
+        .info2 li.active a {border-bottom: 1px dashed #fff;}
+        .info3 {position: absolute; right: 0; bottom: 0;}
+        .info3 li {list-style: none; margin-bottom: 5px;}
+        .info3 li a {color: #fff;}
+        .infor4 {position: absolute; left: 0; bottom: 0; z-index: 1000; padding: 20px;}
+        .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 30px}
+        .infor4 .modal {
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            top: 100%;
+            left: 0;
+            text-align: left;
+            transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        .infor4 .modal.show {
+            top: 0;
+        }
+        .infor4 .modal .close {
+            position: absolute; right: 10px; top: 20px;
+        }
+
+        .contents{
+            display : flex;
+            align-items:center;
+            justify-content: center;
+            width:100%; height:100vh;
+            flex-direction: column;
+        }
+
+        .cursor{
+            position: absolute;
+            left:0; top:0;
+            width:20px; height:20px;
+            border-radius: 50%;
+            z-index:1000;
+            user-select: none;
+            pointer-events: none;
+            transform: scale(1);
+            background: #fff;
+            transition:transform 0.8s ease-in-out;  
+        }
+        .cursor strong {
+            background: rgba(0,0,0,1);
+            white-space: nowrap;
+            position: absolute;
+            display: none;
+            padding: 0 5px;
+        }
+        .cursor strong:first-child {left: 50%; top: -60px }
+        .cursor strong:last-child {left: 50%;  top: -40px }
+        .cursor.active {
+            transform: scale(12);
+        }
+        .move-image {
+            --x: 0;
+            --y: 0;
+            --d: 20;
+            position: relative;
+        }
+        .move-image:hover .mimg {
+            transform: scale(1.025);
+        }
+        .move-image .mtext {
+            position: absolute; 
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 1vw;
+        }
+        .move-image .mimg {
+            width: 50vw; height: 60vh;
+            background: #ccc;
+            position: relative;
+            overflow: hidden;
+            transition: transform 500ms;
+        }
+        .move-image .mimg img {
+            --d: 20;
+            position: absolute;
+            left: -5%; top: -5%;
+            width: 110%;
+            height: 110%;
+            object-fit: cover;
+            transition: transform 500ms cubic-bezier(0.25,0.46,0.45,0.84);
+            transform: translate(calc(var(--x) / var(--d) * 1px),calc(var(--y) / var(--d) * 1px));
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+    <div class="info">
+        <h1>Mouse Effect05</h1>
+        <p>마우스 따라다니기</p>
+    </div>
+    <div class="info2">
+        <ul>
+            <li><a href="mouse01.html">Mouse01</a></li>
+            <li><a href="mouse02.html">Mouse02</a></li>
+            <li><a href="mouse03.html">Mouse03</a></li>
+            <li><a href="mouse04.html">Mouse04</a></li>
+            <li class="active"><a href="mouse05.html">Mouse05</a></li>
+            <li><a href="mouse06.html">Mouse06</a></li>
+        </ul>
+    </div>
+
+    <div class="info3">
+        <li>clientX : <span class="clientX">0</span> </li>
+        <li>clientY : <span class="clientY">0</span> </li>
+    </div>
+    
+    <div class="infor4">
+        <a href="#" class="view">소스보기</a>
+        <a href="#" class="code">좌표보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">   
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js">
+</code></pre>
+                
+                
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
+
+    <!-- content -->
+    <div class="contents">
+        <div class="cursor">
+                <strong>mouseX : <span class="mouseX">0</span> </strong>
+                <strong>mouseY : <span class="mouseY">0</span> </strong>
+        </div>
+
+        <div class="move-image">
+            <div class="mimg">
+                <img src="../parallax/img/so08.jpg" alt="">
+            </div>
+            <div class="mtext">
+                <p>All forture is to be conquered by bearing it.</p>
+                <p>모든 운명은 그것을 인내함으로써 극복해야 한다.</p>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script src="../parallax/js/jquery.min_1.12.4.js"></script>
+    <script src="../parallax/js/jquery-ui.min.js"></script>
+    <script src="../parallax/js/gsap.min.js"></script>
+    <script src="../mouse/assets/js/prism.js"></script>
+    <script>
+        let x = 0,
+            y = 0;
+;
+        // $(".move-image").mousemove(function(e){
+        //     gsap.to(".cursor",{duration: .2, left: e.pageX-10, top: e.pageY-10});
+        
+        //좌표값을 중앙으로 초기화
+        //x = 컨텐츠 박스의 width()/2 + 왼쪽의 여백값
+        //y = 컨텐츠 박스의 height()/2 + 윗쪽의 여백값
+            //let x = $(".move-image").width()/2 
+            //let y = $(".move-image").position().left 
+
+            // let x = e.clientX - ( $(".move-image").width()/2 + $(".move-image").position().left )
+            // let y = e.clientY - ( $(".move-image").height()/2 + $(".move-image").position().top )
+            // console.log(x)
+            // console.log(y)
+            // $(".img").attr({"style":"transform: translate("+x/20+" px, "+y/20+" px)" })
+
+            //자바스크립트
+            const moveImg = document.querySelector(".move-image");
+
+            moveImg.addEventListener("mousemove",function(e){
+                const rect = this.getBoundingClientRect();
+                console.log(rect)
+                this.style.setProperty("--x", e.clientX - ( (rect.width/2) + rect.left))
+                this.style.setProperty("--y", e.clientY - ( (rect.height/2) + rect.top))
+
+                gsap.to(".cursor",{duration: .2, left: e.pageX-10, top: e.pageY-10});
+            });
+            moveImg.addEventListener("mouseleave",function(){
+                this.style.setProperty("--x", 0)
+                this.style.setProperty("--y", 0)
+            });
+
+
+            //출력용
+            $(window).mousemove(function(e){
+                $(".clientX").text(x+"px")
+                $(".clientY").text(Math.floor(y)+"px")
+                $(".mouseX").text(x+"px")
+                $(".mouseY").text(Math.floor(y)+"px")  
+            })
+
+        $(".code").click(function(){
+            $(".cursor strong").fadeToggle();
+        })
+</script>
+</body>
+</html>

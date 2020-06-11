@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Effect06</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+        @font-face { 
+            font-family: 'GmarketSansMedium'; 
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); 
+            font-weight: normal; 
+            font-style: normal; 
+        }
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        a {text-decoration: none; color: #fff;}
+        img {width: 100%; vertical-align: top;}
+        ul {padding: 10px 20px;}
+        body {
+            background: url(../parallax/img/so08.jpg) no-repeat center center;
+            background-size: cover;
+            font-family: 'Abel', 'GmarketSansMedium';
+            color: #fff;
+            height: 100vh;
+            transition: all 0.2s;
+            /* cursor: none; */
+            overflow: hidden;
+        }
+        body::before {
+            content: '';
+            position: absolute; left: 0; top: 0;
+            width: 100%; height: 100vh;
+            background: rgba(83, 50, 94, 0.8);
+            z-index: -1;
+        }
+        .info {position: absolute; left: 0; top: 0; z-index: 1000; padding: 20px;}
+        .info h1 {margin-bottom: 10px;}
+        .info2 {position: absolute; right: 0; top: 0; z-index: 1000; padding: 20px;}
+        .info2 li {list-style: none; margin-bottom: 5px;}
+        .info2 li.active a {border-bottom: 1px dashed #fff;}
+        .info3 {position: absolute; right: 0; bottom: 0;}
+        .info3 li {list-style: none; margin-bottom: 5px;}
+        .info3 li a {color: #fff;}
+        .infor4 {position: absolute; left: 0; bottom: 0; z-index: 1000; padding: 20px;}
+        .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 30px}
+        .infor4 .modal {
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            top: 100%;
+            left: 0;
+            text-align: left;
+            transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        .infor4 .modal.show {
+            top: 0;
+        }
+        .infor4 .modal .close {
+            position: absolute; right: 10px; top: 20px;
+        }
+
+        .contents{
+            display : flex;
+            align-items:center;
+            justify-content: center;
+            width:100%; height:100vh;
+            flex-direction: column;
+        }
+
+        .cursor{
+            position: absolute;
+            left:0; top:0;
+            width:20px; height:20px;
+            border-radius: 50%;
+            z-index:1000;
+            user-select: none;
+            pointer-events: none;
+            transform: scale(1);
+            background: #fff;
+            transition:transform 0.8s ease-in-out;  
+        }
+        .cursor strong {
+            background: rgba(0,0,0,1);
+            white-space: nowrap;
+            position: absolute;
+            display: none;
+            padding: 0 5px;
+        }
+        .cursor strong:first-child {left: 50%; top: -60px }
+        .cursor strong:last-child {left: 50%;  top: -40px }
+        .cursor.active {
+            transform: scale(12);
+        }
+        /* .move-image {
+            --x: 0;
+            --y: 0;
+            --d: 20;
+            position: relative;
+        }
+        .move-image:hover .mimg {
+            transform: scale(1.025);
+        }
+        .move-image .mimg {
+            width: 50vw; height: 60vh;
+            background: #ccc;
+            position: relative;
+            overflow: hidden;
+            transition: transform 500ms;
+        }
+        .move-image .mimg img {
+            --d: 20;
+            position: absolute;
+            left: -5%; top: -5%;
+            width: 110%;
+            height: 110%;
+            object-fit: cover;
+            transition: transform 500ms cubic-bezier(0.25,0.46,0.45,0.84);
+            transform: translate(calc(var(--x) / var(--d) * 1px),calc(var(--y) / var(--d) * 1px));
+        } */
+        .move-image .mtext {
+            position: absolute; 
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 1.3vw;
+        }
+        .move-image .mtext em {
+            color: palevioletred;
+            border-bottom: 2px solid palevioletred;
+            font-style: normal;
+        }
+        .move-image .mtext .word {
+            /* text-shadow: 10px 10px 0 rgba(255, 255, 255, 0.7),
+                         -10px 10px 0 rgba(255, 255, 255, 0.7),
+                         -10px -10px 0 rgba(255, 255, 255, 0.7),
+                         10px -10px 0 rgba(255, 255, 255, 0.7); */
+        }
+        
+    </style>
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+    <div class="info">
+        <h1>Mouse Effect06</h1>
+        <p>마우스 따라다니기</p>
+    </div>
+    <div class="info2">
+        <ul>
+            <li><a href="mouse01.html">Mouse01</a></li>
+            <li><a href="mouse02.html">Mouse02</a></li>
+            <li><a href="mouse03.html">Mouse03</a></li>
+            <li><a href="mouse04.html">Mouse04</a></li>
+            <li><a href="mouse05.html">Mouse05</a></li>
+            <li class="active"><a href="mouse06.html">Mouse06</a></li>
+        </ul>
+    </div>
+
+    <div class="info3">
+        <li>clientX : <span class="clientX">0</span> </li>
+        <li>clientY : <span class="clientY">0</span> </li>
+    </div>
+    
+    <div class="infor4">
+        <a href="#" class="view">소스보기</a>
+        <a href="#" class="code">좌표보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">   
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+<pre class="line-numbers"><code class="language-js">
+</code></pre>
+                
+                
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
+
+    <!-- content -->
+    <div class="contents">
+        <div class="cursor">
+                <strong>mouseX : <span class="mouseX">0</span> </strong>
+                <strong>mouseY : <span class="mouseY">0</span> </strong>
+        </div>
+
+        <div class="move-image">
+            <!-- <div class="mimg">
+                <img src="../parallax/img/so08.jpg" alt="">
+            </div> -->
+            <div class="mtext">
+                <p>Welcome to My Honest and <em class="word">Creative</em> Portfolio.</p>
+                <p>저의 <em class="word">정직</em>하고 창의적인 포트폴리오에 오신 것을 환영합니다.</p>
+                <p>Feel the <em class="word">passion.</em></p>
+                <p>열정을 느껴보세요.</p>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script src="../parallax/js/jquery.min_1.12.4.js"></script>
+    <script src="../parallax/js/jquery-ui.min.js"></script>
+    <script src="../parallax/js/gsap.min.js"></script>
+    <script src="../mouse/assets/js/prism.js"></script>
+    <script>
+        // const word = document.querySelector(".word")
+
+        // const shadow= e => {
+        //     const {x, y} = e
+        //     const rect = word.getBoundingClientRect()
+        //     // console.log(rect)
+        //     const mouseX = (x - rect.left - rect.width/2) / 20
+        //     const mouseY = (y - rect.top - rect.height/2) / 20
+
+        //     gsap.to(".cursor",{duration: .2, left: e.pageX-10, top: e.pageY-10});
+            
+        //     word.style.textShadow = `${mouseX}px ${-mouseY}px 0px rgba(102, 249, 255, 0.7),
+        //                             ${-mouseX}px ${mouseY}px 0px rgba(255, 35, 251, 0.7),
+        //                             ${mouseY}px ${-mouseX}px 0px rgba(255, 255, 73, 0.7),
+        //                             ${-mouseY}px ${mouseX}px 0px rgba(102, 149, 255, 0.7)`;
+        // }
+
+        // window.addEventListener("mousemove", shadow)
+
+        window.addEventListener("mousemove", function(e){
+            document.querySelectorAll(".word").forEach(elem => {
+                const {x, y} = e
+                const rect = word.getBoundingClientRect()
+                const mouseX = (x - rect.left - rect.width/2) / 20
+                const mouseY = (y - rect.top - rect.height/2) / 20
+
+                gsap.to(".cursor",{duration: .2, left: e.pageX-10, top: e.pageY-10});
+                
+                elem.style.textShadow = `${mouseX}px ${-mouseY}px 0px rgba(102, 249, 255, 0.7),
+                                        ${-mouseX}px ${mouseY}px 0px rgba(255, 35, 251, 0.7),
+                                        ${mouseY}px ${-mouseX}px 0px rgba(255, 255, 73, 0.7),
+                                        ${-mouseY}px ${mouseX}px 0px rgba(102, 149, 255, 0.7)`;
+            })
+        })
+
+    </script>
+</body>
+</html>
