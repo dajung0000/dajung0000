@@ -1,31 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Nongshim">
     <meta name="author" content="dajung">
     <meta name="description" content="뮤직 모바일 메인에서 다양한 정보와 유용한 컨텐츠를 만나보세요!">
-    <meta name="keywords" content="듣기, apple, apple music">
-    <title>apple</title>
+    <meta name="keywords" content="농심, nongshim, 農心 , 농심그룹, 농심 홈페이지, 식품기업, 식품회사, 라면회사, 라면제조사">
+    <title>Apple Music App</title>
 
-    <!-- meta -->
-    <meta property="og:title" content="apple">
-    <meta property="og:url" content="https://dajung.dothome.co.kr">
-    <meta property="og:image" content="https://webstoryboy.github.io/apple/assets/icon/icon.jpg">
-    <meta property="og:description" content="모바일 메인에서 다양한 정보와 유용한 컨텐츠를 만나보세요">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="apple">
-    <meta name="twitter:url" content="https://webstoryboy.github.io/apple">
-    <meta name="twitter:image" content="https://webstoryboy.github.io/apple/assets/icon/icon.jpg">
-    <meta name="twitter:description" content="모바일 메인에서 다양한 정보와 유용한 컨텐츠를 만나보세요">
+     <!-- meta -->
+     <meta property="og:title" content="농심">
+     <meta property="og:url" content="http://zzekqls.dothome.co.kr">
+     <meta property="og:image" content="https://webstoryboy.github.io/apple/assets/icon/icon.jpg">
+     <meta property="og:description" content="뮤직 모바일 메인에서 다양한 정보와 유용한 컨텐츠를 만나보세요!">
+     <meta name="twitter:card" content="summary">
+     <meta name="twitter:title" content="뮤직 모바일 메인">
+     <meta name="twitter:url" content="https://webstoryboy.github.io/apple">
+     <meta name="twitter:image" content="https://webstoryboy.github.io/apple/assets/icon/icon.jpg">
+     <meta name="twitter:description" content="뮤직 모바일 메인에서 다양한 정보와 유용한 컨텐츠를 만나보세요!">
 
-    <!-- style -->
+      <!-- style -->
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/swiper.css">
-    <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
 </head>
 <body>
+    <header id="header">
+      <div class="container">
+        <div class="row">
+          <time class="header-data">2020년 6월 15일</time>
+          <h1 class="header-title">음악 듣기</h1>
+          <div class="header-id"><span>D</span></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="mainBanner">
+        <div class="container">
+          <div class="row">
+            <div class="banner">
+              <div class="banner-title">
+                <span class="bt-stit">BEAT1 on AIR</span>
+                <h2 class="bt-tit">Travis Mills</h2>
+                <p class="bt-desc">L.A.’s pop culture authority</p>
+              </div>
+              <picture>
+                <source srcset="assets/img/iPhone 11 Pro/Rectangle 3@1x.jpg" media="(min-width:800px)"/>
+                <source srcset="assets/img/iPhone 11 Pro/Rectangle 3@2x.jpg" media="(min-width:600px)"/>
+                <img srcset="assets/img/iPhone 11 Pro/Rectangle 3@1x.jpg,
+                assets/img/iPhone 11 Pro/Rectangle 3@2x.jpg,
+                assets/img/iPhone 11 Pro/Rectangle 3@3x.jpg" src="assets/img/iPhone 11 Pro/Rectangle 3@1x.jpg" alt="이미지">
+              </picture>
+              <!-- img, background, 이미지 스프라이트, ir / figure / picture -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="recentMusic">
+        <div class="container">
+          <div class="row">
+            <div class="recent">
+              <div class="recent-title">
+                <h2 class="recent-tit">최근 재생한 음악</h2>
+                <span class="recent-stit">전체 보기</span>
+              </div>
+              <picture class="m1">
+                <source srcset="assets/img/iPhone 11 Pro/recent 9@1x.jpg"/> 
+                <source srcset="assets/img/iPhone 11 Pro/recent 9@2x.jpg"/> 
+                <img srcset="assets/img/iPhone 11 Pro/recent 9@1x.jpg,
+                assets/img/iPhone 11 Pro/recent 9@2x.jpg,
+                assets/img/iPhone 11 Pro/recent 9@3x.jpg" src="assets/img/iPhone 11 Pro/recent 9@1x.jpg" alt="이미지">
+                <h3>AJ Tracey (Deluxe)</h3>
+                <p>AJ Tracey</p>
+              </picture>
+              <picture class="m2">
+                <source srcset="assets/img/iPhone 11 Pro/recent2 10@1x.jpg"/> 
+                <source srcset="assets/img/iPhone 11 Pro/recent2 10@2x.jpg"/> 
+                <img srcset="assets/img/iPhone 11 Pro/recent2 10@1x.jpg,
+                assets/img/iPhone 11 Pro/recent2 10@2x.jpg,
+                assets/img/iPhone 11 Pro/recent2 10@3x.jpg" src="assets/img/iPhone 11 Pro/recent2 10@1x.jpg" alt="이미지">
+                <h3>오늘의 신곡</h3>
+                <p>Apple Music</p>
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="nextProgram"></section>              
+    </main>
+
     
+
 </body>
 </html>

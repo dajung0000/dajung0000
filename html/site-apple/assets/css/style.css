@@ -1,3 +1,90 @@
-h1 {
-    font-size: 1vw;
+/* container */
+.container {max-width: 1000px; margin: 0 auto;}
+/* row */
+.row {position: relative; margin: 0 20px;}
+/* layout */
+#header .container {}
+.header-data {
+    color: #99999B;
+    position: absolute;
+    top: 65px;
 }
+.header-title {
+    font-size: 30px;
+    line-height: 20px;
+    position: absolute; top: 96px;
+}
+.header-id {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    right: 0;
+    top: 90px;
+    background: #888C97;
+    border: 1px solid #EBEBEB;
+    box-sizing: border-box;
+    border-radius: 50px;
+}
+.header-id span {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 5.3vw;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.banner {font-family: SF Pro Display;}
+.banner .banner-title {}
+.banner .banner-title .bt-stit {
+    font-size: 3.3vw;
+    line-height: 20px;
+    color: #DA5E7C;
+    position: absolute; top: 137px;
+}
+.banner .banner-title .bt-tit {
+    font-size: 6.5vw;
+    line-height: 20px;
+    position: absolute; top: 156px;
+}
+.banner .banner-title .bt-desc {
+    font-size: 6.5vw;
+    line-height: 20px;
+    color: #818181;
+    position: absolute; top: 179px;
+}
+.banner img {
+    width: 100%;
+    position: absolute; top: 215px;
+    border-bottom: 1px solid #848484;
+}
+
+.recent .recent-tit {
+    font-size: 4.5vw;
+    line-height: 20px;
+    position: absolute;
+    top: 478px;
+}
+.recent .recent-stit {
+    font-size: 3.8vw;
+    line-height: 20px; 
+    color: #DA5E7C;
+    position: absolute;
+    right: 0;
+    top: 478px;
+}
+.recent .m1 {
+    position: absolute;
+    width: 158px;
+    height: 201px;
+    top: 509px;
+}
+.recent .m2 {
+    position: absolute;
+    width: 158px;
+    height: 159px;
+    left: 177px;
+    top: 509px;
+}
+.recent h3 {font-size: 3.8vw; line-height: 20px;}
+.recent p {font-size: 3.5vw; line-height: 20px; color: #818181;}
