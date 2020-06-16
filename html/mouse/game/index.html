@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <style>
+        body {background: #1a1a1a;}
+        /* 카드 */
+        main {
+            display: flex; 
+            flex-wrap: wrap; 
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 900px;
+            margin: 10% auto;
+            }
+
+        main .card {
+            width: 120px; height: 150px;
+            margin: 1%;
+            position: relative;
+            perspective: 1000px;
+        }
+        /* main .card img {
+            width: 100%; 
+            vertical-align: top;
+        } */
+        main .front{
+            width: 100%; height: 100%;
+            background: url(img/group10.jpg);
+            background-size: cover;
+            position: absolute; top: 0; left: 0;
+            z-index: 10;
+            transform-style: preserve-3d;
+        }
+        main .back {
+            width: 100%; height: 100%;
+            background-size: cover;
+            position: absolute; top: 0; left: 0;
+            transform-style: preserve-3d;
+        }
+        /* Mouse hover */
+        main .card .front{
+           transform: rotateY(0);
+           transition: transform 1s;
+           backface-visibility: hidden;
+        }
+        main .card:hover .front {
+            transform: rotateY(180deg);
+            transition: transform 1s;
+        }
+        main .card .back {
+            transform: rotateY(-180deg);
+            transition: transform 1s;
+            backface-visibility: hidden;
+        }
+        main .card:hover .back {
+            transform: rotateY(0);
+            transition: transform 1s;
+        }
+
+        /* img */
+        [data-type="img1"] .back {
+            background: url(img/group1.jpg);
+            background-size: cover;
+        }
+        [data-type="img2"] .back {
+            background: url(img/group2.jpg);
+            background-size: cover;
+        }
+        [data-type="img3"] .back {
+            background: url(img/group3.jpg);
+            background-size: cover;
+        }
+        [data-type="img4"] .back {
+            background: url(img/group4.jpg);
+            background-size: cover;
+        }
+        [data-type="img5"] .back {
+            background: url(img/group5.jpg);
+            background-size: cover;
+        }
+        [data-type="img6"] .back {
+            background: url(img/group6.jpg);
+            background-size: cover;
+        }
+        [data-type="img7"] .back {
+            background: url(img/group7.jpg);
+            background-size: cover;
+        }
+        [data-type="img8"] .back {
+            background: url(img/group8.jpg);
+            background-size: cover;
+        }
+        [data-type="img9"] .back {
+            background: url(img/group9.jpg);
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="card" data-type="img1" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img2" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img3" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img4" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img5" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img6" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img7" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img8" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img9" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+
+        <div class="card" data-type="img1" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img2" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img3" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img4" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img5" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img6" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img7" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img8" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="card" data-type="img9" data-matched="false">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+    </main>
+</body>
+</html>

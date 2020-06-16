@@ -102,6 +102,7 @@
     .textWrap .line .right {width: 50vw; transform: skew(0deg, 15deg); overflow: hidden;}
     .textWrap .line .right .spanWrap {width: 100vw; text-align: center; transform: translate(-50vw);}
     .textWrap .line .right .spanWrap span {font-size: 6vw;}
+    .textWrap span {display: inline-block;}
 
     </style> 
     
@@ -168,7 +169,7 @@
             <div class="line">
                 <div class="left">
                     <div class="spanWrap">
-                        <span>인생은 짧다</span>
+                        <span class="spanFast">인생은 짧다</span>
                     </div>
                 </div>
                 <div class="right">
@@ -213,19 +214,37 @@
     <script src="../assets/js/prism.js"></script>
 
     <script>
-      const spanSlow = document.querySelectorAll(".spanSlow")
-      const spanFast = document.querySelectorAll(".spanFast")
+    //   자바스크립트
+    //   const spanSlow = document.querySelectorAll(".spanSlow")
+    //   const spanFast = document.querySelectorAll(".spanFast")
 
-        window.addEventListener("mousemove", mouseMove)
+    //     window.addEventListener("mousemove", mouseMove)
 
-      function mouseMove(e){
+    //   function mouseMove(e){
 
-        let speedSlow = 
+    //     let position = (e.pageX / (window.innerWidth / 2)) * 100
 
-        spanSlow.forEach( (span)=> {
-            span.style.transform = `translate(${speedSlow}px)`;
-        } )
-      }
+    //     spanSlow.forEach( (span)=> {
+    //         span.style.transform = `translate(${position}px)`;
+    //     } )
+    //     spanFast.forEach( (span)=> {
+    //         span.style.transform = `translate(${-position}px)`;
+    //     } )
+    //   }
+
+    //   제이쿼리
+         let spanSlow = $(".spanSlow")
+         let spanFast = $(".spanFast")
+
+        $(window).on("mousemove", mouseMove)
+
+        function mouseMove(e){
+            let position = (e.pageX - ($(window).width() / 2)) * 0.1
+
+            $(".spanSlow").css({"transform":"translate("+position +"px)"})
+            $(".spanFast").css({"transform":"translate("+ -position +"px)"})
+        }
+
     </script>
 </body>
 </html>

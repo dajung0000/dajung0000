@@ -87,7 +87,7 @@
       
 
         /* slide-wrap */
-        .slide-wrap {position: relative; height: 100vh;}
+        .slide-wrap {position: relative; height: 100vh; overflow: hidden;}
         .slide-img {position: relative; width: 100%; height: 100%;}
         .slide-img .slide {position: absolute; width: 100%; height: 100%; overflow: hidden;}
         .slide-img .slide .stext {
@@ -112,14 +112,14 @@
             display: flex;
         }
         .slide-img .slide .stext h2 span {
-            display: inline-block;
+            /* display: inline-block; */
             transform: translateY(150px 350px);
             opacity: 0;
             transform-origin: bottom left;
             transition: all 1s ease;
         }
         .slide-img .slide.active .stext h2 span {
-            transform: translate(0);
+            transform: translate(0) rotate(0deg);
             opacity: 1;
         }
 
@@ -207,7 +207,7 @@
             display: inline-block;
             width: 10px; height: 10px;
             border-radius: 50%;
-            margin: 2.5vw 1.2vw;
+            margin: 2.5vw 1.2vw 2.5vw 1vw;
             border: 1px solid #ccc;
             text-indent: -9999px;
         }
@@ -220,7 +220,6 @@
         }
 
         /* slide-btn */
-        .slide-btn {}
         .slide-btn a {position: absolute; top: 0; z-index: 2000;}
         .slide-btn a.prev {left: 0; width: 5vw; height: 100vh; background: #fff;}
         .slide-btn a.next {right: 0; width: 5vw; height: 100vh; background: #fff;}
@@ -268,7 +267,41 @@
             background-color: rgba(255, 255, 255, 0.1);
             user-select: none;
             pointer-events: none;
+            transform: scale(1);
+            transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
         }
+        .cursor.active {
+            opacity: 0.5;
+            transform: scale(0);
+        }
+        .cursor-follower {
+            position: absolute; left: 10px; top: 0;
+            width: 30px; height: 30px;
+            background: rgba(253, 249, 249, 0.1);
+            border-radius: 50%;
+            z-index: 10000;
+            user-select: none;
+            pointer-events: none;
+            transition: transform 0.6s ease-in-out, opacity 0.2s ease-in-out;
+        }
+
+        .cursor-follower.active {
+            opacity: 0.7;
+            transform: scale(4);
+        }
+        .s2 .cursor {background: dodgerblue;}
+        .s3 .cursor {background: rgb(226, 140, 212);}
+        .s4 .cursor {background: rgb(245, 174, 22);}
+        .s5 .cursor {background: #76b1af;}
+        .s6 .cursor {background: #7689b4;}
+        .s7 .cursor {background:#a39b81;}
+        .s2 .cursor-follower {background: rgba(137, 174, 223, 0.3);}
+        .s3 .cursor-follower {background: rgba(240, 130, 172, 0.3);}
+        .s4 .cursor-follower {background: rgba(255, 174, 0, 0.3);}
+        .s5 .cursor-follower {background: rgba(109, 160, 175, 0.3);}
+        .s6 .cursor-follower {background: rgba(83, 97, 158, 0.3);}
+        .s7 .cursor-follower {background: rgba(120, 122, 99, 0.3);}
+
     </style>
 </head>
 <body>
@@ -387,8 +420,6 @@
         </div>
     </section>
 
-    <div class="cursor"></div>
-
     <script src="js/jquery.min_1.12.4.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="../mouse/assets/js/prism.js"></script>
@@ -396,13 +427,16 @@
         //닷, 버튼 생성
         $(".slide-wrap").append("<div class='slide-dot'></div>")
         $(".slide-wrap").append("<div class='slide-btn'><a href='#' class='prev'></a><a href='#' class='next'></a></div>")
+        $(".slide").append("<div class='cursor'></div><div class='cursor-follower'></div>");
+
 
         const slideWrap = $(".slide-wrap"),
               slideImg = $(".slide-img"),
               slide = $(".slide"),
               slideDot = $(".slide-dot"),
               slideBtn = $(".slide-btn"),
-              cursor = $(".cursor");
+              cursor = $(".cursor"),
+              follower = $(".cursor-follower");
 
         let slideCount = slide.length,          //슬라이드 이미지 갯수
             currentIndex = 0,                   //현재 보이는 이미지
@@ -434,8 +468,22 @@
         });
         slideDot.html(dotIndex);    //닷 버튼 출력
 
-        $("body, html").mousemove(function(event){
-            $(cursor).css({left: event.clientX-25, top: event.clientY-25})
+        // $("body, html").mousemove(function(event){
+        //     $(cursor).css({left: event.clientX-25, top: event.clientY-25})
+        //     $(follower).css({left: event.clientX-35, top: event.clientY-35})
+        // })
+
+        $(document).mousemove(function(e){
+            gsap.to(cursor, 0.3, {left: e.pageX-5, top: e.pageY-5})
+            gsap.to(follower, 0.8, {left: e.pageX-15, top: e.pageY-15})
+        })
+
+        $("a").hover(function(){
+            cursor.addClass("active")
+            follower.addClass("active")
+        }, function(){
+            cursor.removeClass("active")
+            follower.removeClass("active")
         })
 
 
@@ -446,12 +494,31 @@
             currentIndex = num
             updatedot()
         }
-        gotoSlide(0)
+        gotoSlide(currentIndex)
 
         function updatedot(){
             slideDot.find("a").removeClass().eq(currentIndex).addClass("active")
             slide.removeClass("active").eq(currentIndex).addClass("active")
         }
+           // 자동 플레이
+        function startTimer(){
+            timer = setInterval(function(){
+                let nextIndex = (currentIndex + 1) % slideCount;
+                gotoSlide(nextIndex)
+            }, 3000);
+        };
+        startTimer();
+        
+        // 정지
+        function stopTImer(){
+            clearInterval(timer);
+        };
+
+        // 마우스 오버 관련 이벤트는 매개변수에 함수 2개를 사용할 수 있다.
+        // sliderWrap.hover(function(){}, function(){});
+        slideImg.on({mouseenter: stopTImer, mouseleave: startTimer})
+
+
 
         //버튼 클릭
         slideBtn.on("click","a",function(){
@@ -481,15 +548,6 @@
         });
         gotoSlide(currentIndex) //시작할 때 첫페이지 실행
 
-        //자동 플레이
-        function startTimer(){
-            let timer = setInterval(function(){
-                let nextIndex = (currentIndex + 1) % slideCount
-                gotoSlide(currentIndex)
-            },3000)
-        }
-
-        
     </script>
 </body>
 </html>
