@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Game</title>
     <style>
-        body {background: #1a1a1a;}
+        @font-face { font-family: 'MaplestoryOTFBold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff'); font-weight: normal; font-style: normal; }
+        body {background: #bedfd4;}
         /* 카드 */
         main {
             display: flex; 
@@ -27,38 +28,23 @@
             width: 100%; 
             vertical-align: top;
         } */
-        main .front{
+        .card .front{
             width: 100%; height: 100%;
             background: url(img/group10.jpg);
             background-size: cover;
             position: absolute; top: 0; left: 0;
-            z-index: 10;
-            transform-style: preserve-3d;
-        }
-        main .back {
-            width: 100%; height: 100%;
-            background-size: cover;
-            position: absolute; top: 0; left: 0;
-            transform-style: preserve-3d;
-        }
-        /* Mouse hover */
-        main .card .front{
-           transform: rotateY(0);
-           transition: transform 1s;
-           backface-visibility: hidden;
-        }
-        main .card:hover .front {
-            transform: rotateY(180deg);
-            transition: transform 1s;
-        }
-        main .card .back {
-            transform: rotateY(-180deg);
+            z-index: 100;
+            transform: rotatey(0deg);
             transition: transform 1s;
             backface-visibility: hidden;
         }
-        main .card:hover .back {
-            transform: rotateY(0);
+        .card .back {
+            width: 100%; height: 100%;
+            position: absolute;
+            left: 0; top: 0;
+            transform: rotatey(-180deg);
             transition: transform 1s;
+            backface-visibility: hidden;
         }
 
         /* img */
@@ -87,7 +73,7 @@
             background-size: cover;
         }
         [data-type="img7"] .back {
-            background: url(img/group7.jpg);
+            background: url(img/group7.png);
             background-size: cover;
         }
         [data-type="img8"] .back {
@@ -95,12 +81,90 @@
             background-size: cover;
         }
         [data-type="img9"] .back {
-            background: url(img/group9.jpg);
+            background: url(img/group9.png);
             background-size: cover;
+        }
+
+        /* 카드를 클릭했을때 */
+        /* Mouse hover */
+        /* .card:hover .front {
+            transform: rotatey(180deg);
+            transition: transform 1s;
+        }
+
+        .card:hover .back {
+            transform: rotatey(0deg);
+            transition: transform 1s;
+        } */
+        .card.is-selected .front {
+            transform: rotatey(180deg);
+            transition: transform 1s;
+        }
+        .card.is-selected .back {
+            transform: rotatey(0deg);
+            transition: transform 1s;
+        }
+
+        [data-matched="true"] .front{
+            transform: rotatey(180deg);
+            transition: transform 0.6s;
+        }
+        [data-matched="true"] .back{
+            transform: rotatey(0deg);
+            transition: transform 0.6s;
+        }
+
+        /* info */
+        .info {
+            width: 100%;
+            max-width: 950px;
+            font-family: 'MaplestoryOTFBold';
+            margin: auto;
+        }
+        .score {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #edb5bd;
+            background: #a4e6d1df;
+            padding-top: 10px;
+        }
+        .score span {
+            font-size: 2vw;
+        }
+        .text {
+            font-size: 4.7vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            background: #bedfd4;
+        }
+        .btn-sound {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 40px; height: 40px;
+            border: 0.3px solid #edb5bd; outline: 0.3px solid #edb5bd;
+            background-image:url(../game/img/soundX.svg);
+            background-size: 100%;
+            background-repeat: no-repeat;
         }
     </style>
 </head>
 <body>
+
+    <div class="info">
+        <button class="btn-sound"></button>
+        <audio src="music/Robot_Boogie.mp3" loop="loop" autoplay></audio>
+        <div class="score">
+            <div class="turns">기회 : <span>2</span></div>
+            <div class="attempts">시도 : <span>0</span></div>
+            <div class="wins"">우승 : <span>0</span></div>
+        </div>
+        <p class="text">맞춰보거라 풉 풉</p>
+    </div>
+
     <main>
         <div class="card" data-type="img1" data-matched="false">
             <div class="front"></div>
@@ -176,5 +240,46 @@
             <div class="back"></div>
         </div>
     </main>
+
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script>
+        const $board = $('main'),   //$-선택자 구별 위함    ///왜 ''?
+              $card = $('.card'),
+              $btnSound = $('.btn-sound'),
+
+              selectedClass = "is-selected",
+              dataMatch = 'data-matched',
+              dataType = 'data-type',
+              timeoutLength = 600;
+
+        let   card1, card2;
+
+        // $btnSound.on('click', function(e){
+        //     $themeSongEl.play
+        // })
+
+            //카드를 클릭하면 is-selected추가
+            $card.click(function(){
+                if ($(this).attr(dataMatch) == 'false'){
+                    $(this).addClass(selectedClass)
+                }
+
+            let selectedCards = $('.'+selectedClass);   //선택자 카드를 클래스로 변경-.is-selected
+
+            if (selectedCards.length == 2){  //선택한 카드가 두 개 일 때
+            card1 = selectedCards.eq(0).attr(dataType)  //첫번째로 선택한 카드 찾기
+            card2 = selectedCards.eq(1).attr(dataType)
+                //카드1과 카드2가 같을 때
+                if (card1 == card2){
+                    selectedCards.attr(dataMatch, true).removeClass(selectedClass)
+                } else {
+                    setTimeout(function(){
+                        selectedCards.removeClass(selectedClass)    //카드가 같지 않으면 뒤집음
+                    }, timeoutLength)
+                  }
+            }
+
+            });
+    </script>
 </body>
 </html>
