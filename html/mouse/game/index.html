@@ -144,11 +144,34 @@
             position: absolute;
             right: 10px;
             top: 10px;
-            width: 40px; height: 40px;
-            border: 0.3px solid #edb5bd; outline: 0.3px solid #edb5bd;
-            background-image:url(../game/img/soundX.svg);
+            width: 24px;
+            height: 24px;
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/icon-sound-on.svg);
+            background-color: transparent;
             background-size: 100%;
             background-repeat: no-repeat;
+            border: none;
+            outline: none;
+        }
+
+        .btn-sound:active {
+            transform: translateY(1px);
+        }
+
+        .btn-sound::before {
+            content: '';
+            position: absolute;
+            top: 9px;
+            left: -2px;
+            width: 120%;
+            height: 2px;
+            background-color: #edb5bd;
+            transform: rotate(35deg);
+            box-shadow: 0 0 0 1px #edb5bd;
+        }
+
+        .btn-sound.is-playing::before {
+            display: none;
         }
     </style>
 </head>
@@ -251,19 +274,16 @@
               selectedClass = "is-selected",
               dataMatch = 'data-matched',
               dataType = 'data-type',
-              timeoutLength = 600;
+              playSoundClass = 'is-playing'
+              timeoutLength = 900;
 
         let   card1, card2;
 
         //음악 아이콘 클릭-플레이, 클릭-정지
-        $btnSound.click(function(){
-            $(themeSongEl).play()
+        $btnSound.on('click', function(){
+            $(this).toggleClass(playSoundClass)
         })
         // $themeSongEl.play()
-
-        // $btnSound.on('click', function(e){
-        //     $themeSongEl.play
-        // })
 
             //카드를 클릭하면 is-selected추가
             $card.click(function(){
