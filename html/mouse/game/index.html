@@ -131,13 +131,17 @@
         }
         .score span {
             font-size: 2vw;
+            margin-right: 10px;
+        }
+        .turns span.last-turn {
+            color: red;
         }
         .text {
             font-size: 4.7vw;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fff;
+            color: #000;
             background: #bedfd4;
         }
         .btn-sound {
@@ -179,9 +183,9 @@
 
     <div class="info">
         <button class="btn-sound"></button>
-        <audio id="theme-song" src="music/Robot_Boogie.mp3" loop="loop" controls></audio>
+        <audio id="theme-song" src="music/Robot_Boogie.mp3" loop="loop"></audio>
         <div class="score">
-            <div class="turns">기회 : <span>2</span></div>
+            <div class="turns">카운트 : <span>2</span></div>
             <div class="attempts">시도 : <span>0</span></div>
             <div class="wins"">우승 : <span>0</span></div>
         </div>
@@ -266,24 +270,40 @@
 
     <script src="js/jquery.min_1.12.4.js"></script>
     <script>
-        const $board = $('main'),   //$-선택자 구별 위함    ///왜 ''?
+        const $board = $('main'),   //$-선택자 구별 위함
               $card = $('.card'),
               $btnSound = $('.btn-sound'),
               $themeSongEl = $('#theme-song')[0],   //배열0-콘솔로 확인해보면 오디오 태그 그대로 가져옴
+              $turns = $('.turns span'),
 
               selectedClass = "is-selected",
               dataMatch = 'data-matched',
               dataType = 'data-type',
-              playSoundClass = 'is-playing'
+              playSoundClass = 'is-playing',
+              lastTurnClass = 'last-turn'
               timeoutLength = 900;
+              
 
-        let   card1, card2;
+        let   sound = [
+              'music/243020__plasterbrain__game-start.mp3',   //맞춤
+              'music/159408__noirenex__life-lost-game-over.wav',  //실패
+              'music/'
+              ],
+              soundMatch = new Audio(sound[0]),
+              soundNoMatch = new Audio(sound[1]),
+              soundSuccess = new Audio(sound[2]),
+              turnCount = 2,   //기회 2회
+              card1, card2; 
 
         //음악 아이콘 클릭-플레이, 클릭-정지
         $btnSound.on('click', function(){
             $(this).toggleClass(playSoundClass)
+            if ( $(this).hasClass(playSoundClass) ){
+                $themeSongEl.play()
+            } else {
+                $themeSongEl.pause()
+            }
         })
-        // $themeSongEl.play()
 
             //카드를 클릭하면 is-selected추가
             $card.click(function(){
@@ -298,12 +318,36 @@
             card2 = selectedCards.eq(1).attr(dataType)
                 //카드1과 카드2가 같을 때
                 if (card1 == card2){
+                    if($btnSound.hasClass(playSoundClass)){
+                        soundMatch.play()
+                    }
+
                     selectedCards.attr(dataMatch, true).removeClass(selectedClass)
                 } else {
+                    if($btnSound.hasClass(playSoundClass)){
+                        soundNoMatch.play()
+                    }
+
                     setTimeout(function(){
                         selectedCards.removeClass(selectedClass)    //카드가 같지 않으면 뒤집음
+                        turnCount--    //카운드 줄기
+                        $turns.html(turnCount) //텍스트로 보이게
                     }, timeoutLength)
+                    //기회가 없을 때
+                    if (turnCount === 1){
+                        setTimeout(function(){
+                            $turns.addClass(lastTurnClass)
+                        },timeoutLength)
+                    }
+                    //기회가 없을 때(시도+1생겨남)
+                    if (turnCount <= 0){
+                        setTimeout(function(){
+                        turnCount = 2;  //기회 2회 복구
+                        $turns.removeClass(lastTurnClass).html(turnCount)   //주의 표시
+                        $card.attr(dataMatch, false)    //실패-원상복구
+                    },timeoutLength)
                   }
+            }
             }
 
             });
