@@ -156,7 +156,7 @@
 
     <div class="info">
         <button class="btn-sound"></button>
-        <audio src="music/Robot_Boogie.mp3" loop="loop" autoplay></audio>
+        <audio id="theme-song" src="music/Robot_Boogie.mp3" loop="loop" controls></audio>
         <div class="score">
             <div class="turns">기회 : <span>2</span></div>
             <div class="attempts">시도 : <span>0</span></div>
@@ -246,6 +246,7 @@
         const $board = $('main'),   //$-선택자 구별 위함    ///왜 ''?
               $card = $('.card'),
               $btnSound = $('.btn-sound'),
+              $themeSongEl = $('#theme-song')[0],   //배열0-콘솔로 확인해보면 오디오 태그 그대로 가져옴
 
               selectedClass = "is-selected",
               dataMatch = 'data-matched',
@@ -253,6 +254,12 @@
               timeoutLength = 600;
 
         let   card1, card2;
+
+        //음악 아이콘 클릭-플레이, 클릭-정지
+        $btnSound.click(function(){
+            $(themeSongEl).play()
+        })
+        // $themeSongEl.play()
 
         // $btnSound.on('click', function(e){
         //     $themeSongEl.play
