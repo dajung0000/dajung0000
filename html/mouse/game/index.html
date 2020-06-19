@@ -177,6 +177,45 @@
         .btn-sound.is-playing::before {
             display: none;
         }
+
+        .success {
+            position: fixed; left: 0; top: 0;
+            z-index: 10000;
+            width: 100%; height: 100vh;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: rgba(255, 170, 215, 0.5);
+            font-family: 'MaplestoryOTFLight';
+            display: none;
+        }
+        .success.is-visible {
+            display: flex;
+        }
+        .success .success-message {
+            font-size: 5vw;
+            color: #bedfd4;
+        }
+        .success .bg {
+            background: transparent;
+            margin: 20px;
+        }
+        .success .btn-continue {
+            padding: 10px 45px;
+            background-color: #bedfd441;
+            font-family: 'SangSangRock';
+            color: #fff;
+            font-size: 20px;
+            border: 0;
+            outline: 0;
+            margin: 20px;
+        }
+        .success .btn-continue:active {
+            transform: translateY(4px);
+            background-color: #bedfd4;
+        }
     </style>
 </head>
 <body>
@@ -187,7 +226,7 @@
         <div class="score">
             <div class="turns">카운트 : <span>2</span></div>
             <div class="attempts">시도 : <span>0</span></div>
-            <div class="wins"">우승 : <span>0</span></div>
+            <div class="wins"">성공 : <span>0</span></div>
         </div>
         <p class="text">맞춰보거라 풉 풉</p>
     </div>
@@ -268,6 +307,16 @@
         </div>
     </main>
 
+    <div class="success">
+        <h2 class="success-message">너 좀 괜찮네</h2>
+        <div class="score bg">
+            <div class="turns">카운트 : <span>2</span></div>
+            <div class="attempts">시도 : <span>0</span></div>
+            <div class="wins">성공 : <span>0</span></div>
+        </div>
+        <button class="btn-continue">또 할겨?</button>
+    </div>
+
     <script src="js/jquery.min_1.12.4.js"></script>
     <script>
         const $board = $('main'),   //$-선택자 구별 위함
@@ -275,35 +324,44 @@
               $btnSound = $('.btn-sound'),
               $themeSongEl = $('#theme-song')[0],   //배열0-콘솔로 확인해보면 오디오 태그 그대로 가져옴
               $turns = $('.turns span'),
+              $attempts = $('.attempts span'),
+              $wins = $('.wins span'),
+              $success = $('.success'),
+              $btnContinue = $('.btn-continue'),
+              $successMsg = $('.success-message'),
 
-              selectedClass = "is-selected",
+              selectedClass = 'is-selected',
               dataMatch = 'data-matched',
               dataType = 'data-type',
               playSoundClass = 'is-playing',
-              lastTurnClass = 'last-turn'
+              visibleClass = 'is-visible',
+              lastTrunClass = 'last-turn',
               timeoutLength = 900;
-              
 
         let   sound = [
               'music/243020__plasterbrain__game-start.mp3',   //맞춤
               'music/159408__noirenex__life-lost-game-over.wav',  //실패
               'music/'
-              ],
+        ],
               soundMatch = new Audio(sound[0]),
               soundNoMatch = new Audio(sound[1]),
               soundSuccess = new Audio(sound[2]),
-              turnCount = 2,   //기회 2회
-              card1, card2; 
+              trunsCount = 2,   //기회 2회
+              attemptsCount = 0,  //시도 횟수
+              winCount = 0,      //성공 횟수
+              card1, card2, msg;
 
-        //음악 아이콘 클릭-플레이, 클릭-정지
-        $btnSound.on('click', function(){
-            $(this).toggleClass(playSoundClass)
-            if ( $(this).hasClass(playSoundClass) ){
-                $themeSongEl.play()
-            } else {
-                $themeSongEl.pause()
-            }
-        })
+              shuffleCards();   //카드 셔플 출력-자바스크립트, 위에 따로 적어도 적용
+
+            //음악 아이콘 클릭-플레이, 클릭-정지
+            $btnSound.on('click', function(){
+                $(this).toggleClass(playSoundClass);
+                if ( $(this).hasClass(playSoundClass) ){
+                    $themeSongEl.play()
+                } else {
+                    $themeSongEl.pause()
+                }
+            });
 
             //카드를 클릭하면 is-selected추가
             $card.click(function(){
@@ -321,36 +379,130 @@
                     if($btnSound.hasClass(playSoundClass)){
                         soundMatch.play()
                     }
-
-                    selectedCards.attr(dataMatch, true).removeClass(selectedClass)
+                    selectedCards.attr(dataMatch, true).removeClass(selectedClass);
                 } else {
-                    if($btnSound.hasClass(playSoundClass)){
+                    if ($btnSound.hasClass(playSoundClass)) {
                         soundNoMatch.play()
                     }
-
+                    
                     setTimeout(function(){
                         selectedCards.removeClass(selectedClass)    //카드가 같지 않으면 뒤집음
-                        turnCount--    //카운드 줄기
-                        $turns.html(turnCount) //텍스트로 보이게
+                        trunsCount--    //카운드 줄기
+                        $turns.html(trunsCount) //텍스트로 보이게
                     }, timeoutLength)
-                    //기회가 없을 때
-                    if (turnCount === 1){
+                    //기회가 1회 남았을 때(주의)
+                    if (trunsCount === 1){
                         setTimeout(function(){
-                            $turns.addClass(lastTurnClass)
+                            $turns.addClass(lastTrunClass)
                         },timeoutLength)
                     }
-                    //기회가 없을 때(시도+1생겨남)
-                    if (turnCount <= 0){
+                    //기회가 없을 때(시도+1, 기회 2회 복구)
+                    if (trunsCount <= 0){
                         setTimeout(function(){
-                        turnCount = 2;  //기회 2회 복구
-                        $turns.removeClass(lastTurnClass).html(turnCount)   //주의 표시
+                        trunsCount = 2;
+                        $turns.removeClass(lastTrunClass).html(trunsCount)   //주의 표시
                         $card.attr(dataMatch, false)    //실패-원상복구
-                    },timeoutLength)
-                  }
+                        attemptsCount +=1
+                        $attempts.html(attemptsCount)
+                        },timeoutLength)
+                    }
+                 }
             }
+            //성공!=dataMatch가 true이면서 true의 갯수가 전체 카드 갯수와 같을 때
+            if ($('[' + dataMatch + '= "true"]').length == $card.length) {
+                setTimeout(() => {
+                    $success.addClass(visibleClass);
+                    winCount += 1
+                    $wins.html(winCount)
+                }, timeoutLength);
+
+            //시도 횟수에 따른 메세지
+            switch(true){
+                case(attemptsCount <= 2):
+                    msg = "다시 하면 못할걸";
+                    break;
+                case(attemptsCount > 2 && attemptsCount <= 5):
+                    msg = "좀 빨리해봐";
+                    break;
+                case(attemptsCount > 5 && attemptsCount <= 8):
+                    msg = "못하는데..?";
+                    break;
+                case(attemptsCount > 8):
+                    msg = "으이구 인간아";
+                    break;
+            }
+            $successMsg.text(msg);
+
+            //카드 초기화
+            setTimeout(() => {
+                    $card.attr(dataMatch, false);
+                }, 1200);
+            
+            }
+            });
+
+            //재시도
+            $btnContinue.on('click',function(){
+                $success.removeClass(visibleClass)
+                shuffleCards();  //셔플카드-카드 섞기
+                trunsCount = 2;  //기회 2로 리셋
+                $turns.removeClass(lastTrunClass).html(trunsCount)
+                attemptsCount = 0;  //누적된 시도 리셋
+                $attempts.html(attemptsCount)
+            });
+            
+            //카드 셔플
+            function shuffleCards(){
+                let cards = $board.children();
+                while(cards.length){
+                    $board.append(cards.splice(Math.floor(Math.random() * cards.length),1)[0])
+                }
+                $card.each(function(index){
+                    setTimeout(() => {
+                        $(this).addClass(selectedClass)
+                    }, timeoutLength + 100 * index)
+                });
+
+                setTimeout(() => {
+                    $card.removeClass(selectedClass)
+                }, 5000);
+                
+                //for문
+                // for(let i=0; i<cards.length; i++){
+                //     let arr = []
+                //     let random = cards.splice(Math.floor(Math.random() * cards.length),1) //카드0~17-18개
+                //     arr.push(random)    //데이터 입력-push
+                // }
+                // console.log(arr)
             }
 
-            });
+            //splice=쪼개다 <예제>
+            //var number = [1, 2, 3, 4, 5, 6, 7]
+
+            // var removed = number.splice(2, 0, '10')
+            // alert(number)   //결과-1,2,10,3,4,5,6,7
+
+            // var removed = number.splice(2,0,'10','11')
+            // alert(number)   //1,2,10,11,3,4,5,6,7
+
+            // var removed = number.splice(3,1)    //1-가운데 없애준다는 의미
+            // alert(number)   //1,2,3,5,6,7
+
+            // var removed = number.splice(2,1,'20')   
+            // alert(number)   //1,2,20,4,5,6,7
+
+            // var removed = number.splice(0,2,'20','30','40')    //2개를 지움
+            // alert(number)   //20,30,40,3,4,5,6,7
+
+            // var removed = number.splice(number.length-3,2)   //7개에서 3 빼고 2개 없애줌
+            // alert(number)   //1,2,3,4,7
+
+            // var removed = number.splice(-2,1)    //-2,뒤에서 2번째 자리 수 없애줌
+            // alert(number)   //1,2,3,4,5,7
+
+            // var removed = number.splice(2)
+            // alert(number)   //1,2
+
     </script>
 </body>
 </html>
