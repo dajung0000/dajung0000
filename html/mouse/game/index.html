@@ -6,7 +6,11 @@
     <title>Memory Game</title>
     <style>
         @font-face { font-family: 'MaplestoryOTFBold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff'); font-weight: normal; font-style: normal; }
-        body {background: #bedfd4;}
+        *{margin: 0; padding: 0;}
+        body {
+            background: #bedfd4;
+            overflow: hidden;
+        }
         /* 카드 */
         main {
             display: flex; 
@@ -216,7 +220,32 @@
             transform: translateY(4px);
             background-color: #bedfd4;
         }
+
+        /* 모달창 */
+        .infor4 {position: absolute; left: 0; bottom: 0; z-index: 1000; padding: 20px;}
+        .infor4 a {color: #fff; border: 1px solid #fff; border-radius: 30px; padding: 5px 30px}
+        .infor4 .modal {
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            top: 100%;
+            left: 0;
+            text-align: left;
+            transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        .infor4 .modal.show {
+            top: 0;
+        }
+        .infor4 .modal .close {
+            position: absolute; right: 10px; top: 20px;
+        }
+
+
     </style>
+    <link rel="stylesheet" href="../assets/css/prism.css">
 </head>
 <body>
 
@@ -317,7 +346,172 @@
         <button class="btn-continue">또 할겨?</button>
     </div>
 
+    <div class="infor4">
+        <a href="#" class="view">소스보기</a>
+        <!-- modal -->
+        <div class="modal">
+            <div class="code-editor">   
+                <span class="control"></span>
+                <span class="control"></span>
+                <span class="control"></span>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">const $board = $('main'),   //$-선택자 구별 위함
+    $card = $('.card'),
+    $btnSound = $('.btn-sound'),
+    $themeSongEl = $('#theme-song')[0],   //배열0-콘솔로 확인해보면 오디오 태그 그대로 가져옴
+    $turns = $('.turns span'),
+    $attempts = $('.attempts span'),
+    $wins = $('.wins span'),
+    $success = $('.success'),
+    $btnContinue = $('.btn-continue'),
+    $successMsg = $('.success-message'),
+
+    selectedClass = 'is-selected',
+    dataMatch = 'data-matched',
+    dataType = 'data-type',
+    playSoundClass = 'is-playing',
+    visibleClass = 'is-visible',
+    lastTrunClass = 'last-turn',
+    timeoutLength = 900;
+
+let   sound = [
+    'music/243020__plasterbrain__game-start.mp3',   //맞춤
+    'music/159408__noirenex__life-lost-game-over.wav',  //실패
+    'music/'
+],
+    soundMatch = new Audio(sound[0]),
+    soundNoMatch = new Audio(sound[1]),
+    soundSuccess = new Audio(sound[2]),
+    trunsCount = 2,   //기회 2회
+    attemptsCount = 0,  //시도 횟수
+    winCount = 0,      //성공 횟수
+    card1, card2, msg;
+
+    shuffleCards();   //카드 셔플 출력-자바스크립트, 위에 따로 적어도 적용
+
+  //음악 아이콘 클릭-플레이, 클릭-정지
+  $btnSound.on('click', function(){
+      $(this).toggleClass(playSoundClass);
+      if ( $(this).hasClass(playSoundClass) ){
+          $themeSongEl.play()
+      } else {
+          $themeSongEl.pause()
+      }
+  });
+
+  //카드를 클릭하면 is-selected추가
+  $card.click(function(){
+      if ($(this).attr(dataMatch) == 'false'){
+          $(this).addClass(selectedClass)
+      }
+
+  let selectedCards = $('.'+selectedClass);   //선택자 카드를 클래스로 변경-.is-selected
+
+  if (selectedCards.length == 2){  //선택한 카드가 두 개 일 때
+  card1 = selectedCards.eq(0).attr(dataType)  //첫번째로 선택한 카드 찾기
+  card2 = selectedCards.eq(1).attr(dataType)
+      //카드1과 카드2가 같을 때
+      if (card1 == card2){
+          if($btnSound.hasClass(playSoundClass)){
+              soundMatch.play()
+          }
+          selectedCards.attr(dataMatch, true).removeClass(selectedClass);
+      } else {
+          if ($btnSound.hasClass(playSoundClass)) {
+              soundNoMatch.play()
+          }
+          
+          setTimeout(function(){
+              selectedCards.removeClass(selectedClass)    //카드가 같지 않으면 뒤집음
+              trunsCount--    //카운드 줄기
+              $turns.html(trunsCount) //텍스트로 보이게
+          }, timeoutLength)
+          //기회가 1회 남았을 때(주의)
+          if (trunsCount === 1){
+              setTimeout(function(){
+                  $turns.addClass(lastTrunClass)
+              },timeoutLength)
+          }
+          //기회가 없을 때(시도+1, 기회 2회 복구)
+          if (trunsCount <= 0){
+              setTimeout(function(){
+              trunsCount = 2;
+              $turns.removeClass(lastTrunClass).html(trunsCount)   //주의 표시
+              $card.attr(dataMatch, false)    //실패-원상복구
+              attemptsCount +=1
+              $attempts.html(attemptsCount)
+              },timeoutLength)
+          }
+       }
+  }
+  //성공!=dataMatch가 true이면서 true의 갯수가 전체 카드 갯수와 같을 때
+  if ($('[' + dataMatch + '= "true"]').length == $card.length) {
+      setTimeout(() => {
+          $success.addClass(visibleClass);
+          winCount += 1
+          $wins.html(winCount)
+      }, timeoutLength);
+
+  //시도 횟수에 따른 메세지
+  switch(true){
+      case(attemptsCount <= 2):
+          msg = "다시 하면 못할걸";
+          break;
+      case(attemptsCount > 2 && attemptsCount <= 5):
+          msg = "좀 빨리해봐";
+          break;
+      case(attemptsCount > 5 && attemptsCount <= 8):
+          msg = "못하는데..?";
+          break;
+      case(attemptsCount > 8):
+          msg = "으이구 인간아";
+          break;
+  }
+  $successMsg.text(msg);
+
+  //카드 초기화
+  setTimeout(() => {
+          $card.attr(dataMatch, false);
+      }, 1200);
+  
+  }
+  });
+
+  //재시도
+  $btnContinue.on('click',function(){
+      $success.removeClass(visibleClass)
+      shuffleCards();  //셔플카드-카드 섞기
+      trunsCount = 2;  //기회 2로 리셋
+      $turns.removeClass(lastTrunClass).html(trunsCount)
+      attemptsCount = 0;  //누적된 시도 리셋
+      $attempts.html(attemptsCount)
+  });
+  
+  //카드 셔플
+  function shuffleCards(){
+      let cards = $board.children();
+      while(cards.length){
+          $board.append(cards.splice(Math.floor(Math.random() * cards.length),1)[0])
+      }
+      $card.each(function(index){
+          setTimeout(() => {
+              $(this).addClass(selectedClass)
+          }, timeoutLength + 100 * index)
+      });
+
+      setTimeout(() => {
+          $card.removeClass(selectedClass)
+      }, 5000);
+    }
+</code></pre>
+                </div>
+            </div>
+            <a class="close">Close</a>
+        </div>
+    </div>
+
     <script src="js/jquery.min_1.12.4.js"></script>
+    <script src="../assets/js/prism.js"></script>
     <script>
         const $board = $('main'),   //$-선택자 구별 위함
               $card = $('.card'),
