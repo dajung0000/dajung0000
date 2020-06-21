@@ -1,2 +1,27 @@
 @font-face {font-family: "Canela"; src: url("//db.onlinewebfonts.com/t/4a24899e94d8236f671c1090cd9e068c.eot"); src: url("//db.onlinewebfonts.com/t/4a24899e94d8236f671c1090cd9e068c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/4a24899e94d8236f671c1090cd9e068c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/4a24899e94d8236f671c1090cd9e068c.woff") format("woff"), url("//db.onlinewebfonts.com/t/4a24899e94d8236f671c1090cd9e068c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/4a24899e94d8236f671c1090cd9e068c.svg#Canela") format("svg"); }
-.container {background: #F4F0EC;}
+.container {background-color: #f4f0ec; position: relative;}
+*{padding: 0; margin: 0; margin: 0 auto;}
+
+#main .container .main {
+    padding-top: 10rem!important;
+    padding-bottom: 4rem!important;
+}
+#main .container .main .mt {
+    font-family: "Canela";
+    font-size: 8.5vw; font-weight: 400; 
+    line-height: 200px; text-align: center;
+    z-index: 1;
+}
+#main .container .main .mt-2 {
+    font-family: "Canela";
+    font-size: 8.5vw; font-weight: 400; 
+    line-height: 200px; text-align: center;
+    z-index: 1;
+    margin-top: -0.3em;
+}
+#main .container .main .mimg {
+    max-width: 50%;
+    display: flex;
+    margin-top: -5.5em;
+    z-index: 0;
+}
