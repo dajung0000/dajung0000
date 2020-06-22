@@ -1,27 +1,85 @@
-@font-face {font-family: "Canela"; src: url("//db.onlinewebfonts.com/t/4a24899e94d8236f671c1090cd9e068c.eot"); src: url("//db.onlinewebfonts.com/t/4a24899e94d8236f671c1090cd9e068c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/4a24899e94d8236f671c1090cd9e068c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/4a24899e94d8236f671c1090cd9e068c.woff") format("woff"), url("//db.onlinewebfonts.com/t/4a24899e94d8236f671c1090cd9e068c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/4a24899e94d8236f671c1090cd9e068c.svg#Canela") format("svg"); }
-.container {background-color: #f4f0ec; position: relative;}
-*{padding: 0; margin: 0; margin: 0 auto;}
+@font-face { font-family: 'Chosunilbo_myungjo'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff'); font-weight: normal; font-style: normal; }
+* {margin: 0; padding: 0; margin: 0 auto;}
+boby {height: 100%; width: 100%; background: #fff;}
+.container {position: relative;}
 
-#main .container .main {
-    padding-top: 10rem!important;
-    padding-bottom: 4rem!important;
+/* header */
+#header {
+    z-index: 100000;
 }
-#main .container .main .mt {
+#nav {
+    position: fixed; right: 0; top: 0;
+    height: 5vh; width: 100%;
+    z-index: 100;
+    padding: 2rem 3rem;
+    display: block;
+}
+#nav h1 {
+    position: absolute; left: 150px;
+    color: #000; font-size: 1rem; font-weight: normal;
+    margin-top: auto!important;
+    margin-bottom: auto!important;
+    z-index: 100;
+}
+#nav ul {
+    display: none;
+}
+#nav .navBtn {
+    display: inline-block;
+    position: absolute; right: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,.5);
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    line-height: 65px;
+    font-size: 0.8rem;
+}
+/* main */
+#main .container {
+    background-color: #F4F0EC;
+    padding: 10rem .2rem 4rem .2rem!important;
+    display: block;
+}
+#main .container .mt {
+    font-size: 8.5vw; font-weight: 300;
     font-family: "Canela";
-    font-size: 8.5vw; font-weight: 400; 
-    line-height: 200px; text-align: center;
-    z-index: 1;
+    text-align: center;
+    line-height: 1;
+    z-index: 100;
+    box-sizing: border-box;
+    position: absolute;
+    position: relative;
 }
-#main .container .main .mt-2 {
-    font-family: "Canela";
-    font-size: 8.5vw; font-weight: 400; 
-    line-height: 200px; text-align: center;
-    z-index: 1;
-    margin-top: -0.3em;
-}
-#main .container .main .mimg {
+#main .container .mimg {
     max-width: 50%;
+    position: absolute; left: 25%;  /*메인글씨 기준*/
+    position: relative; /*이미지 아래 기준*/
+    margin-top: -2.5em;
+    z-index: 1;
+}
+#main .container .mt2 {
+    position: absolute; left: 13%;
+    font-size: 8.5vw; font-weight: 300;
+    font-family: "Canela";
+    z-index: 100;
+    margin-top: -.65em;
+    box-sizing: border-box;
+    padding-left: 6rem!important;
+    padding-top: 1.75rem!important;
+}
+#main .container svg {
+    height: 4rem;
+    margin-bottom: 4rem!important;
+    margin-top: 4rem!important;
+    box-sizing: border-box;
     display: flex;
-    margin-top: -5.5em;
-    z-index: 0;
+    align-items: center;
+    justify-content: center;
+}
+/* intro */
+#intro {
+    padding-top: 10rem!important;
+    display: flex!important;
+    font-family: ChosunNm;
 }

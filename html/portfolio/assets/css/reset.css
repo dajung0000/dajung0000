@@ -18,6 +18,7 @@ body, input, textarea, select, button, table {
 
 /* 블릿 기호 초기화 */
 li, ol, ul, menu {list-style: none;}
+/* i {font-style: italic;} */
 
 /* 이미지 초기화 */
 img {border: 0 none; vertical-align: top; width: 100%;}
