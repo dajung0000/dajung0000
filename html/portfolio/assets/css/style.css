@@ -2,6 +2,7 @@
     font-family: 'Chosunilbo_myungjo'; 
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff'); 
     font-weight: normal; font-style: normal; }
+
 * {margin: 0; padding: 0; margin: 0 auto;}
 boby {height: 100%; width: 100%; background: #fff;}
 .container {position: relative;}
@@ -71,7 +72,7 @@ boby {height: 100%; width: 100%; background: #fff;}
     padding-left: 6rem!important;
     padding-top: 1.75rem!important;
 }
-#main .container svg {
+#main .container .arrow {
     height: 4rem;
     margin-bottom: 4rem!important;
     margin-top: 4rem!important;
@@ -84,28 +85,17 @@ boby {height: 100%; width: 100%; background: #fff;}
 #intro {
     padding-top: 10rem!important;
     display: flex!important;
-    /* font-family: "Chosunilbo_myungjo"; */
     font-family: "ChosunilboNM";
+    font-style: normal;
+    font-weight: 300;
 }
 #intro .container {
-    width: 100%;
-    position: absolute; left: 25%;
-}
-#intro .container div {
-    display: flex;
-    box-sizing: border-box;
     text-align: center;
-    
 }
-#intro .container h2 {
-    font-size: 5rem;
-}
-#intro .container em {
-    color: #9EBDAE;
+#intro .container h1 strong {
+    display: block;
+    font-size: 6vw;
 }
 #intro .container img {
-    width: 150px; 
-    margin: 0; padding: 0;
-    margin-left: 1rem!important;
-    display: inline-block;
+    width: 5vw;
 }
