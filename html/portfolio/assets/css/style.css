@@ -1,4 +1,7 @@
-@font-face { font-family: 'Chosunilbo_myungjo'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face {
+    font-family: 'Chosunilbo_myungjo'; 
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff'); 
+    font-weight: normal; font-style: normal; }
 * {margin: 0; padding: 0; margin: 0 auto;}
 boby {height: 100%; width: 100%; background: #fff;}
 .container {position: relative;}
@@ -38,7 +41,7 @@ boby {height: 100%; width: 100%; background: #fff;}
 /* main */
 #main .container {
     background-color: #F4F0EC;
-    padding: 10rem .2rem 4rem .2rem!important;
+    padding: 10rem .2rem 4rem .2rem;
     display: block;
 }
 #main .container .mt {
@@ -55,11 +58,11 @@ boby {height: 100%; width: 100%; background: #fff;}
     max-width: 50%;
     position: absolute; left: 25%;  /*메인글씨 기준*/
     position: relative; /*이미지 아래 기준*/
-    margin-top: -2.5em;
+    margin-top: -4.5em;
     z-index: 1;
 }
 #main .container .mt2 {
-    position: absolute; left: 13%;
+    position: absolute; left: 17%;
     font-size: 8.5vw; font-weight: 300;
     font-family: "Canela";
     z-index: 100;
@@ -81,5 +84,27 @@ boby {height: 100%; width: 100%; background: #fff;}
 #intro {
     padding-top: 10rem!important;
     display: flex!important;
-    font-family: ChosunNm;
+    font-family: "Chosunilbo_myungjo";
+}
+#intro .container {
+    width: 100%;
+    position: absolute; left: 25%;
+}
+#intro .container div {
+    display: flex;
+    box-sizing: border-box;
+    text-align: center;
+    
+}
+#intro .container h2 {
+    font-size: 5rem;
+}
+#intro .container em {
+    color: #9EBDAE;
+}
+#intro .container img {
+    width: 150px; 
+    margin: 0; padding: 0;
+    margin-left: 1rem!important;
+    display: inline-block;
 }
