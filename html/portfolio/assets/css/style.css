@@ -84,7 +84,8 @@ boby {height: 100%; width: 100%; background: #fff;}
 #intro {
     padding-top: 10rem!important;
     display: flex!important;
-    font-family: "Chosunilbo_myungjo";
+    /* font-family: "Chosunilbo_myungjo"; */
+    font-family: "ChosunilboNM";
 }
 #intro .container {
     width: 100%;
