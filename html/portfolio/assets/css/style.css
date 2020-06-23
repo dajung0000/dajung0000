@@ -4,33 +4,54 @@
     font-weight: normal; font-style: normal; }
 
 * {margin: 0; padding: 0; margin: 0 auto;}
-boby {height: 100%; width: 100%; background: #fff;}
+body {height: 100%; width: 100%;}
 .container {position: relative;}
 
 /* header */
 #header {
+    width: 100%;
+    position: fixed; left: 0; top: 0;
     z-index: 100000;
+    display: flex;
+    transition: all .65s,background .3s ease;
 }
+#header.on {
+    transform: translateY(-300%);
+  }
 #nav {
-    position: fixed; right: 0; top: 0;
-    height: 5vh; width: 100%;
-    z-index: 100;
+    position: relative;
+    width: 100%;
     padding: 2rem 3rem;
-    display: block;
 }
-#nav h1 {
-    position: absolute; left: 150px;
-    color: #000; font-size: 1rem; font-weight: normal;
+#nav .logo {
+    position: absolute;
     margin-top: auto!important;
     margin-bottom: auto!important;
-    z-index: 100;
+    width: 5rem;
+    height: 4rem;
 }
-#nav ul {
+#nav .ham-wrap {
+    width: 4rem;
+    height: 4rem;
+    transform: scale(1) rotate(.1deg);
+    box-sizing: border-box;
+    float: right;
+}
+#nav .ham-circle {
+    border: 1px solid rgba(0,0,0,.5);
+    height: 100%; width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+#nav .ham-wrap .text {
+    position: absolute; top: 35%; left: 10%;
+}
+/* #nav ul {
     display: none;
 }
 #nav .navBtn {
-    display: inline-block;
-    position: absolute; right: 40px;
+    display: flex;
+    position: absolute;
     border-radius: 50%;
     border: 1px solid rgba(0,0,0,.5);
     width: 4rem;
@@ -38,64 +59,147 @@ boby {height: 100%; width: 100%; background: #fff;}
     text-align: center;
     line-height: 65px;
     font-size: 0.8rem;
-}
-/* main */
+} */
+/* 메인 */
 #main .container {
     background-color: #F4F0EC;
     padding: 10rem .2rem 4rem .2rem;
-    display: block;
-}
-#main .container .mt {
-    font-size: 8.5vw; font-weight: 300;
+    text-align: center!important;
     font-family: "Canela";
-    text-align: center;
+}
+#main .container .mt {  /*윗줄글씨*/
+    font-size: 8.5vw; font-weight: 300;
     line-height: 1;
-    z-index: 100;
-    box-sizing: border-box;
-    position: absolute;
-    position: relative;
+    z-index: 1; /*이미지 위로/포지션*/
+    position: absolute; /*컨테이너 기준*/
+    position: relative; /*이미지 기준*/
 }
 #main .container .mimg {
     max-width: 50%;
-    position: absolute; left: 25%;  /*메인글씨 기준*/
-    position: relative; /*이미지 아래 기준*/
+    position: absolute;  /*메인글씨 기준 위치*/
+    position: relative; /*아래 글씨 기준*/
     margin-top: -4.5em;
-    z-index: 1;
+    z-index: 0;
 }
 #main .container .mt2 {
-    position: absolute; left: 17%;
+    position: absolute; left: 21%;  /*가운데 정렬?*/
     font-size: 8.5vw; font-weight: 300;
-    font-family: "Canela";
-    z-index: 100;
-    margin-top: -.65em;
-    box-sizing: border-box;
-    padding-left: 6rem!important;
-    padding-top: 1.75rem!important;
+    z-index: 1;
+    margin-top: -.5em;
 }
 #main .container .arrow {
     height: 4rem;
     margin-bottom: 4rem!important;
     margin-top: 4rem!important;
     box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
-/* intro */
+/* 소개글 */
 #intro {
     padding-top: 10rem!important;
-    display: flex!important;
-    font-family: "ChosunilboNM";
-    font-style: normal;
-    font-weight: 300;
-}
-#intro .container {
+    padding-bottom: 10rem!important;
+    font-family: "Chosunilbo_myungjo";
     text-align: center;
 }
-#intro .container h1 strong {
-    display: block;
-    font-size: 6vw;
+#intro .container h3 strong {
+    display: block; /*정렬*/
+    font-size: 5vw;
+    font-weight: normal;
+    line-height: 1.7!important;
+    z-index: 1;
 }
+#intro .container em {color: #9EBDAE;}
 #intro .container img {
-    width: 5vw;
+    width: 7.5vw;
+}
+.img1 {transform: rotate( 15deg ); margin-left: 1.75rem;}
+.img2 {margin: 0 1.75rem;}
+.img3 {margin: 0 1.75rem; width: 9vw!important;}
+.img4 {margin-right: 1.75rem;}
+.img5 {margin: 0 1.75rem; transform: rotate( -5deg );}
+.img6 {margin-left: 1.75rem; width: 5.5vw!important;}
+.img7 {width: 9vw!important;}
+#intro .container .about {
+    margin-top: 6rem!important;
+    font-family: "Canela";
+    font-size: 3rem; font-weight: 500;
+    display: inline-block;
+    position: relative;
+}
+#intro .container .about::after {
+    content: "";
+    position: absolute;
+    bottom: -.1rem;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transition: .4s;
+}
+
+/* 작업물 */
+#work .work {
+    background: #F4F0EC;
+    padding-top: 10rem!important;
+    padding-bottom: 12.5rem!important;
+}
+#work .work h2 {
+    font-family: "Canela";
+    font-size: 5.6vw; font-weight: normal;
+    text-align: center; 
+}
+#work .work p {
+    text-align: center;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1vw;
+}
+
+#work .cont {height: 50vw;}
+#work .cont1 {
+    width: 50%;
+    background: #F4F0EC;
+    padding-left: 2.5rem!important;
+}
+#work .cont h1 {
+    font-family: "Canela";
+    font-size: 8.25vw;
+    padding-top: 5vw;
+    font-weight: normal;
+}
+#work .cont h1:hover {
+    opacity: 0.3;
+    transition: opacity 0.5s ease ;
+}
+#work .cont h4 {margin-top: 5vw;}
+#work .cont strong {
+    font-family: "Chosunilbo_myungjo";
+    font-weight: normal;
+    font-size: 1.5vw;
+    display: flex;
+}
+#work .cont .btn-wrap {margin-top: 8vw;}
+#work .cont1 button {
+    border: 0.01vw solid #000;
+    background: none;
+    height: 3.5vw;
+    margin-bottom: 1vw;
+    margin-right: .3vw;
+    font-family: "Chosunilbo_myungjo";
+    font-size: 1vw;
+}
+#work .cont1 .bt1 {width: 10vw;}
+#work .cont1 .bt2 {width: 8vw;}
+#work .cont1 .bt3 {width: 8vw;}
+#work .cont1 .bt4 {width: 8vw;}
+#work .cont1 .bt5 {width: 6vw;}
+#work .cont1 .bt6 {width: 8vw; margin-bottom: 1.5vw;}
+#work .cont1 li {
+   
+}
+#work .cont1 a {
+    font-family: "Canela"; 
+    font-size: 1vw;
+}
+#work .cont img {
+    width: 50%;
 }
