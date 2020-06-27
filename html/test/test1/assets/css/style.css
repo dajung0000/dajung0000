@@ -1,36 +1,250 @@
 @charset "UTF-8";
-
-*{margin: 0; padding: 0;}
-img {width: 100%;}
-body {background-color: #fff;}
-h2,h3,p,a,ul,li {color: #222328; text-decoration: none; list-style: none;}
-
-.container {position: relative; width: 1200px; margin: 0 auto;}
-
-/* header */
-#header {height: 100px;}
-#header .container img {width: 200px; height: 40px; position: absolute; top: 30px; left: 0;}
-#header .container .menu {width: 60%; float: right; }
-#header .container .menu .menu-wrap {
-    display: flex; justify-content: space-between; align-items: center;
-    height: 100px;
+*{padding: 0; margin: 0;}
+img {width: 100%; vertical-align: top; border: 0; color: inherit;}
+h1, h2, h3, h4, ul, li, a {list-style: none; text-decoration: none; color: #222328;}
+.clearfix::after {display:table; content: ""; clear: both;}
+body {background-color: #fff; color: #222328;
+width: 1200px; margin: 0 auto;
 }
-#header .container .menu .menu-wrap .menu-main {font-size: 20px; text-align: center;}
-#header .container .menu-sub {display: none;}
 
-/* content1 */
-#content1 {height: 300px; overflow: hidden;}
+.container {position: relative; }
 
-#content1 .container .slide-wrap .slide img {width: 100%; height: 300px; float: left; display: flex;}
-
-
-/* content2 */
-#content2 {height: 200px;}
-#content2 .container {
-    display: flex; justify-content: space-between;
-    font-size: 18px;  text-align: center;
+/*layout*/
+/*header*/
+#header .container {
+    width: 100%; 
+    height: 100px; 
+    z-index: 10;
 }
-#content2 .container .banner {
+#header h1 img {
+    float: left;
+    width: 200px; height: 40px;
+    padding-top: 30px;
+}
+
+#header nav {
+    float: right;
+    width: 60%; 
+    padding-top: 30px;
+}
+#header nav .wrap {
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+#header nav .wrap>li {
+    width: 25%;
+    float: left;
+    position: relative;
+}
+#header nav .wrap>li>a {
+    font-size: 20px;
+    display: block;
+    width: 100%; 
+    height: 45px;
+    line-height: 45px;
+}
+#header nav .wrap>li>a:hover {
+    background-color: #000;
+    color: #fff;
+}
+#header nav .wrap .sub {
+    width: 100%;
+    display: none;
+    position: absolute; 
+    left: 0; top: 45px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    background-color: #fff;
     height: 200px;
 }
-#content2 .container .popup {height: 200px;}
+#header nav .wrap .sub>li {
+    width: 100%; 
+    height: 40px;
+    line-height: 40px;
+}
+#header nav .wrap .sub>li>a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#header nav .wrap .sub>li>a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/*cont1*/
+#cont1 {
+    width: 100%; height: 300px; 
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+#cont1 .slide {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 300px; 
+}
+#cont1 .slide li {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 300px; 
+}
+
+/*cont2*/
+#cont2 .container {width: 100%; height: 200px;}
+#cont2 .container div {float: left;}
+#cont2 .container .notice-gal {
+    width: 400px; height: 200px;
+    position: relative;
+} 
+#cont2 .container .notice-gal h3 {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100px; height: 30px;
+    line-height: 30px;
+    background-color: #ccc;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+} 
+#cont2 .container .notice-gal .l100 {
+    left: 100px;
+}
+#cont2 .container .notice-gal h3.on {
+    background-color: #000;
+}
+#cont2 .container .notice-gal ul {
+    position: absolute; 
+    left: 0; top: 30px;    /*글씨 보다 아래에 나와야 하므로*/
+    display: none;
+} 
+#cont2 .container .notice-gal ul.on {
+    display: block;
+}
+#cont2 .container .notice-gal .notice {
+    width: 100%;
+} 
+#cont2 .container .notice-gal .notice li {
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+} 
+#cont2 .container .notice-gal .notice li a {
+    display: block;
+    width: 100%; height: 100%;
+} 
+#cont2 .container .notice-gal .notice li a:hover {
+    color: #ccc;
+}
+#cont2 .container .notice-gal .notice li a .day {
+    position: absolute;
+    right: 10px;
+    font-size: 14px;
+}
+#cont2 .container .notice-gal .gal {
+    width: 100%;
+} 
+#cont2 .container .notice-gal .gal li {
+    width: 200px; height: 100px;
+    background-size: 200px; 
+    text-indent: -9999px;
+}
+#cont2 .container .notice-gal .gal li:nth-child(1) {
+    background-image: url(../img/L1.jpg);
+} 
+#cont2 .container .notice-gal .gal li:nth-child(2) {
+    background-image: url(../img/L2.jpg);
+} 
+#cont2 .container .notice-gal .gal li:nth-child(3) {
+    background-image: url(../img/L3.jpg);
+} 
+#cont2 .container .notice-gal .gal li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+} 
+
+#cont2 .container .banner {
+    width: 400px; height: 200px;
+} 
+#cont2 .container .banner img {width: 400px; height: 200px;}
+
+#cont2 .container .baro {
+    width: 400px; height: 200px;
+} 
+#cont2 .container .baro h2 {
+    background-color: #000;
+    color: #fff;
+    width: 100px; height: 30px;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 9px;
+} 
+#cont2 .container .baro h3 {
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    background-color: #999;
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+    border-bottom: 1px solid #fff;
+} 
+#cont2 .container .baro h3 a {
+    display: block;
+    width: 100%; height: 100%;
+} 
+#cont2 .container .baro h3 a:hover {
+    opacity: 0.8;
+}
+
+/*footer*/
+#footer .container {width: 100%; height: 100px;}
+#footer p img {
+    float: left;
+    width: 200px; height: 40px;
+    padding-top: 30px;
+}
+#footer .copy {
+    float: left;
+    width: 800px; height: 100px;
+    text-align: center;
+}
+#footer .copy li {
+    float: left;
+    margin-right: 20px;
+}
+#footer .sns {
+    float: left;
+    width: 200px; height: 100px;
+}
+
+/*modal*/
+#modal {position: absolute; left: 0; top: 0;}
+#modal .container {
+    position: fixed!important;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 100;
+    text-align: center;
+    display: none;
+}
+#modal .madal-inner {
+    width: 50%; height: 50%;
+    background: #fff;
+    position: absolute!important;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
+#modal .madal-inner button {
+    width: 50px; height: 50px;
+    font-size: 20px;
+}
+
