@@ -8,18 +8,12 @@
     <link rel="stylesheet" href="assets/css/reset.css">
 
 </head>
-<body>
+<body style="overflow-x: hidden;">
 <!--loading-->
 <!--header-->
 <header id="header">
     <nav id="nav">
-          <img class="logo" src="assets/img/logo.svg" alt="로고">
-      <!-- <ul>
-        <li class="active"><a href="#section1">Work</a></li>
-        <li><a href="#section2">About</a></li>
-        <li><a href="#section3">Contact</a></li>
-      </ul>
-      <a href="#" class="navBtn">MENU</a> -->
+        <a href="#"><img class="logo" src="assets/img/logo.svg" alt="로고"></a>
       <div class="ham-wrap">
           <div class="ham-circle" style="transform: matrix(1, 0, 0, 1, 0, 0); border-radius: 50%;"></div> 
             <div class="text">   
@@ -34,12 +28,15 @@
 <!--main-->
 <section id="main">
     <div class="container">
-        <h2 class="mt">Welcome to<br>My Honest and Creative<br>Portfolio.</h2>
-        <img class="mimg" src="assets/img/main.jpg" alt="메인사진">
-        <h2 class="mt2">Feel the passion.</h2>
-        <div class="arrow">
+        <div class="waypoint">
+            <h2 class="mt" data-delay=".45" data-dur="1.5" data-preset="opacity,y" style="opacity: 1;">Welcome to<br>My Honest and Creative<br>Portfolio.</h2>
+            <img class="mimg" data-delay=".2" style="opacity: 1;" src="assets/img/main.jpg" alt="메인사진">
+        </div>
+        <div class="waypoint">
+            <h2 class="mt2">Feel the passion.</h2>
             <svg width="58" height="77" viewBox="0 0 58 77" xmlns="http://www.w3.org/2000/svg" data-delay=".45" data-dur="1.5" data-fromy="-100" data-preset="opacity,y" data-v-07576142="" data-v-6553ed66="" style="opacity: 1;">
-            <path d="M27.5 62.305V.5h3v61.805C34.82 53.72 43.779 48.747 57.21 47.5l.29 3.022C39.382 52.203 30.582 60.747 30.582 76.5H27.418c0-15.753-8.8-24.297-26.918-25.978L.79 47.5c13.431 1.247 22.39 6.219 26.71 14.805z" fill="#000" fill-rule="nonzero"></path></svg>
+                <path d="M27.5 62.305V.5h3v61.805C34.82 53.72 43.779 48.747 57.21 47.5l.29 3.022C39.382 52.203 30.582 60.747 30.582 76.5H27.418c0-15.753-8.8-24.297-26.918-25.978L.79 47.5c13.431 1.247 22.39 6.219 26.71 14.805z" fill="#000" fill-rule="nonzero"></path>
+            </svg>
         </div>
     </div>
 </section>
@@ -65,32 +62,96 @@
     </div>
 </section>
 <!-- work -->
-<section id="work">
     <div class="work">
-        <h2>Featured Work</h2>
+        <h2>Featured work</h2>
         <p>Scroll down for more</p>
     </div>
-
+<section id="work">
     <div class="container">
         <div class="cont cont1">
             <h1>Webstandard</h1>
             <h4>
                 <strong>웹표준을 준수한 사이트입니다.</strong>
                 <strong>슬라이드, 탭 메뉴, 로그인 기능이 있으며</strong>
-                <strong>버튼과 이미지에 오버 효과 주어 동적인 효과를 더하였습니다.</strong>
+                <strong>버튼과 이미지에 오버 효과 주어</strong>
+                <strong>동적인 효과를 더하였습니다.</strong>
             </h4>
             <div class="btn-wrap">
-                <button class="btn1 bt1">웹 접근성 검사</button>
-                <button class="btn1 bt2">ir_pm효과</button><br>
-                <button class="btn1 bt3">슬라이드1</button>
-                <button class="btn1 bt4">슬라이드2</button>
-                <button class="btn1 bt5">탭 메뉴</button>
-                <button class="btn1 bt6">오버효과</button>
+                <button>웹 접근성 검사</button>
+                <button>IR 기법이란?</button><br>
+                <button>슬라이드1</button>
+                <button>슬라이드2</button>
+                <button>탭 메뉴</button>
+                <button>오버효과</button>
             </div>
-                <a href="#">SITE VISIT</a>
+            <a href="https://dajung0000.github.io/dajung0000/html/site-webstandard/index.html">SITE VISIT</a>
         </div>
-        <div class="mok web">
+        <!-- <div class="mok web"> -->
             <!-- <img src="assets/img/web.jpg" alt="웹표준 이미지"> -->
+        <!-- </div> -->
+        <div class="image-div position-relative overflow-hidden h-100 w-100 slide-bgimg">
+            <div class="web"></div>
+        </div>
+    </div>
+</section>
+<section id="work">
+    <div class="container">
+        <div class="image-div position-relative overflow-hidden h-100 w-100 slide-bgimg">
+            <div class="res"></div>
+        </div>
+        <div class="cont cont2">
+            <h1>Responsive</h1>
+            <h4>
+                <strong>웹 표준을 준수한 반응형 사이트 입니다.</strong><br>
+                <strong>slick.js, Light Box.js 플러그인을 이용한 슬라이드와</strong><br>
+                <strong>다양한 마우스 오버 효과가 적용되어 있습니다.</strong>
+            </h4>
+            <div class="btn-wrap">
+                <button>웹 접근성 검사</button>
+                <br><button>슬라이드</button>
+                <button>오버효과</button>
+                <button>반응형</button>
+            </div>
+            <a href="https://dajung0000.github.io/dajung0000/html/site-responsive/index.html">SITE VISIT</a>
+        </div>
+    </div>
+</section>
+<section id="work">
+    <div class="container">
+        <div class="cont cont3">
+            <h1>Nongshim</h1>
+            <h4>
+                <strong>메인 페이지와 서브 페이지 6개가 완성되어 있습니다.</strong><br>
+            </h4>
+            <div class="btn-wrap">
+                <button>배너 슬라이드</button>
+                <button>공지 슬라이드</button>
+                <br><button>목업이용한 슬라이드</button>
+                <button>버튼 오버효과</button>
+            </div>
+            <a href="#">SITE VISIT</a>
+        </div>
+        <div class="image-div position-relative overflow-hidden h-100 w-100 slide-bgimg">
+            <div class="nong"></div>
+        </div>
+    </div>
+</section>
+<section id="work">
+    <div class="container">
+        <div class="image-div position-relative overflow-hidden h-100 w-100 slide-bgimg">
+            <div class="paik"></div>
+        </div>
+        <div class="cont cont4">
+            <h1>Paikdabang</h1>
+            <h4>
+                <!-- <strong>메인 페이지와 서브 페이지 6개가 완성되어 있습니다.</strong><br> -->
+            </h4>
+            <div class="btn-wrap">
+                <button>슬라이드</button>
+                <button>이미지 오버효과</button>
+                <button>버튼 오버효과</button>
+            </div>
+            <a href="#">SITE VISIT</a>
         </div>
     </div>
 </section>
@@ -129,6 +190,7 @@
         }
         lastScrollTop = wScroll
         }
+
     </script>
 </body>
 </html>
