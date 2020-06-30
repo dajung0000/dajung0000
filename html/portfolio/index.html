@@ -94,7 +94,7 @@
         </div>
     </div>
 </section>
-<section id="work">
+<section id="work" data-scroll>
     <div class="container">
         <div class="image-div position-relative overflow-hidden h-100 w-100 slide-bgimg">
             <div class="res"></div>
@@ -157,10 +157,23 @@
 </section>
 
 
+<section id="ani">
+    <div class="container">
+        <ul>
+            <li>Animation</li>
+            <li>Parallax</li>
+            <li>Mouse Effect</li>
+            <li>Memory Game</li>
+        </ul>
+    </div>
+</section>
+
+
     <!-- script -->
     <script src="../parallax/js/jquery.min_1.12.4.js"></script>
     <script src="../parallax/js/jquery-ui.min.js"></script>
     <script src="../mouse/assets/js/prism.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
     <script>
         let wHeight = $(window).height();         // 브라우저 높이
         let dHeight = $(document).height();       // 컨텐츠의 높이
@@ -190,6 +203,16 @@
         }
         lastScrollTop = wScroll
         }
+
+
+        document.addEventListener('DOMContentLoad', function(){
+            var trigger = new ScrollTrigger({
+                offset : {
+                    x:0,
+                    y:250
+                }
+            });
+        })
 
     </script>
 </body>

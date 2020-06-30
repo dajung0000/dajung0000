@@ -201,6 +201,7 @@ div {display: block;}
 #work {
     width: 100%;     /*크기 값 정해주기!*/
     box-sizing: border-box;
+    overflow: hidden;
 }
 .work {
     width: 100%;
@@ -226,6 +227,9 @@ div {display: block;}
 #work .cont1 {background: #F4F0EC;}
 #work .cont2 {background: #fff;}
 #work .cont3 {background: #F4F0EC;}
+
+.invisible {opacity: 0; transition: opacity 1s ease;}
+.visible {opacity: 1;}
 
 
 #work .container {
@@ -273,7 +277,11 @@ div {display: block;}
     padding-left: 9rem; margin-bottom: 5.5rem;
 }
 #work .cont3 .btn-wrap {
-    padding-left: 9rem; margin-bottom: 3rem;
+    margin-bottom: 3rem;
+}
+#work .cont4 .btn-wrap {
+    /* margin-bottom: 3rem; */
+    margin: 27.5rem 0 5.5rem 0;
 }
 #work .cont button {
     border: 1px solid #000;
@@ -351,4 +359,17 @@ div {display: block;}
     background-repeat: no-repeat;
     height: 100%; width: 100%;
     position: absolute; top: 0; left: 0;
+}
+
+
+#ani {
+    background-color: #BCC6BC; 
+    width: 100%; 
+    height: 100vh;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+#ani .container ul {
+    
 }
