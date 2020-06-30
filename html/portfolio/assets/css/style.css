@@ -181,7 +181,7 @@ div {display: block;}
 .img7 {width: 9vw!important;}
 #intro .container a {
     margin-top: 6rem!important;
-    font-family: "Canela";
+    font-family: Canela-Regular;
     font-size: 3rem; font-weight: 500;
     display: inline-block!important;
     position: relative;
@@ -211,7 +211,7 @@ div {display: block;}
     z-index: 10;
 }
 .work h2 {
-    font-family: "Canela";
+    font-family: Canela-Regular;
     font-size: 5.6rem; font-weight: normal;
     text-align: center;
     line-height: .9;
@@ -248,7 +248,7 @@ div {display: block;}
 /* #work .container .cont1 {z-index: 10;}
 #work .container .cont2 {z-index: 9;} */
 #work .cont h1 {
-    font-family: "Canela";
+    font-family: Canela-Regular;
     font-size: 7.5rem;
     font-weight: normal;
     text-align: left;
