@@ -81,19 +81,43 @@ body {
     line-height: 1.7;
 }
 #intro em {color: #9EBDAE;}
-#intro span {display: inline-block;}
-#intro .container h3 span:nth-child(1) {
-    background-image: url(../img/1.jpg);
+#intro span {
+    display: inline-block; 
     background-size: cover;
     width: 16vh; height: 16vh;
+}
+#intro .container .img1 {
+    background-image: url(../img/1.jpg);
     margin-left: 3vh;
     transform: rotate( 13deg );
 }
-#intro .container h3 span:nth-child(2){
+#intro .container .img2 {
     background-image: url(../img/2.jpg);
-    background-size: cover;
-    width: 16vh; height: 16vh;
-    margin-left: 3vh;
+    width: 15vh; height: 15vh;
+}
+#intro .container .img3 {
+    background-image: url(../img/3.jpg);
+    width: 19vh; height: 19vh;
+    margin: 0 3vh;
+}
+#intro .container .img4 {
+    background-image: url(../img/4.jpg);
+}
+#intro .container .img5 {
+    background-image: url(../img/5.jpg);
+    transform: rotate( -10deg );
+    width: 15vh; height: 18vh;
+}
+#intro .container .img6 {
+    background-image: url(../img/6.jpg);
+    width: 15vh; height: 18vh;
+}
+#intro .container .img7 {
+    background-image: url(../img/7.jpg);
+    width: 15vh; height: 19vh;
+}
+#intro .container .img8 {
+    background-image: url(../img/8.jpg);
 }
 
 #content1 {
@@ -131,6 +155,7 @@ body {
 /* 배경색 */
 .site-wrap .site1 {background: #F3F0EB;}
 .site-wrap .site2 {background: #fff;}
+.site-wrap .site4 {background: #fff;}
 
 .site-wrap .site .left {
     flex-basis: 50%;
@@ -143,6 +168,16 @@ body {
     background-size: cover;
 }
 .site-wrap .site2 .right {
+    flex-basis: 50%;
+    background: url(https://webstoryboy.github.io/portfolio/port16/assets/img/work01_1.jpg) no-repeat center center;
+    background-size: cover;
+}
+.site-wrap .site3 .right {
+    flex-basis: 50%;
+    background: url(https://webstoryboy.github.io/portfolio/port16/assets/img/work01_1.jpg) no-repeat center center;
+    background-size: cover;
+}
+.site-wrap .site4 .right {
     flex-basis: 50%;
     background: url(https://webstoryboy.github.io/portfolio/port16/assets/img/work01_1.jpg) no-repeat center center;
     background-size: cover;
@@ -187,4 +222,78 @@ body {
     float: right;
     margin-top: 3vw;
     margin-left: 1vw;
+}
+
+/* 애니메이션 */
+#content2 {background: #F3F0EB;}
+#content2 h2 {
+    font-family: "Canela-Regular";
+    font-size: 11.3vh;
+    font-weight: normal;
+    text-align: center;
+    position: relative;
+    padding: 20vh 0;
+}
+
+#content3 {position: relative; box-sizing: border-box;}
+#content3 .top {
+    
+}
+#content3 .top h2 {
+    font-family: "Canela-Regular";
+    font-size: 11.3vh;
+    font-weight: normal;
+    text-align: center;
+    padding: 20vh 0;
+    /* display: block; */
+}
+#content3 .top h3 {
+    font-family: "Canela-Regular";
+    font-size: 15vh;
+    font-weight: normal;
+    text-align: center;
+    position: absolute; top: 40vh; left: 100vh;
+    /* display: block; */
+}
+#content3 .top h4 {
+    font-family: "Canela-Regular";
+    font-size: 15vh;
+    font-weight: normal;
+    text-align: center;
+    position: absolute; top: 52vh; left: 117vh;
+    /* display: block; */
+}
+#content3 .box {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+}
+#content3 .box .left1 {
+    width: 75vh;
+    height: 75vh;
+    background-color: #F8D8C1;
+    position: relative;
+}
+#content3 .box .left1 p {
+    position: absolute; bottom: -7vh; left: 0;
+    font-family: "Canela-Regular";
+    font-size: 5vh;
+    font-weight: normal;
+}
+#content3 .box .right1 {
+    width: 52vh;
+    height: 52vh;
+    background-color: #AFC9BB;
+    /* margin-right: 40vh; */
+    z-index: 1;
+    /* top: -65vh; */
+    position: relative; right: 5vh;
+}
+#content3 .box .right1 p {
+    position: absolute; bottom: -7vh; right: 0;
+    font-family: "Canela-Regular";
+    font-size: 5vh;
+    font-weight: normal;
 }
