@@ -149,15 +149,6 @@
   font-weight: 800;
 }
 
-.main_sec_row1 .container .main_tit::after {
-  display: block;
-  width: 37px;
-  height: 2px;
-  margin: 28px 0;
-  background: #7f5b39;
-  content: '';
-}
-
 .main_sec_row1 .container .main_tit span {
   display: inline-block;
   color: #564e00;
