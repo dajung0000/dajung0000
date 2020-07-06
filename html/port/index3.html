@@ -144,36 +144,14 @@
             <div>
                 <h2>Keyframe Animation</h2>
             </div>
-            
                 <iframe class="cursor hover1" src="https://cdpn.io/dajung/debug/eYNqypy/XBkGRqXVqLQA" frameborder="0"></iframe>
                 <iframe class="cursor hover2" src="https://cdpn.io/dajung/debug/RwWrBjN/gareYzLqBDyr" frameborder="0"></iframe>
                 <iframe class="cursor hover3" src="https://cdpn.io/dajung/debug/bGVEjPo/dGMXWKPvaxRk" frameborder="0"></iframe>
                 <iframe class="cursor hover4" src="https://cdpn.io/dajung/debug/PoPVemw/DqrDdgoVJKxr" frameborder="0"></iframe>
-            >
-            <!-- <div class="cursor-follower"></div> -->
-            <!-- <div class="box1">
-                <iframe src="https://cdpn.io/dajung/debug/eYNqypy/xJMjOnvgPnyr" frameborder="0"
-                style="width: 50vh; height: 58vh; overflow-y: hidden;"></iframe>
-                <a href="#">Code Veiw</a>
-            </div>
-            <div class="box2">
-                <iframe src="https://cdpn.io/dajung/debug/PoPVemw/bZAQWEVDjjmM" frameborder="0"
-                style="width: 55vh; height: 65vh;"></iframe>
-                <a href="#">Code Veiw</a>
-            </div>
-            <div class="box3">
-
-                <a href="https://codepen.io/dajung/pen/ExVeaga">Code Veiw</a>
-            </div>
-            <div class="box4">
-                <iframe src="https://cdpn.io/dajung/debug/RwWGNGN/wQrPozdePVDM" frameborder="0"
-               style="width: 50vh; height: 58vh;"></iframe>
-                <a href="#">Code Veiw</a>
-            </div> -->
-            <h3 class="img1">Border-radius Morphing</h3>
-            <h3 class="img2">Wave Circle</h3>
-            <h3 class="img3">Square Animation</h3>
-            <h3 class="img4">Gsap Animation</h3>
+                <h3 class="img1">Border-radius Morphing</h3>
+                <h3 class="img2">Wave Circle</h3>
+                <h3 class="img3">Square Animation</h3>
+                <h3 class="img4">Gsap Animation</h3>
         </section>
         <!-- //content2 -->
 
@@ -203,23 +181,6 @@
     <script src="./assets/js/jquery.min_1.12.4.js"></script>
     <script src="./assets/js/jquery.lettering.min.js"></script>
     <script src="./assets/js/gsap.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $(".box1 .title").lettering();
-            $(".button").lettering();
-            animation();
-            });
-            function animation(){
-            let title = new TimelineMax();
-            title.staggerFromTo(".box1 .title span", 0.5, 
-                {ease: Back.easeOut.config(1.7), opacity:0, bottom: -80},
-                {ease: Back.easeOut.config(1.7), opacity:1, bottom: 0, repeat: -1, yoyo: true}, 0.05);
-  
-  // gsap.fromTo(".title span", 0.5, 
-  //     {ease: Back.easeOut.config(1.7), opacity:0, bottom: -80},
-  //     {ease: Back.easeOut.config(1.7), opacity:1, bottom: 0, repeat: -1, yoyo: true, stagger: 0.05});
-}
-    </script>
     <script>
          const cursor = $("#content2 .cursor")
 
