@@ -164,22 +164,23 @@ body {
 }
 .site-wrap .site1 .right {
     flex-basis: 50%;
-    background: url(https://webstoryboy.github.io/portfolio/port16/assets/img/work01_1.jpg) no-repeat center center;
+    background: url(../img/web.jpg) no-repeat;
     background-size: cover;
+    background-position: right;
 }
 .site-wrap .site2 .right {
     flex-basis: 50%;
-    background: url(https://webstoryboy.github.io/portfolio/port16/assets/img/work01_1.jpg) no-repeat center center;
+    background: url(../img/res2.jpg) no-repeat center center;
     background-size: cover;
 }
 .site-wrap .site3 .right {
     flex-basis: 50%;
-    background: url(https://webstoryboy.github.io/portfolio/port16/assets/img/work01_1.jpg) no-repeat center center;
+    background: url(../img/nong4.jpg) no-repeat center center;
     background-size: cover;
 }
 .site-wrap .site4 .right {
     flex-basis: 50%;
-    background: url(https://webstoryboy.github.io/portfolio/port16/assets/img/work01_1.jpg) no-repeat center center;
+    background: url(../img/paik2.jpg) no-repeat center center;
     background-size: cover;
 }
 .site-wrap .site .left h3 {
