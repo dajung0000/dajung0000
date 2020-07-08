@@ -6,16 +6,14 @@
 }
 
 @font-face {
-    font-family: Canela-Regular;
-    font-display: block;
+    font-family: "Canela-Regular";
     src: url(../fonts/Canela-Regular.eot);
-    src: url(../fonts/Canela-Regular?#iefix) format("embedded-opentype"), url(/fonts/Canela-Regular.woff) format("woff"), url(../fonts/Canela-Regular.ttf) format("truetype");
+    src: url(../fonts/Canela-Regular?#iefix) format("embedded-opentype"), url(../fonts/Canela-Regular.woff) format("woff"), url(../fonts/Canela-Regular.ttf) format("truetype");
     font-style: normal
 }
 
 @font-face {
-    font-family: FoundersGroteskRegular;
-    font-display: block;
+    font-family: "FoundersGroteskRegular";
     src: url(../fonts/FoundersGroteskRegular.eot);
     src: url(../fonts/FoundersGroteskRegular?#iefix) format("embedded-opentype"), url(../fonts/FoundersGroteskRegular.woff) format("woff"), url(../fonts/FoundersGroteskRegular.ttf) format("truetype");
     font-style: normal
@@ -23,12 +21,76 @@
 
 /* layout */
 #contents {}
-#section1 {height: 100vh; background: #fff;}
-#section2 {height: 100vh; background: #fff;}
+#section1 {height: 100vh; background: #F3F0EB;}
+#section2 {height: 100vh; background: #F3F0EB;}
 #section3 {height: 3000px; background: #F3F0EB;}
 #section4 {}
 #section5 {}
 #section6 {}
+
+
+/* sec1 */
+.sec1 { }
+.sec1 .intro {
+    position: fixed; 
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    text-align: center;
+}
+.sec1 .intro span {
+    font-size: 8.5vw;
+    font-family: "Canela-Regular";
+    display: inline-block;
+    opacity: 0;
+}
+.sec1 .intro span.i5 { 
+    position: absolute;
+    right: 23vw; bottom: 2vw;
+    font-size: 20px;
+    font-family: "Canela-Regular";
+    text-transform: capitalize;
+    opacity: 0;
+} 
+.sec1 .main {
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sec1 .main h1 {
+    font-size: 7.5vw;
+    font-weight: normal;
+    line-height: 1.2;
+    font-family: "Canela-Regular"; 
+    position: relative;
+    z-index: 10;
+    opacity: 0;
+}
+.sec1 .img {
+    margin: -40vh auto 0 auto;
+    width: 50vw;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+}
+.sec1 .img img {
+    position: relative;
+    z-index: 1;
+}
+.sec1 .img .text h2{
+    font-size: 7.5vw;
+    font-weight: normal;
+    line-height: 1.2;
+    font-family: "Canela-Regular"; 
+    position: relative;
+    z-index: 10;
+    white-space: nowrap;
+    padding-bottom: 5vw;
+}
+.sec1 .img .text svg {}
 
 
 /* sec3 */
