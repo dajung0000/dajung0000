@@ -8,6 +8,21 @@
     <link rel="stylesheet" href="assets/css/style3.css">
 </head>
 <body>
+    <header id="header">
+        <nav id="nav">
+            <a href="#"><img class="logo" src="assets/img/logo.svg" alt="로고"></a>
+          <div class="ham-wrap">
+              <a href="menu.html"><div class="ham-circle"></div> 
+                <div class="text">   
+                    <span>M</span>
+                    <span>E</span>
+                    <span>N</span>
+                    <span>U</span>
+                </div></a> 
+          </div>
+        </nav>
+      </header>
+
     <div id="wrapper">
 
         <section id="section1">
@@ -19,16 +34,18 @@
                     <span class="i4">JUNG</span>
                     <span class="i5">Creative professional<br>web publisher</span>
                 </div>
-                <div id="main">
-                    <div class="waypoint">
+                <div class="main">
+                    <div class="mt">
                         <h1>Welcome to<br>My Honest and Creative<br>Portfolio.</h1>
-                        <a href="#"><img src="assets/img/main.jpg" alt="메인 이미지"></a>
                     </div>
-                    <div class="waypoint">
+                    <div class="img">
+                        <img src="assets/img/main.jpg" alt="메인 이미지">
                         <h2>Feel the passion.</h2>
-                        <svg width="58" height="77" viewBox="0 0 58 77" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M27.5 62.305V.5h3v61.805C34.82 53.72 43.779 48.747 57.21 47.5l.29 3.022C39.382 52.203 30.582 60.747 30.582 76.5H27.418c0-15.753-8.8-24.297-26.918-25.978L.79 47.5c13.431 1.247 22.39 6.219 26.71 14.805z" fill="#000" fill-rule="nonzero"></path>
-                        </svg>
+                        <div class="svg">
+                            <svg width="58" height="77" viewBox="0 0 58 77" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M27.5 62.305V.5h3v61.805C34.82 53.72 43.779 48.747 57.21 47.5l.29 3.022C39.382 52.203 30.582 60.747 30.582 76.5H27.418c0-15.753-8.8-24.297-26.918-25.978L.79 47.5c13.431 1.247 22.39 6.219 26.71 14.805z" fill="#000" fill-rule="nonzero"></path>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -38,21 +55,21 @@
         <section id="intro">
             <div class="container">
                 <h3>
-                    <strong>고등학교 <em>졸업</em> 후<span class="img1"></span></strong>
-                    <strong>웹 퍼블리셔 라는 길의</strong>
-                    <strong><em>첫발</em>을 <span class="img2"></span> 내딛게 되었습니다.</strong>
-                    <strong>처음 접해본 <em>코딩</em>의<span class="img3"></span>세계는</strong>
-                    <strong>용어조차 낯설어</strong>
-                    <strong>매 시간 <span class="img4"></span> <em>메모장</em> 켜놓고</strong>
-                    <strong>HTML과 CSS 사용 방법부터</strong>
-                    <strong>속성, 태그 등을 <span class="img5"></span> 익히기에도</strong>
-                    <strong><em>벅차다고</em> 느꼈지만</strong>
-                    <strong><span class="img6"></span> 순탄하지 않았던</strong>
-                    <strong>이 배움의 <em>과정</em>이 <span class="img7"></span></strong>
-                    <strong><em>익숙</em>해져 일상이되는</strong>
-                    <strong>날을 고대하며,</strong>
-                    <strong>매력이 있는 <em>웹 퍼블리셔</em>를</strong>
-                    <strong><em>꿈꾸고</em> 있습니다.<span class="img8"></span></strong>
+                    <strong class="s1">고등학교 <em>졸업</em> 후<span class="img1"></span></strong>
+                    <strong class="s2">웹 퍼블리셔 라는 길의</strong>
+                    <strong class="s3"><em>첫발</em>을 <span class="img2"></span> 내딛게 되었습니다.</strong>
+                    <strong class="s4">처음 접해본 <em>코딩</em>의<span class="img3"></span>세계는</strong>
+                    <strong class="s5">용어조차 낯설어</strong>
+                    <strong class="s6">매 시간 <span class="img4"></span> <em>메모장</em> 켜놓고</strong>
+                    <strong class="s7">HTML과 CSS 사용 방법부터</strong>
+                    <strong class="s8">속성, 태그 등을 <span class="img5"></span> 익히기에도</strong>
+                    <strong class="s9"><em>벅차다고</em> 느꼈지만</strong>
+                    <strong class="s10"><span class="img6"></span> 순탄하지 않았던</strong>
+                    <strong class="s11">이 배움의 <em>과정</em>이 <span class="img7"></span></strong>
+                    <strong class="s12"><em>익숙</em>해져 일상이되는</strong>
+                    <strong class="s13">날을 고대하며,</strong>
+                    <strong class="s14">매력이 있는 <em>웹 퍼블리셔</em>를</strong>
+                    <strong class="s15"><em>꿈꾸고</em> 있습니다.<span class="img8"></span></strong>
                 </h3>
             </div>
         </section>
@@ -183,20 +200,88 @@
     <script src="assets/js/jquery.min_1.12.4.js"></script>
     <script src="assets/js/gsap.min.js"></script>
     <script>
+        let wHeight = $(window).height();         // 브라우저 높이
+        let dHeight = $(document).height();       // 컨텐츠의 높이
+        let hHeight = $("#header").outerHeight(); // 헤더의 높이
+
+        let moveScroll;   //스크롤 값을 감지하기 위한 변수
+        let lastScrollTop = 0;  //스크롤의 마지막 위치의 값
+
+        $(window).scroll(function(){
+            moveScroll = true;
+        });
+
+        setInterval(function(){
+        if(moveScroll){
+            hasScroll();
+            moveScroll = false;
+        }
+        },100)
+
+        function hasScroll(){
+        let wScroll = $(this).scrollTop();
+        
+        if( wScroll > lastScrollTop ){ //스크롤을 내렸을 때
+            $("#header").addClass("on");
+        } else if(wScroll < lastScrollTop) {
+            $("#header").removeClass("on");
+        }
+        lastScrollTop = wScroll
+        }
+
+        document.addEventListener('DOMContentLoad', function(){
+            var trigger = new ScrollTrigger({
+                offset : {
+                    x:0,
+                    y:250
+                }
+            });
+        })
+    </script>
+    <script>
         setTimeout(function(){
             let tl = gsap.timeline();
-            tl.fromTo(".loading .i1", {x: -100}, {opacity: 1, x: 0, duration: 1},"a");
-            tl.fromTo(".loading .i2", {x: -100}, {opacity: 1, x: 0, duration: 1},"a");
-            tl.fromTo(".loading .i3", {x: 100}, {opacity: 1, x: 0, duration: 1},"a");
-            tl.fromTo(".loading .i4", {x: 100}, {opacity: 1, x: 0, duration: 1},"a");
-            tl.fromTo(".loading .i1", {y: 0}, {opacity: 1, y: -50, duration: 1, delay: 1},"b");
-            tl.fromTo(".loading .i3", {y: 0}, {opacity: 1, y: -50, duration: 1, delay: 1},"b");
-            tl.fromTo(".loading .i2", {y: 0}, {opacity: 1, y: 50, duration: 1, delay: 1},"b");
-            tl.fromTo(".loading .i4", {y: 0}, {opacity: 1, y: 50, duration: 1, delay: 1},"b");
-            tl.to(".loading .i5", {opacity: 1, duration: 1, delay: 1});
-            tl.fromTo(".loading", {y: 0, opacity: 1}, {y: -50, opacity: 0, duration: 0.5, delay: 0.5});
-            tl.fromTo("#main h1", {y: 0, opacity: 0}, {y: -50, opacity: 1, duration: 0.8});
-            tl.fromTo("#main img", {y: 50, opacity: 0}, {y: -50, opacity: 1, duration: 0.8});
+            tl.fromTo(".loading .i1", {x: -100}, {opacity: 1, x: 0, duration: 0.8},"a");
+            tl.fromTo(".loading .i2", {x: -100}, {opacity: 1, x: 0, duration: 0.8},"a");
+            tl.fromTo(".loading .i3", {x: 100}, {opacity: 1, x: 0, duration: 0.8},"a");
+            tl.fromTo(".loading .i4", {x: 100}, {opacity: 1, x: 0, duration: 0.8},"a");
+            tl.fromTo(".loading .i1", {y: 0}, {opacity: 1, y: -50, duration: 0.8, delay: 1},"b");
+            tl.fromTo(".loading .i3", {y: 0}, {opacity: 1, y: -50, duration: 0.8, delay: 1},"b");
+            tl.fromTo(".loading .i2", {y: 0}, {opacity: 1, y: 50, duration: 0.8, delay: 1},"b");
+            tl.fromTo(".loading .i4", {y: 0}, {opacity: 1, y: 50, duration: 0.8, delay: 1},"b");
+            tl.to(".loading .i5", {opacity: 1, duration: 0.5, delay: 0.8});
+            
+            tl.fromTo("#header", {opacity: 0}, {opacity: 1, duration: 1},"c");
+
+            tl.fromTo(".loading", {y: 0, opacity: 1}, {y: -50, opacity: 0, duration: 0.8},"c");
+            tl.fromTo(".main .mt h1", {y: 0, opacity: 0}, {y: -50, opacity: 1, duration: 0.8});
+            tl.fromTo(".main .img img", {y: 50, opacity: 0}, {y: -50, opacity: 1, duration: 0.8});
+            tl.fromTo(".main .img h2", {y: 0, opacity: 0}, {y: -50, opacity: 1, duration: 0.8});
+            tl.fromTo(".main .img .svg", {y: 0, opacity: 0}, {y: -50, opacity: 1, duration: 0.8});
+
+            tl.fromTo("#intro .s1", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.5, delay:0.5});
+            tl.to("#intro .s1 .img1", {opacity: 1, duration: 1});
+            tl.fromTo("#intro .s2", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.4});
+            tl.fromTo("#intro .s3", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.3});
+            tl.to("#intro .s3 .img2", {opacity: 1, duration: 1});
+            tl.fromTo("#intro .s4", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.3});
+            tl.to("#intro .s4 .img3", {opacity: 1, duration: 1});
+            tl.fromTo("#intro .s5", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s6", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.3});
+            tl.to("#intro .s6 .img4", {opacity: 1, duration: 1});
+            tl.fromTo("#intro .s7", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s8", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.3});
+            tl.to("#intro .s8 .img5", {opacity: 1, duration: 1});
+            tl.fromTo("#intro .s9", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s10", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.3});
+            tl.to("#intro .s10 .img6", {opacity: 1, duration: 1});
+            tl.fromTo("#intro .s11", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.3});
+            tl.to("#intro .s11 .img7", {opacity: 1, duration: 1});
+            tl.fromTo("#intro .s12", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s13", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s14", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s15", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.3});
+            tl.to("#intro .s15 .img8", {opacity: 1, duration: 1});
         },2000);
     </script>
     <script>
