@@ -7,24 +7,24 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style3.css">
 </head>
-<body>
-    <header id="header">
-        <nav id="nav">
-            <a href="#"><img class="logo" src="assets/img/logo.svg" alt="로고"></a>
-          <div class="ham-wrap">
-              <a href="menu.html"><div class="ham-circle"></div> 
-                <div class="text">   
-                    <span>M</span>
-                    <span>E</span>
-                    <span>N</span>
-                    <span>U</span>
-                </div></a> 
-          </div>
-        </nav>
-      </header>
-
+<body style="overflow-x: hidden;">
     <div id="wrapper">
 
+        <!-- <header id="header">
+            <nav id="nav">
+                <a href="#"><img class="logo" src="assets/img/logo.svg" alt="로고"></a>
+              <div class="ham-wrap">
+                  <a href="menu.html"><div class="ham-circle"></div> 
+                    <div class="text">   
+                        <span>M</span>
+                        <span>E</span>
+                        <span>N</span>
+                        <span>U</span>
+                    </div></a> 
+              </div>
+            </nav>
+          </header> -->
+          
         <section id="section1">
             <div class="container">
                 <div class="loading">
@@ -116,8 +116,8 @@
                             <li><a href="#">오버효과</a></li>
                             <li><a href="#">반응형</a></li>
                         </ul>
-                        <a href="#" class="btn">Site View</a>
-                        <a href="#" class="btn">Figma View</a>
+                        <a href="https://dajung0000.github.io/dajung0000/html/site-responsive/index.html" class="btn">Site View</a>
+                        <a href="https://www.figma.com/proto/rLwazRT6QuZkp6VZ5GcRIA/%EB%B0%98%EC%9D%91%ED%98%95-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EC%A0%95%EB%8B%A4%EC%A0%95?node-id=1%3A109&viewport=730%2C492%2C0.08276160806417465&scaling=contain" class="btn" target="_blank">Figma View</a>
                     </div>
                 </div>
                 <!-- //site2 -->
@@ -199,7 +199,7 @@
 
     <script src="assets/js/jquery.min_1.12.4.js"></script>
     <script src="assets/js/gsap.min.js"></script>
-    <script>
+    <!-- <script>
         let wHeight = $(window).height();         // 브라우저 높이
         let dHeight = $(document).height();       // 컨텐츠의 높이
         let hHeight = $("#header").outerHeight(); // 헤더의 높이
@@ -236,7 +236,7 @@
                     y:250
                 }
             });
-        })
+        }) -->
     </script>
     <script>
         setTimeout(function(){
@@ -251,7 +251,7 @@
             tl.fromTo(".loading .i4", {y: 0}, {opacity: 1, y: 50, duration: 0.8, delay: 1},"b");
             tl.to(".loading .i5", {opacity: 1, duration: 0.5, delay: 0.8});
             
-            tl.fromTo("#header", {opacity: 0}, {opacity: 1, duration: 1},"c");
+            // tl.fromTo("#header", {opacity: 0}, {opacity: 1, duration: 1},"c");
 
             tl.fromTo(".loading", {y: 0, opacity: 1}, {y: -50, opacity: 0, duration: 0.8},"c");
             tl.fromTo(".main .mt h1", {y: 0, opacity: 0}, {y: -50, opacity: 1, duration: 0.8});
