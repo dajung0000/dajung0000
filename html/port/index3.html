@@ -55,21 +55,21 @@
         <section id="intro">
             <div class="container">
                 <h3>
-                    <strong class="s1">고등학교 <em>졸업</em> 후<span class="img1"></span></strong>
+                    <strong class="s1">고등학교 <em>졸업</em> 후<span class="img img1"></span></strong>
                     <strong class="s2">웹 퍼블리셔 라는 길의</strong>
-                    <strong class="s3"><em>첫발</em>을 <span class="img2"></span> 내딛게 되었습니다.</strong>
-                    <strong class="s4">처음 접해본 <em>코딩</em>의<span class="img3"></span>세계는</strong>
-                    <strong class="s5">용어조차 낯설어</strong>
-                    <strong class="s6">매 시간 <span class="img4"></span> <em>메모장</em> 켜놓고</strong>
-                    <strong class="s7">HTML과 CSS 사용 방법부터</strong>
-                    <strong class="s8">속성, 태그 등을 <span class="img5"></span> 익히기에도</strong>
-                    <strong class="s9"><em>벅차다고</em> 느꼈지만</strong>
-                    <strong class="s10"><span class="img6"></span> 순탄하지 않았던</strong>
-                    <strong class="s11">이 배움의 <em>과정</em>이 <span class="img7"></span></strong>
-                    <strong class="s12"><em>익숙</em>해져 일상이되는</strong>
-                    <strong class="s13">날을 고대하며,</strong>
-                    <strong class="s14">매력이 있는 <em>웹 퍼블리셔</em>를</strong>
-                    <strong class="s15"><em>꿈꾸고</em> 있습니다.<span class="img8"></span></strong>
+                    <strong><span class="s3"><em>첫발</em>을</span> <span class="img img2"></span> <span class="s4">내딛게 되었습니다.</span></strong>
+                    <strong><span class="s5">처음 접해본 <em>코딩</em>의</span><span class="img img3"></span><span class="s6">세계는</span></strong>
+                    <strong class="s7">용어조차 낯설어</strong>
+                    <strong><span class="s8">매 시간</span> <span class="img img4"></span> <span class="s9"><em>메모장</em> 켜놓고</span></strong>
+                    <strong class="s10">HTML과 CSS 사용 방법부터</strong>
+                    <strong><span class="s11">속성, 태그 등을</span> <span class="img img5"></span> <span class="s12">익히기에도</span></strong>
+                    <strong class="s13"><em>벅차다고</em> 느꼈지만</strong>
+                    <strong><span class="img img6"></span> <span class="s14">순탄하지 않았던</span></strong>
+                    <strong class="s15">이 배움의 <em>과정</em>이 <span class="img img7"></span></strong>
+                    <strong class="s16"><em>익숙</em>해져 일상이되는</strong>
+                    <strong class="s17">날을 고대하며,</strong>
+                    <strong class="s18">매력이 있는 <em>웹 퍼블리셔</em>를</strong>
+                    <strong class="s19"><em>꿈꾸고</em> 있습니다.<span class="img img8"></span></strong>
                 </h3>
             </div>
         </section>
@@ -236,8 +236,8 @@
                     y:250
                 }
             });
-        }) -->
-    </script>
+        })
+    </script> -->
     <script>
         setTimeout(function(){
             let tl = gsap.timeline();
@@ -251,38 +251,48 @@
             tl.fromTo(".loading .i4", {y: 0}, {opacity: 1, y: 50, duration: 0.8, delay: 1},"b");
             tl.to(".loading .i5", {opacity: 1, duration: 0.5, delay: 0.8});
             
-            // tl.fromTo("#header", {opacity: 0}, {opacity: 1, duration: 1},"c");
+            tl.fromTo("#header", {opacity: 0}, {opacity: 1, duration: 1},"c");
 
-            tl.fromTo(".loading", {y: 0, opacity: 1}, {y: -50, opacity: 0, duration: 0.8},"c");
+            tl.fromTo(".loading", {y: 0, opacity: 1}, {y: -50, opacity: 0, duration: 0.8});
             tl.fromTo(".main .mt h1", {y: 0, opacity: 0}, {y: -50, opacity: 1, duration: 0.8});
             tl.fromTo(".main .img img", {y: 50, opacity: 0}, {y: -50, opacity: 1, duration: 0.8});
             tl.fromTo(".main .img h2", {y: 0, opacity: 0}, {y: -50, opacity: 1, duration: 0.8});
-            tl.fromTo(".main .img .svg", {y: 0, opacity: 0}, {y: -50, opacity: 1, duration: 0.8});
+            tl.fromTo(".main .img svg", {y: 0, opacity: 0}, {y: -50, opacity: 1, duration: 0.8});
 
-            tl.fromTo("#intro .s1", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.5, delay:0.5});
-            tl.to("#intro .s1 .img1", {opacity: 1, duration: 1});
-            tl.fromTo("#intro .s2", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.4});
-            tl.fromTo("#intro .s3", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.3});
-            tl.to("#intro .s3 .img2", {opacity: 1, duration: 1});
-            tl.fromTo("#intro .s4", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.3});
-            tl.to("#intro .s4 .img3", {opacity: 1, duration: 1});
-            tl.fromTo("#intro .s5", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.5});
-            tl.fromTo("#intro .s6", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.3});
-            tl.to("#intro .s6 .img4", {opacity: 1, duration: 1});
-            tl.fromTo("#intro .s7", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.5});
-            tl.fromTo("#intro .s8", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.3});
-            tl.to("#intro .s8 .img5", {opacity: 1, duration: 1});
-            tl.fromTo("#intro .s9", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.5});
-            tl.fromTo("#intro .s10", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.3});
-            tl.to("#intro .s10 .img6", {opacity: 1, duration: 1});
-            tl.fromTo("#intro .s11", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.3});
-            tl.to("#intro .s11 .img7", {opacity: 1, duration: 1});
-            tl.fromTo("#intro .s12", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.5});
-            tl.fromTo("#intro .s13", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.5});
-            tl.fromTo("#intro .s14", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.5});
-            tl.fromTo("#intro .s15", {y: 0, opacity: 0}, {y: -30, opacity: 1, duration: 0.3});
-            tl.to("#intro .s15 .img8", {opacity: 1, duration: 1});
+            //소개
+            tl.fromTo("#intro .s1", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .img1", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s2", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s3", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .img2", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s4", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s5", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .img3", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s6", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s7", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s8", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .img4", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s9", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s10", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s11", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .img5", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s12", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s13", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .img6", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s14", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s15", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .img7", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s16", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s17", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s18", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .s19", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
+            tl.fromTo("#intro .img8", {y: -10, opacity: 0}, {y: 0, opacity: 1, duration: 0.5});
         },2000);
+    </script>
+    <script>
+        // $(document).ready(function(){
+        //     $("#intro").text()
+        // });
     </script>
     <script>
          const cursor = $("#content2 .cursor")

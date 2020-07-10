@@ -9,7 +9,7 @@
     font-family: Canela-Regular;
     font-display: block;
     src: url(../fonts/Canela-Regular.eot);
-    src: url(../fonts/Canela-Regular?#iefix) format("embedded-opentype"), url(/fonts/Canela-Regular.woff) format("woff"), url(../fonts/Canela-Regular.ttf) format("truetype");
+    src: url(../fonts/Canela-Regular?#iefix) format("embedded-opentype"), url(../fonts/Canela-Regular.woff) format("woff"), url(../fonts/Canela-Regular.ttf) format("truetype");
     font-style: normal
 }
 
@@ -113,13 +113,14 @@ body {
     display: inline-block;
     opacity: 0;
 }
+#section1 .container .loading span.i4 {position: relative;}
 #section1 .container .loading span.i5 { 
     position: absolute;
-    right: 16vw; bottom: 1vw;
-    font-size: 20px;
+    right: 14.9vw; bottom: 1vw;
+    font-size: 1vw;
     font-family: "Canela-Regular";
     text-transform: capitalize;
-    /* opacity: 0; */
+    opacity: 0;
 } 
 /* layout */
 /* 메인 */
@@ -140,22 +141,22 @@ body {
     line-height: 1.2;
     position: relative;
     z-index: 10;
-    /* opacity: 0; */
+    opacity: 0;
 }
 #section1 .container .img {
     /* margin: -17vh auto 0 auto; */
     margin: 0 auto;
-    max-width: 50%;
+    width: 50vw;
     text-align: center;
     position: relative;
     z-index: 1;
-    /* opacity: 0; */
     transform: translate(0px, -210px);
 }
 #section1 .container .img img {
     /* margin-top: -17vh; */
     position: relative;
     z-index: 1;
+    opacity: 0;
 }
 #section1 .container .img h2{
     font-size: 8.5vw;
@@ -166,10 +167,12 @@ body {
     /* margin: -8vh -8vh 0 -8vh; */
     line-height: 0.6;
     margin: 0 -8vh;
+    opacity: 0;
 }
 #section1 .container .img svg {
     margin-top: 20vh;
     height: 2rem;
+    opacity: 0;
 }
 
 /* 소개 */
@@ -188,7 +191,7 @@ body {
     opacity: 0;
 }
 #intro em {color: #9EBDAE;}
-#intro span {
+#intro .img {
     display: inline-block; 
     background-size: cover;
     width: 7.5vw; height: 7.5vw;
@@ -197,42 +200,34 @@ body {
     background-image: url(../img/1.jpg);
     margin-left: 3vh;
     transform: rotate( 13deg );
-    opacity: 0;
 }
 #intro .container .img2 {
     background-image: url(../img/2.jpg);
     width: 7vw; height: 7vw;
-    opacity: 0;
 }
 #intro .container .img3 {
     background-image: url(../img/3.jpg);
     width: 8vw; height: 8vw;
     margin: 0 3vh;
-    opacity: 0;
 }
 #intro .container .img4 {
     background-image: url(../img/4.jpg);
-    opacity: 0;
 }
 #intro .container .img5 {
     background-image: url(../img/5.jpg);
     transform: rotate( -10deg );
     width: 7vw; height: 7.5vw;
-    opacity: 0;
 }
 #intro .container .img6 {
     background-image: url(../img/6.jpg);
     width: 7vw; height: 8vw;
-    opacity: 0;
 }
 #intro .container .img7 {
     background-image: url(../img/7.jpg);
     width: 7vw; height: 8vw;
-    opacity: 0;
 }
 #intro .container .img8 {
     background-image: url(../img/8.jpg);
-    opacity: 0;
 }
 
 #content1 {
