@@ -1,0 +1,136 @@
+@font-face {
+    font-family: Canela-Regular;
+    font-display: block;
+    src: url(../fonts/Canela-Regular.eot);
+    src: url(../fonts/Canela-Regular?#iefix) format("embedded-opentype"), url(../fonts/Canela-Regular.woff) format("woff"), url(../fonts/Canela-Regular.ttf) format("truetype");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: FoundersGroteskRegular;
+    font-display: block;
+    src: url(../fonts/FoundersGroteskRegular.eot);
+    src: url(../fonts/FoundersGroteskRegular?#iefix) format("embedded-opentype"), url(../fonts/FoundersGroteskRegular.woff) format("woff"), url(../fonts/FoundersGroteskRegular.ttf) format("truetype");
+    font-style: normal;
+}
+@font-face { 
+    font-family: 'Chosunilbo_myungjo'; 
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+* {margin: 0; padding: 0; margin: 0 auto;}
+body {
+    color: #000; 
+    letter-spacing: normal;
+    line-height: 1.5;
+    font-family: "FoundersGroteskRegular";
+}
+
+.window {
+    height: 100vh;
+    width: 50%;
+    margin: 0 auto;
+}
+.window-header {
+    height: 4.3vh;
+    background: Gainsboro;
+    position: relative;
+}
+.window-header .buttons {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    margin-top: -5px;
+    width: 0.45vw;
+    height: 0.45vw;
+    background: Crimson;
+    border-radius: 50%;
+    box-shadow: 15px 0 0 orange, 30px 0 0 limegreen;
+}
+.window-header .tab-menu ul {
+    display: flex;
+    text-align: center;
+    position: absolute;
+    left: 6.6%;
+    top: 0;
+    width: 70%;
+}
+.window-header .tab-menu ul button {
+    padding: 0.4vw;
+    border: 1px solid rgba(0,0,0,0.2);
+    font-size: 14px;
+    outline: none;
+}
+.window .window-header .language {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -10px;
+    height: 21px;
+    padding: 0 10px;
+    text-align: right;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid rgba(0,0,0,0.2);
+    background: transparent;
+    font-family: "FoundersGroteskRegular";
+    color: DimGrey;
+    outline: none;
+}
+.window-body {
+    height: 95.7vh;
+    margin: 0 auto;
+    padding: 0.6vw;
+    border: none;
+    font-family: "FoundersGroteskRegular";
+    font-size: 0.6vw;
+    background: #FBFBFB;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    position: relative;
+}
+.language-js {
+    position:absolute;
+    top:0;
+    left:3%;
+    width:100%;
+    height: 100%;
+    padding: 0.6vw;
+    counter-reset: linenumber;
+    box-sizing: border-box;
+    border:none;
+    font-family: 'Chosunilbo_myungjo'; 
+    font-size:0.8rem;
+    background:transparent;
+    white-space:pre-wrap;
+    line-height:1.5;
+    word-wrap: break-word;
+}
+.line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em;
+    letter-spacing: -1px;
+    border-right: 1px solid #999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.line-numbers-rows span {
+    display: block;
+    counter-increment: linenumber;
+}
+.line-numbers-rows span::before {
+    content: counter(linenumber);
+    color: #999;
+    display: block;
+    padding-right: 0.8em;
+    text-align: right;
+}

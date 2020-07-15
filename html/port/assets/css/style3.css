@@ -10,7 +10,7 @@
     font-display: block;
     src: url(../fonts/Canela-Regular.eot);
     src: url(../fonts/Canela-Regular?#iefix) format("embedded-opentype"), url(../fonts/Canela-Regular.woff) format("woff"), url(../fonts/Canela-Regular.ttf) format("truetype");
-    font-style: normal
+    font-style: normal;
 }
 
 @font-face {
@@ -18,7 +18,7 @@
     font-display: block;
     src: url(../fonts/FoundersGroteskRegular.eot);
     src: url(../fonts/FoundersGroteskRegular?#iefix) format("embedded-opentype"), url(../fonts/FoundersGroteskRegular.woff) format("woff"), url(../fonts/FoundersGroteskRegular.ttf) format("truetype");
-    font-style: normal
+    font-style: normal;
 }
 
 * {margin: 0; padding: 0; margin: 0 auto;}
