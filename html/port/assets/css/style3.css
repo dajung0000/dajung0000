@@ -179,7 +179,7 @@ body {
     padding-top: 18vh;
     padding-bottom: 24vh;
 }
-#intro h3 strong {
+#intro .container .text-wrap strong {
     display: block; /*정렬*/
     font-family: "Chosunilbo_myungjo"; 
     font-size: 4.5vw;
@@ -187,44 +187,13 @@ body {
     text-align: center;
     line-height: 1.7;
 }
-#intro em {color: #9EBDAE;}
-#intro .img {
-    display: inline-block; 
-    background-size: cover;
+#intro .container .text-wrap strong span {
+    display: inline-block;
+    opacity: 0;
+    transform: translate(-100px, 200px);
+}
+#intro span.img {
     width: 7.5vw; height: 7.5vw;
-}
-#intro .container .img1 {
-    background-image: url(../img/1.jpg);
-    margin-left: 3vh;
-    transform: rotate( 13deg );
-}
-#intro .container .img2 {
-    background-image: url(../img/2.jpg);
-    width: 7vw; height: 7vw;
-}
-#intro .container .img3 {
-    background-image: url(../img/3.jpg);
-    width: 8vw; height: 8vw;
-    margin: 0 3vh;
-}
-#intro .container .img4 {
-    background-image: url(../img/4.jpg);
-}
-#intro .container .img5 {
-    background-image: url(../img/5.jpg);
-    transform: rotate( -10deg );
-    width: 7vw; height: 7.5vw;
-}
-#intro .container .img6 {
-    background-image: url(../img/6.jpg);
-    width: 7vw; height: 8vw;
-}
-#intro .container .img7 {
-    background-image: url(../img/7.jpg);
-    width: 7vw; height: 8vw;
-}
-#intro .container .img8 {
-    background-image: url(../img/8.jpg);
 }
 
 #content1 {
