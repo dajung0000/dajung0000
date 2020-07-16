@@ -22,7 +22,7 @@
 /* layout */
 #contents {}
 #section1 {height: 100vh; background: #F3F0EB;}
-#section2 {height: 100vh; background: #F3F0EB;}
+#section2 {height: ; background: #fff;}
 #section3 {height: 3000px; background: #F3F0EB;}
 #section4 {}
 #section5 {}
@@ -30,7 +30,7 @@
 
 
 /* sec1 */
-.sec1 { }
+.sec1 {display: none; }
 .sec1 .intro {
     position: fixed; 
     left: 50%; top: 50%;
@@ -93,6 +93,31 @@
 .sec1 .img .text svg {}
 
 
+/* sec2 */
+.sec2 {
+    padding: 30vh 0;
+}
+.text-wrap { }
+.text-wrap strong {
+    display: block;
+    font-family: "Chosunilbo_myungjo";
+    font-size: 4.5vw;
+    font-weight: normal;
+    text-align: center;
+    line-height: 1.7;
+}
+.text-wrap strong span {
+    display: inline-block;
+    min-width: 1.5vw;
+    opacity: 0;
+    transform: translate(-100px, 200px);
+}
+.text-wrap .splice.s1 span:nth-child(6) {color: #9ebdae}
+.text-wrap .splice.s1 span:nth-child(7) {color: #9ebdae}
+
+.text-wrap strong span.img {width: 7vw; height: 7vw; margin-left: 1vw; margin-right: 1vw; }
+
+
 /* sec3 */
 .sec3 {padding: 30vh 0; }
 .sec3 h2 {
@@ -112,8 +137,9 @@
     font-weight: 100;
 }
 
-
-.site-wrap {}
+.site-wrap {
+    
+}
 .site-wrap .site {
     display: flex;
 }

@@ -39,7 +39,26 @@
         <!-- //section1 -->
         
         <section id="section2">
-            
+            <div class="contianer">
+                <div class="sec2">
+                    <div class="text-wrap">
+                        <strong class="splice s1">고등학교 졸업 후</strong>
+                        <strong class="splice s2">웹 퍼블리셔 라는 길의</strong>
+                        <strong class="splice s3">첫발을내딛게 되었습니다.</strong>
+                        <strong class="splice s4">처음 접해본 코딩의세계는</strong>
+                        <strong class="splice s5">용어조차 낯설어</strong>
+                        <strong class="splice s6">매 시간메모장을 켜놓고</strong>
+                        <strong class="splice s7">HTML과 CSS 사용 방법부터</strong>
+                        <strong class="splice s8">속성, 태그 등을  익히기에도</strong>
+                        <strong class="splice s9">순탄하지 않았던</strong>
+                        <strong class="splice s10">이 배움의 과정이 </strong>
+                        <strong class="splice s11">익숙해져 일상이되는</strong>
+                        <strong class="splice s12">날을 고대하며,</strong>
+                        <strong class="splice s13">매력이 있는 웹 퍼블리셔를</strong>
+                        <strong class="splice s14">꿈꾸고 있습니다.</strong>
+                    </div>
+                </div>
+            </div>
         </section>
         <!-- //section2 -->
         
@@ -99,27 +118,80 @@
     </div>
     <!-- //contents -->
     
-    <script src="assets/js/jquery.min_1.12.4.js"></script>
+    <script src="assets/js/jquery-1.12.4.js"></script>
     <script src="assets/js/gsap.min.js"></script>
     <script>
-        setTimeout(function(){
-            let tl = gsap.timeline();
-            tl.fromTo(".intro .i1", {x: -100}, {opacity: 1, x: 0, duration: 1},"a");
-            tl.fromTo(".intro .i2", {x: -100}, {opacity: 1, x: 0, duration: 1},"a");
-            tl.fromTo(".intro .i3", {x: 100}, {opacity: 1, x: 0, duration: 1},"a");
-            tl.fromTo(".intro .i4", {x: 100}, {opacity: 1, x: 0, duration: 1},"a");
-            tl.fromTo(".intro .i1", {y: 0}, {opacity: 1, y: -50, duration: 1, delay: 1},"b");
-            tl.fromTo(".intro .i3", {y: 0}, {opacity: 1, y: -50, duration: 1, delay: 1},"b");
-            tl.fromTo(".intro .i2", {y: 0}, {opacity: 1, y: 50, duration: 1, delay: 1},"b");
-            tl.fromTo(".intro .i4", {y: 0}, {opacity: 1, y: 50, duration: 1, delay: 1},"b");
-            tl.to(".intro .i5", {opacity: 1, duration: 1, delay: 1});
-            tl.fromTo(".intro", {y: 0, opacity: 1}, {y: -50, opacity: 0, duration: 0.5, delay: 0.5});
-            tl.fromTo(".main h1", {y: 0, opacity: 0}, {y: -50, opacity: 1, duration: 0.8});
-            tl.fromTo(".img", {y: 50, opacity: 0}, {y: -50, opacity: 1, duration: 0.8});
-        },2000);
+//        setTimeout(function(){
+//            let tl = gsap.timeline();
+//            tl.fromTo(".intro .i1", {x: -100}, {opacity: 1, x: 0, duration: 1},"a");
+//            tl.fromTo(".intro .i2", {x: -100}, {opacity: 1, x: 0, duration: 1},"a");
+//            tl.fromTo(".intro .i3", {x: 100}, {opacity: 1, x: 0, duration: 1},"a");
+//            tl.fromTo(".intro .i4", {x: 100}, {opacity: 1, x: 0, duration: 1},"a");
+//            tl.fromTo(".intro .i1", {y: 0}, {opacity: 1, y: -50, duration: 1, delay: 1},"b");
+//            tl.fromTo(".intro .i3", {y: 0}, {opacity: 1, y: -50, duration: 1, delay: 1},"b");
+//            tl.fromTo(".intro .i2", {y: 0}, {opacity: 1, y: 50, duration: 1, delay: 1},"b");
+//            tl.fromTo(".intro .i4", {y: 0}, {opacity: 1, y: 50, duration: 1, delay: 1},"b");
+//            tl.to(".intro .i5", {opacity: 1, duration: 1, delay: 1});
+//            tl.fromTo(".intro", {y: 0, opacity: 1}, {y: -50, opacity: 0, duration: 0.5, delay: 0.5});
+//            tl.fromTo(".main h1", {y: 0, opacity: 0}, {y: -50, opacity: 1, duration: 0.8});
+//            tl.fromTo(".img", {y: 50, opacity: 0}, {y: -50, opacity: 1, duration: 0.8});
+//        },2000);
+        
+        
+        $(".splice").each(function () {
+            let txt = $(this).text();
+            let split = txt.split("").join("</span><span aria-hidden='true'>");
+            split = "<span aria-hidden='true'>" + split + "</span>";
+            $(this).html(split).attr("aria-label", txt);
+        });
+        
+        
+        $(window).scroll(function(){
+            let scroll = $(this).scrollTop() + $(window).height()/2;
+            
+            $(".splice").each(function () {
+                let offset = $(this).offset().top;
+                let span = $(this).find("span");
+
+                if( scroll > offset){
+                    gsap.to(span, {opacity: 1, y:0, x:0, duration: 0.4, stagger: 0.04});
+                }
+            });
+            
+        });
+        
+        $(".splice.s1").append("<span class='img'><img src='assets/img/1.jpg'></span>");
+        $(".splice.s3 span:nth-child(3)").after("<span class='img'><img src='assets/img/3.jpg'></span>");
+        $(".splice.s4 span:nth-child(10)").after("<span class='img'><img src='assets/img/4.jpg'></span>");
+        $(".splice.s6 span:nth-child(4)").after("<span class='img'><img src='assets/img/1.jpg'></span>");
+        $(".splice.s7 span:nth-child(13)").after("<span class='img'><img src='assets/img/1.jpg'></span>");
+        $(".splice.s9 span:nth-child(5)").after("<span class='img'><img src='assets/img/1.jpg'></span>");
+        $(".splice.s11").append("<span class='img'><img src='assets/img/1.jpg'></span>");
+        $(".splice.s12 span:nth-child(3)").after("<span class='img'><img src='assets/img/2.jpg'></span>");
+        $(".splice.s14").append("<span class='img'><img src='assets/img/8.jpg'></span>");
+        
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
