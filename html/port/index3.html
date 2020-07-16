@@ -86,13 +86,11 @@
                             브라우저별 크로스 브라우징과 Internet explore 버전별 호환이 가능하도록 코딩하였습니다.
                         </p>
                         <ul>
-                            <li class="active"><a href="#" onclick="return false;">웹표준?</a></li>
-                            <li><a href="#" onclick="return false;">웹접근성?</a></li>
-                            <li><a href="#" onclick="return false;">IR효과?</a></li>
-                            <li><a href="#" onclick="return false;">스프라이트?</a></li>
-                            <li><a href="#" onclick="return false;">슬라이드</a></li>
-                            <li><a href="#" onclick="return false;">탭메뉴</a></li>
-                            <li><a href="#" onclick="return false;">로그인</a></li>
+                            <li class="active"><a href="#" onclick="return false;">웹표준</a></li>
+                            <li><a href="#" onclick="return false;">웹접근성</a></li>
+                            <li><a href="#" onclick="return false;">IR기법</a></li>
+                            <li><a href="#" onclick="return false;">이미지 스프라이트 기법</a></li>
+                            <li><a href="#" onclick="return false;">로그인 기능</a></li>
                             <li><a href="#" onclick="return false;">오버효과</a></li>
                         </ul>
                         <a href="https://dajung0000.github.io/dajung0000/html/site-webstandard/index.html" class="btn">Site View</a>
@@ -335,6 +333,11 @@
             let index = target.index()
             btn.removeClass("active"); //버튼의 클래스를 삭제
             target.addClass("active"); //타겟버튼의 클래스를 추가
+        })
+
+        let c1 = $(".site-wrap .site1 .right .c1")
+        $(".site-wrap .site1 .right").click(function(){
+            c1.css("display", "block")
         })
     </script>
     <script>    /* 애니메이션1 */
