@@ -57,12 +57,12 @@
                 <div class="text-wrap">
                     <strong class="splice s1">고등학교 졸업 후</strong>
                     <strong class="splice s2">웹 퍼블리셔 라는 길의</strong>
-                    <strong class="splice s3">첫발을 내딛게 되었습니다.</strong>
+                    <strong class="splice s3">첫발을내딛게 되었습니다.</strong>
                     <strong class="splice s4">처음 접해본 코딩의세계는</strong>
                     <strong class="splice s5">용어조차 낯설어</strong>
-                    <strong class="splice s6">매 시간 메모장을 켜놓고</strong>
+                    <strong class="splice s6">매 시간메모장을 켜놓고</strong>
                     <strong class="splice s7">HTML과 CSS 사용 방법부터</strong>
-                    <strong class="splice s8">속성, 태그 등을 익히기에도</strong>
+                    <strong class="splice s8">속성, 태그 등을익히기에도</strong>
                     <strong class="splice s9">벅차다고 느꼈지만</strong>
                     <strong class="splice s10">순탄하지 않았던</strong>
                     <strong class="splice s11">이 배움의 과정이</strong>
@@ -70,7 +70,15 @@
                     <strong class="splice s13">날을 고대하며,</strong>
                     <strong class="splice s14">매력이 있는 웹 퍼블리셔를</strong>
                     <strong class="splice s15">꿈꾸고 있습니다.</strong>
+                    <!-- <img class="heart h1" src="./assets/img/heart.png" alt="">
+                <img class="heart h2" src="./assets/img/heart.png" alt=""> -->
                 </div>
+                <!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 269 264" style="enable-background:new 0 0 269 264;" xml:space="preserve">
+                <path fill="red" class="heart" d="M131.9,110.7c-6.8-6.3-17.4-6-23.7,0.8c-6.3,6.8-6,17.4,0.8,23.7l14.4,13.5l11.5,10.7l11.5-10.7
+                                    l14.4-13.5c6.8-6.3,7.1-16.9,0.8-23.7c-6.3-6.8-16.9-7.1-23.7-0.8l-2.9,2.7"/>
+                </svg> -->
+                
             </div>
         </section>
         <!-- //intro -->
@@ -328,14 +336,47 @@
                 }
             });
         });
-        $(".splice.s1").append("<span class= 'img'><img src='assets/img/1.jpg'></span>")
+        $(".splice.s1").append("<span class= 'img' style='transform: rotate(12deg);'><img src='assets/img/1.jpg'></span>")
         $(".splice.s3 span:nth-child(3)").after("<span class='img'><img src='assets/img/2.jpg'></span>");
         $(".splice.s4 span:nth-child(10)").after("<span class='img'><img src='assets/img/3.jpg'></span>");
         $(".splice.s6 span:nth-child(4)").after("<span class='img'><img src='assets/img/4.jpg'></span>");
-        $(".splice.s8 span:nth-child(9)").after("<span class='img'><img src='assets/img/5.jpg'></span>");
-        $(".splice.s10 span:nth-child(1)").before("<span class='img'><img src='assets/img/6.jpg'></span>");
-        $(".splice.s11").append("<span class='img'><img src='assets/img/7.jpg'></span>");
+        $(".splice.s8 span:nth-child(9)").after("<span class='img' style='width: 6.5vw; height: 7.5vw; transform: rotate(-8deg);'><img src='assets/img/5.jpg'></span>");
+        $(".splice.s10 span:nth-child(1)").before("<span class='img' style='width: 6.5vw; height: 7vw;'><img src='assets/img/6.jpg'></span>");
+        $(".splice.s11").append("<span class='img' style='width: 6.5vw; height: 7vw;'><img src='assets/img/7.jpg'></span>");
         $(".splice.s15").append("<span class='img'><img src='assets/img/8.jpg'></span>");
+        $("span.img").append("<div class='heart heart1'><img src='assets/img/heart.png'></div>");
+        $("span.img").append("<div class='heart heart2'><img src='assets/img/heart.png'></div>");
+
+        // setTimeout(function(){
+        //     let tl = gsap.timeline();
+        //     tl.fromTo(".heart1", {y: 0}, {opacity: 1, y: -100, duration: 0.8},"a");
+        // },2000);
+
+        // $("span.img").mouseover(function(){
+        //     let h1 = $(this).find(".heart1")
+        //     let h2 = $(this).find(".heart2")
+
+        //         let tl = gsap.timeline();
+        //         tl.fromTo(h1, {y: 0}, {opacity: 0.8, y: -110, duration: 1},"a");
+        //         tl.fromTo(h2, {y: 0}, {opacity: 0.4, y: -100, duration: 1},"a");
+            
+        // });
+        // $("span.img").mouseout(function(){
+        //     let h1 = $(this).find(".heart1")
+        //     let h2 = $(this).find(".heart2")
+        //     let tl = gsap.timeline();
+        //         tl.fromTo(h1, {opacity: 0.8}, {opacity: 0, duration: 0.4});
+        //         tl.fromTo(h2, {opacity: 0.4}, {opacity: 0, duration: 0.8});
+        // })
+
+        $("span.img").hover(function(){
+            let h1 = $(this).find(".heart1")
+            let h2 = $(this).find(".heart2")
+                gsap.fromTo(h1 ,2.2, {y:0, opacity:0.8,scale:0.6}, {y:-130, opacity:0, scale:1})
+                gsap.fromTo(h2 ,1.7, {y:0, opacity:0.5, scale:0.6, delay:0.3}, {y:-120, opacity:0, scale:1})
+            }, function(){
+                
+            })
     </script>
     <script>    /* 애니메이션1 */
          const cursor = $("#content2 .cursor")
