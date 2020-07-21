@@ -303,6 +303,7 @@ span.img .heart2 {
     background: url(../img/web.jpg) no-repeat;
     background-size: cover;
     background-position: right;
+    cursor: pointer;
 }
 .site-wrap .site2 .right {
     flex-basis: 50%;
@@ -380,6 +381,10 @@ span.img .heart2 {
 }
 .site-wrap .site .left .btn:hover::after {
     width: 0;
+}
+.site-wrap .site iframe {
+    display: none;
+    cursor: pointer;
 }
 
 /* 애니메이션1 */

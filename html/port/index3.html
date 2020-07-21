@@ -70,15 +70,7 @@
                     <strong class="splice s13">날을 고대하며,</strong>
                     <strong class="splice s14">매력이 있는 웹 퍼블리셔를</strong>
                     <strong class="splice s15">꿈꾸고 있습니다.</strong>
-                    <!-- <img class="heart h1" src="./assets/img/heart.png" alt="">
-                <img class="heart h2" src="./assets/img/heart.png" alt=""> -->
-                </div>
-                <!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                viewBox="0 0 269 264" style="enable-background:new 0 0 269 264;" xml:space="preserve">
-                <path fill="red" class="heart" d="M131.9,110.7c-6.8-6.3-17.4-6-23.7,0.8c-6.3,6.8-6,17.4,0.8,23.7l14.4,13.5l11.5,10.7l11.5-10.7
-                                    l14.4-13.5c6.8-6.3,7.1-16.9,0.8-23.7c-6.3-6.8-16.9-7.1-23.7-0.8l-2.9,2.7"/>
-                </svg> -->
-                
+                </div>             
             </div>
         </section>
         <!-- //intro -->
@@ -101,11 +93,14 @@
                             <li><a href="#" onclick="return false;">로그인 기능</a></li>
                             <li><a href="#" onclick="return false;">오버효과</a></li>
                         </ul>
+                        
                         <a href="https://dajung0000.github.io/dajung0000/html/site-webstandard/index.html" class="btn">Site View</a>
                         <a href="https://www.figma.com/proto/fhBZHZhULZz7fpAwvqiSj4/%EC%9B%B9-%ED%91%9C%EC%A4%80-%EC%82%AC%EC%9D%B4%ED%8A%B8?node-id=0%3A170&viewport=730%2C492%2C0.050534021109342575&scaling=contain" class="btn" target="_blank">Figma View</a>
                     </div>
                     <div class="right">
-                        <!-- <iframe src="http://dajung.dothome.co.kr/port/code2.html" frameborder="0" style="width: 100%; height: 100%;"></iframe> -->
+                        <iframe class="site1" src="file:///C:/Users/dajung/Documents/GitHub/dajung0000/html/port/code veiw/site1.html#" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+                    
+                        <iframe class="btnCd1" style="height: 100vh; width: 100%; display: none;" src="file:///C:/Users/dajung/Documents/GitHub/dajung0000/html/port/btn/btn1.html" frameborder="0"></iframe>
                     </div>
                 </div>
                 <!-- //site1 -->
@@ -172,10 +167,10 @@
             <div>
                 <h2>Keyframe Animation</h2>
             </div>
-                <iframe class="cursor hover1" src="http://dajung.dothome.co.kr/port/script1.html" frameborder="0"></iframe>
-                <iframe class="cursor hover2" src="http://dajung.dothome.co.kr/port/script2.html" frameborder="0"></iframe>
-                <iframe class="cursor hover3" src="http://dajung.dothome.co.kr/port/script3.html" frameborder="0"></iframe>
-                <iframe class="cursor hover4" src="http://dajung.dothome.co.kr/port/script4.html" frameborder="0"></iframe>
+                <iframe class="cursor hover1" src="http://dajung.dothome.co.kr/port/animation/script1.html" frameborder="0"></iframe>
+                <iframe class="cursor hover2" src="http://dajung.dothome.co.kr/port/animation/script2.html" frameborder="0"></iframe>
+                <iframe class="cursor hover3" src="http://dajung.dothome.co.kr/port/animation/script3.html" frameborder="0"></iframe>
+                <iframe class="cursor hover4" src="http://dajung.dothome.co.kr/port/animation/script4.html" frameborder="0"></iframe>
                 <h3 class="img1">Border-radius Morphing</h3>
                 <h3 class="img2">Wave Circle</h3>
                 <h3 class="img3">Square Animation</h3>
@@ -304,18 +299,16 @@
             tl.fromTo(".main .img h2", {y: 0, opacity: 0}, {y: -50, opacity: 1, duration: 0.8});
             tl.fromTo(".main .img svg", {y: 0, opacity: 0}, {y: -50, opacity: 1, duration: 0.8});
         },2000);
-
-
-
-        /* work 버튼 */
-        let btn = $(".left > ul > li");
-        btn.click(function(){
-            let target = $(this)
-            let index = target.index()
-            btn.removeClass("active"); //버튼의 클래스를 삭제
-            target.addClass("active"); //타겟버튼의 클래스를 추가
-        })
-
+        //타임라인 3번만 움직이기
+        // $(".main .img .svg").css("height","100%")
+        // setTimeout(function(){
+        //     let tl = new TimelineMax()
+        //     tl.to(".main .img svg", {duration: 0.4, top: "-90%", ease: "power2.out", scale: "1.5"})
+        //         .to(".main .img svg", {duration: 0.4, top: "50%", ease: "power2.out"})
+        //         .to(".main .img svg", {duration: 0.4, top: "40%", ease: "power2.out"})
+        //         .to(".main .img svg", {duration: 0.4, top: "-90%", ease: "power2.out", scale: "1.5"})
+        //         .repeat(3)
+        // });
 
         $(".splice").each(function(){
             let txt = $(this).text();
@@ -347,36 +340,52 @@
         $("span.img").append("<div class='heart heart1'><img src='assets/img/heart.png'></div>");
         $("span.img").append("<div class='heart heart2'><img src='assets/img/heart.png'></div>");
 
-        // setTimeout(function(){
-        //     let tl = gsap.timeline();
-        //     tl.fromTo(".heart1", {y: 0}, {opacity: 1, y: -100, duration: 0.8},"a");
-        // },2000);
-
-        // $("span.img").mouseover(function(){
-        //     let h1 = $(this).find(".heart1")
-        //     let h2 = $(this).find(".heart2")
-
-        //         let tl = gsap.timeline();
-        //         tl.fromTo(h1, {y: 0}, {opacity: 0.8, y: -110, duration: 1},"a");
-        //         tl.fromTo(h2, {y: 0}, {opacity: 0.4, y: -100, duration: 1},"a");
-            
-        // });
-        // $("span.img").mouseout(function(){
-        //     let h1 = $(this).find(".heart1")
-        //     let h2 = $(this).find(".heart2")
-        //     let tl = gsap.timeline();
-        //         tl.fromTo(h1, {opacity: 0.8}, {opacity: 0, duration: 0.4});
-        //         tl.fromTo(h2, {opacity: 0.4}, {opacity: 0, duration: 0.8});
-        // })
-
         $("span.img").hover(function(){
             let h1 = $(this).find(".heart1")
             let h2 = $(this).find(".heart2")
-                gsap.fromTo(h1 , {y:-50, opacity:0.8,scale:0.6}, {y:-150, opacity:0, scale:1, duration: 2.8})
-                gsap.fromTo(h2 , {y:-50, opacity:0.5, scale:0.6, delay:0.4}, {y:-150, opacity:0, scale:1, duration: 2.8})
+                gsap.fromTo(h1,{y:"15%", opacity:0.8,scale:0.6},{y:"70%", opacity:0, scale:1, duration: 2})
+                gsap.fromTo(h2,{y:"15%", opacity:0.6, scale:0.6, delay:0.4}, {y:"70%", opacity:0, scale:1, duration: 2})
             }, function(){
                 
             })
+
+        /* work 버튼 */
+        let btn = $(".left > ul > li");
+        btn.click(function(){
+            let target = $(this)
+            let index = target.index()
+            btn.removeClass("active"); //버튼의 클래스를 삭제
+            target.addClass("active"); //타겟버튼의 클래스를 추가
+        })
+
+        $(".site1 .left li:nth-child(1)").click(function(){
+            $(".site1 .left p").text("웹에서의 표준은 W3C의 토론을 통해 나온 권고안을 말하며, 관련 기술로는 구조 HTML, 표현 CSS, 동작Script가 있습니다.")
+        });
+        $(".site1 .left li:nth-child(2)").click(function(){
+            $(".site1 .left p").text("웹 접근성은 ‘모든 사용자가 신체적·환경적 조건에 관계없이 웹에 접근하여 이용할 수 있도록 보장하는 것’ 입니다.")
+        });
+        $(".site1 .left li:nth-child(3)").click(function(){
+            $(".site1 .left p").text("IR기법은 이미지 대체텍스트 제공을 위한 CSS기법 입니다.")
+        });
+        $(".site1 .left li:nth-child(4)").click(function(){
+            $(".site1 .left p").text("이미지 스프라이트 기법은 배경 이미지를 낱개로 제작하지 않고, 비슷한 성격의 배경 이미지를 하나의 파일로 제작 후에 background-position을 이용하여 배치하는 방법입니다.")
+        });
+
+        $(".site1 .left li:nth-child(5)").click(function(){
+            $(".site1 .right .btnCd1").css("display", "block")
+        });
+        $(".site1 .right").click(function(){
+            $(".site1 .right .site1").show()
+        });
+
+
+
+        // $(".site1 .right").click(function(){
+        //     $("iframe").hide()
+        // });
+
+
+        
     </script>
     <script>    /* 애니메이션1 */
          const cursor = $("#content2 .cursor")

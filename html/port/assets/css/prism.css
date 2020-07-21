@@ -57,8 +57,8 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: GhostWhite;
-	font-size: 14px;
+	background: #2e2e31;
+	font-size: 16px;
 }
 
 /* Inline code */
@@ -73,7 +73,7 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: DimGrey;
+	color: #9fa2a4;
 }
 
 .token.punctuation {
@@ -123,7 +123,7 @@ pre[class*="language-"] {
 .token.operator,
 .token.entity,
 .token.url {
-	color: Gainsboro;
+	color: #9fa2a4;
 }
 
 .token.important,
@@ -146,11 +146,13 @@ pre[class*="language-"].line-numbers {
 	position: relative;
 	padding-left: 3.8em;
 	counter-reset: linenumber;
+	color: #9fa2a4;
 }
 
 pre[class*="language-"].line-numbers > code {
 	position: relative;
 	white-space: inherit;
+	color: #9fa2a4;
 }
 
 .line-numbers .line-numbers-rows {
@@ -161,7 +163,7 @@ pre[class*="language-"].line-numbers > code {
 	left: -3.8em;
 	width: 3em; /* works for line-numbers below 1000 lines */
 	letter-spacing: -1px;
-	border-right: 1px solid #999;
+	border-right: 1px solid #434445;
 
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -178,7 +180,7 @@ pre[class*="language-"].line-numbers > code {
 
 		.line-numbers-rows > span:before {
 			content: counter(linenumber);
-			color: #999;
+			color: #434445;
 			display: block;
 			padding-right: 0.8em;
 			text-align: right;

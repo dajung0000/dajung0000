@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>btn-로그인</title>
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/code2.css">
+    <link rel="stylesheet" href="../../assets/css/prism.css">
+</head>
+<body>
+    <div class="editor">
+        <div class="editor-tab">
+            <div class="dot"><span></span></div>
+            <ul class="menu">
+                <li class="active"><a href="#">index.html</a></li>
+                <li><a href="#">style.css</a></li>
+            </ul>
+        </div>
+        <div class="editor-code">
+            <pre class="line-numbers"><code class="language-html">&lt;!-- 로그인 --&gt;
+&lt;div id="login-wrap"&gt;
+    &lt;h4 class="ir_so"&gt;로그인 정보&lt;/h4&gt;
+    &lt;form action="post" id="login-form" name="login-form"&gt;
+        &lt;fieldset&gt;
+            &lt;legend class="ir_so"&gt;로그인 및 관련 설정&lt;/legend&gt;
+            &lt;div class="login-header"&gt;
+                &lt;h5 class="ir_so"&gt;로그인 보안&lt;/h5&gt;
+                &lt;div class="lh-check"&gt;
+                    &lt;input id="infor-check" type="checkbox" class="input-check"&gt;
+                    &lt;label for="infor-check"&gt;로그인 상태 유지&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class="lh-ip"&gt;
+                    IP보안 &lt;strong&gt;ON&lt;/strong&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="login-content"&gt;
+                &lt;h5 class="ir_so"&gt;로그인 영역&lt;/h5&gt;
+                &lt;div class="lc-text"&gt;
+                    &lt;label for="uid" class="ir_so"&gt;아이디&lt;/label&gt;
+                    &lt;input type="text" id="uid" name="uid" class="input-text" maxlength="20"&gt;
+                    &lt;label for="upw" class="ir_so"&gt;비밀번호&lt;/label&gt;
+                    &lt;input type="password" id="upw" name="upw" class="input-text" maxlength="20"&gt;
+                    &lt;button class="ic-btn" type="submit"&gt;로그인&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="login-footer"&gt;
+                &lt;h5 class="ir_so"&gt;로그인 문제 해결&lt;/h5&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;strong&gt;회원가입&lt;/strong&gt;/&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;아이디&lt;/a&gt; &middot; &lt;a href=""&gt;비밀번호&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/fieldset&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+&lt;!-- //로그인 --&gt;
+</code></pre>
+        </div>
+
+        <div class="editor-code">
+            <pre class="line-numbers"><code class="language-css">/* 로그인  */
+#login-wrap {background: #f2f4f5; padding: 15px;}
+.login-header {overflow: hidden; font-size: 12px; height: 24px;}
+.login-header .lh-check {float: left; padding-right: 15px;}
+.login-header .lh-check .input-check {vertical-align: -2px;}
+.login-header .lh-ip {float: left;}
+.login-header .lh-ip strong {color: #0093bd; text-decoration: underline;}
+.login-content {position: relative;}
+.login-content .lc-text .input-text {width: 182px; height: 16px; padding: 2px 5px; border: 1px solid #bebebe; margin-bottom: 2px; background: #fff;}
+.login-content .lc-text .ic-btn {position: absolute; right: 0; top: 0; width: 62px; height: 46px; background: #fff; border: 1px solid #bebebe;}
+.login-footer {margin-top: 5px;}
+.login-footer li {display: inline; }
+.login-footer li a {font-size: 12px;}
+</code></pre>
+        </div>
+
+    </div>
+    <script src="../../assets/js/prism.js"></script>
+    <script src="../assets/js/jquery-1.12.4.js"></script>
+    <script>
+        let tabBtn = $(".menu > li"); //각각의 버튼을 변수에 저장
+        let tabCont = $ (".editor .editor-code"); //각각의 컨텐츠를 변수에 저장
+
+        tabCont.hide().eq(0).show(); //모든 컨텐츠를 숨기고 첫 번쨰 콘텐츠만 노출
+
+        tabBtn.click(function(){
+        let target = $(this) //버튼의 타겟을 변수에 저장
+        let index = target.index(); //버튼의 순서를 변수에 저장
+        // alert(index);
+        tabBtn.removeClass("active"); //버튼의 클래스를 삭제
+        target.addClass("active"); //타겟버튼의 클래스를 추가
+        tabCont.css("display","none");
+        tabCont.eq(index).css("display","block");
+        });
+    </script>
+</body>
+</html>
